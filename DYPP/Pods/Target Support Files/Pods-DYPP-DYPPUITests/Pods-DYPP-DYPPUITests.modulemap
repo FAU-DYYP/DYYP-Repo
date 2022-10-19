@@ -1,0 +1,6 @@
+framework module Pods_DYPP_DYPPUITests {
+  umbrella header "Pods-DYPP-DYPPUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

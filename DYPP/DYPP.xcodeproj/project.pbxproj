@@ -168,7 +168,6 @@
 				BC115A106C774CBE18EB1BD9 /* Pods-DYPPTests.debug.xcconfig */,
 				E7356299CD5F0AE8D85CCE89 /* Pods-DYPPTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -557,6 +556,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S23EGKVD27;
 				INFOPLIST_FILE = DYPP/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DYYP;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -577,6 +578,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S23EGKVD27;
 				INFOPLIST_FILE = DYPP/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DYYP;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

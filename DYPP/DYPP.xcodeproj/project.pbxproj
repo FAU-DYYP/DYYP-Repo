@@ -592,6 +592,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S23EGKVD27;
 				INFOPLIST_FILE = DYPP/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DYYP;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -612,6 +614,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S23EGKVD27;
 				INFOPLIST_FILE = DYPP/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DYYP;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

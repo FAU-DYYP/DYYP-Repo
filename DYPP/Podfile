@@ -6,6 +6,7 @@ target 'DYPP' do
   use_frameworks!
 
   # Pods for DYPP
+  pod 'AlamofireImage'
 
   target 'DYPPTests' do
     inherit! :search_paths

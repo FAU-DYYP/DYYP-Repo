@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-DYPP-DYPPUITests/Pods-DYPP-DYPPUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework

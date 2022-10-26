@@ -11,16 +11,16 @@ Original App Design Project - README Template
 
 ## Overview
 ### Description
-[Description of your app]
+DYYP is a cryptocurrency focused app: it monitors the crpyto market for prices, trade volume, and important news. Users can personalize their feed, a profile, and a simulated crypto wallet. The user can also seen in-depth information about a specific coin in a seperate view.
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
-- **Category:**
-- **Mobile:**
-- **Story:**
-- **Market:**
-- **Habit:**
-- **Scope:**
+- **Category: Finance News**
+- **Mobile: iOS, modern**
+- **Story: A user can browse the app to monitor crypto markets and news, as well as their own holdings.**
+- **Market: 21-40 year olds interested in finance**
+- **Habit: To monitor their holdings and prices, Users would browse the app daily when the market is slow and every few minutes when there are rapid changes.**
+- **Scope: More personal and focused, there is no intent for it to be a full social media app (chat functionality, posting content, etc.)**
 
 ## Product Spec
 
@@ -28,22 +28,39 @@ Original App Design Project - README Template
 
 **Required Must-have Stories**
 
-* [fill in your required user stories here]
-* ...
+* User Login (persistant without logging out)
+* Cryto Feed: prices and trade volume
+* Settings/Profile: favorite coins, aesthetic settings
 
 **Optional Nice-to-have Stories**
 
-* [fill in your required user stories here]
-* ...
+* Coin Info: indepth info on selected coins
+* NFT Art Gallery
+* My Wallet/Portfolio: user "buys" and "sells" coins. The value of each and the total is displayed and tracked.
+* Crypto News: A small section of the feed will have a scrolling/refreshing line of text containing crypto news
+* Notifications: A notification appears when a price changes by a certain threshold
 
 ### 2. Screen Archetypes
 
-* [list first screen here]
-   * [list associated required story here]
-   * ...
-* [list second screen here]
-   * [list associated required story here]
-   * ...
+* Login
+   * create a persistent account
+   * access existing account
+* Crypto Feed
+   * scroll through coin prices
+   * select coin cell, get more info
+* Settings/Profile
+   * aesthetic settings (darkmode)
+   * favorite coins
+   * notification settings
+* Coin Info
+   * prices
+   * image
+   * news
+   * trends
+* Wallet/Portfolio
+   * buy and sell
+   * value of your portfolio
+   * history
 
 ### 3. Navigation
 

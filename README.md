@@ -66,18 +66,15 @@ DYYP is a cryptocurrency focused app: it monitors the crpyto market for prices, 
 
 **Tab Navigation** (Tab to Screen)
 
-* [fill out your first tab]
-* [fill out your second tab]
-* [fill out your third tab]
+* [Main Feed]
+* [Settings]
+* [Wallet View]
 
 **Flow Navigation** (Screen to Screen)
 
-* [list first screen here]
-   * [list screen navigation here]
-   * ...
-* [list second screen here]
-   * [list screen navigation here]
-   * ...
+* [Forced Login -> Main Feed]
+* [Main Feed Cell -> Coin Info]
+* [Settings -> favorites]
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]

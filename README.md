@@ -28,9 +28,9 @@ DYYP is a cryptocurrency focused app: it monitors the crpyto market for prices, 
 
 **Required Must-have Stories**
 
-* User Login (persistant without logging out)
-* Cryto Feed: prices and trade volume
-* Settings/Profile: favorite coins, aesthetic settings
+* Wallet View: collection view of coins, My portfolio, value of account, description of coin
+* Feed View: table view of coins, value of coins
+* Settings View: UI view of team credits
 
 **Optional Nice-to-have Stories**
 
@@ -43,38 +43,31 @@ DYYP is a cryptocurrency focused app: it monitors the crpyto market for prices, 
 ### 2. Screen Archetypes
 
 * Login
-   * create a persistent account
-   * access existing account
-* Crypto Feed
-   * scroll through coin prices
-   * select coin cell, get more info
-* Settings/Profile
-   * aesthetic settings (darkmode)
-   * favorite coins
-   * notification settings
-* Coin Info
-   * prices
-   * image
-   * news
-   * trends
-* Wallet/Portfolio
-   * buy and sell
-   * value of your portfolio
-   * history
+   * User Sign in
+   * User Sign up
+* Wallet View
+   * Collection view of crypto currencies
+   * Portfolio view value of the account, description of coin
+* Feed View
+   * coin image
+   * current market value of coin
+* Settings View
+   * Team Logo (Dyyper)
+   * Team credits (names of the members)
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* [Main Feed]
-* [Settings]
 * [Wallet View]
+* [Feed View]
+* [Settings View]
 
 **Flow Navigation** (Screen to Screen)
 
-* [Forced Login -> Main Feed]
-* [Main Feed Cell -> Coin Info]
-* [Settings -> favorites]
+* [User Login -> Wallet View]
+    * [Wallet View Cell  -> My Portfolio]
+* [Settings -> Team credits]
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]

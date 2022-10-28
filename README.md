@@ -11,13 +11,13 @@ Original App Design Project - README Template
 
 ## Overview
 ### Description
-DYYP is a cryptocurrency focused app: it monitors the crpyto market for prices, trade volume, and important news. Users can personalize their feed, a profile, and a simulated crypto wallet. The user can also seen in-depth information about a specific coin in a seperate view.
+DYYP is a cryptocurrency focused app: it monitors the crpyto market for prices. Users can personalize their feed, a profile, and a simulated crypto wallet. The user can also seen in-depth information about a specific coin in a seperate view.
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
 - **Category: Finance News**
 - **Mobile: iOS, modern**
-- **Story: A user can browse the app to monitor crypto markets and news, as well as their own holdings.**
+- **Story: A user can browse the app to monitor crypto markets, as well as their own holdings.**
 - **Market: 21-40 year olds interested in finance**
 - **Habit: To monitor their holdings and prices, Users would browse the app daily when the market is slow and every few minutes when there are rapid changes.**
 - **Scope: More personal and focused, there is no intent for it to be a full social media app (chat functionality, posting content, etc.)**

@@ -79,7 +79,6 @@ Figma Wireframe: https://www.figma.com/file/fUa2beX6Y2vNY50vHFtWAr/DYYP?node-id=
 
 
 ### [BONUS] Interactive Prototype
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FfUa2beX6Y2vNY50vHFtWAr%2FDYYP%3Fnode-id%3D0%253A1" allowfullscreen></iframe>
 
 ## Schema 
 [This section will be completed in Unit 9]

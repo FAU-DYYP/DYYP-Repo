@@ -131,11 +131,11 @@ Figma Wireframe: https://www.figma.com/file/fUa2beX6Y2vNY50vHFtWAr/DYYP?node-id=
 #### [OPTIONAL:] Existing API Endpoints
 
 ##### coinapi.io - cryptocurrency information
-- Base URL - https://rest-sandbox.coinapi.io/
+- Base URL - https://rest.coinapi.io/
 
    HTTP Verb | Endpoint | Description
    ----------|----------|------------
-    `GET`    | /v1/exchanges/icons/{iconSize} | Gets the list of icons (of the given size) for all the exchanges.
+    `GET`    | /v1/exchangerate/BTC | Gets the exchange rate for Bitcoin
     `GET`    | /v1/assets | Get detailed list of assets.
     `GET`    | /v1/assets/{asset_id} | Get detailed list of assets.
     `GET`    | /v1/assets?filter_asset_id={filter_asset_id} | Get detailed list of assets.

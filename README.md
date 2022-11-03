@@ -139,7 +139,9 @@ Figma Wireframe: https://www.figma.com/file/fUa2beX6Y2vNY50vHFtWAr/DYYP?node-id=
     `GET`    | /v1/assets | Get detailed list of assets.
     `GET`    | /v1/assets/{asset_id} | Get detailed list of assets.
     `GET`    | /v1/assets?filter_asset_id={filter_asset_id} | Get detailed list of assets.
-    `GET`    | /v1/assets?filter_asset_id={filter_asset_id} | Get detailed list of assets.
+    `GET`    | /v1/assets/icons/{iconSize} | Gets the list of icons (of the given size) for all the assets.
+    `GET`    | /v1/symbols/{exchange_id} | Get detailed list of all symbols.
+    `GET`    | /v1/symbols?filter_symbol_id={filter_symbol_id}&filter_exchange_id={filter_exchange_id}&filter_asset_id={filter_asset_id} | Get detailed list of all symbols.
     
 
 

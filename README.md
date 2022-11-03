@@ -129,7 +129,6 @@ Figma Wireframe: https://www.figma.com/file/fUa2beX6Y2vNY50vHFtWAr/DYYP?node-id=
         }
     }
 
-         ```
 #### [OPTIONAL:] Existing API Endpoints
 
 ##### coinapi.io - cryptocurrency information

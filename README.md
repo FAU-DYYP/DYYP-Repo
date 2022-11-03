@@ -97,50 +97,52 @@ Figma Wireframe: https://www.figma.com/file/fUa2beX6Y2vNY50vHFtWAr/DYYP?node-id=
    
 ### Networking
 #### List of network requests by screen
-   - Home Feed Screen
-      - (Read/GET) Query all posts where user is author
+   - Login Screen
+      - (Create/Post) Create a new user for the app
          ```swift
-         let query = PFQuery(className:"Post")
-         query.whereKey("author", equalTo: currentUser)
-         query.order(byDescending: "createdAt")
-         query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
-            if let error = error { 
-               print(error.localizedDescription)
-            } else if let posts = posts {
-               print("Successfully retrieved \(posts.count) posts.")
-           // TODO: Do something with posts...
+        let user = PFUser()
+        user.username = usernameField.text
+        user.password = passwordField.text
+                
+        user.signUpInBackground { (success, error) in
+            if error != nil {
+                        self.performSegue(withIdentifier: "loginViewSegue", sender: nil)
             }
-         }
+            else {
+                print("Error: \(error?.localizedDescription)")
+            }
+        }
          ```
-      - (Create/POST) Create a new like on a post
-      - (Delete) Delete existing like
-      - (Create/POST) Create a new comment on a post
-      - (Delete) Delete existing comment
-   - Create Post Screen
-      - (Create/POST) Create a new post object
-   - Profile Screen
-      - (Read/GET) Query logged in user object
-      - (Update/PUT) Update user profile image
+      - (READ/Get) User can login to app
+       ```swift
+        let username = usernameField.text!
+        let password = passwordField.text!
+                
+        PFUser.logInWithUsername(inBackground: username, password: password)
+        {   (user, error) in
+            if user != nil {
+                        self.performSegue(withIdentifier: "loginViewSegue", sender: nil)
+            }
+            else {
+                print("Error: \(error?.localizedDescription)")
+            }
+        }
+    }
+
+         ```
 #### [OPTIONAL:] Existing API Endpoints
-##### An API Of Ice And Fire
-- Base URL - [http://www.anapioficeandfire.com/api](http://www.anapioficeandfire.com/api)
+
+##### coinapi.io - cryptocurrency information
+- Base URL - https://rest-sandbox.coinapi.io/
 
    HTTP Verb | Endpoint | Description
    ----------|----------|------------
-    `GET`    | /characters | get all characters
-    `GET`    | /characters/?name=name | return specific character by name
-    `GET`    | /houses   | get all houses
-    `GET`    | /houses/?name=name | return specific house by name
+    `GET`    | /v1/exchanges/icons/{iconSize} | Gets the list of icons (of the given size) for all the exchanges.
+    `GET`    | /v1/assets | Get detailed list of assets.
+    `GET`    | /v1/assets/{asset_id} | Get detailed list of assets.
+    `GET`    | /v1/assets?filter_asset_id={filter_asset_id} | Get detailed list of assets.
+    `GET`    | /v1/assets?filter_asset_id={filter_asset_id} | Get detailed list of assets.
+    
 
-##### Game of Thrones API
-- Base URL - [https://api.got.show/api](https://api.got.show/api)
 
-   HTTP Verb | Endpoint | Description
-   ----------|----------|------------
-    `GET`    | /cities | gets all cities
-    `GET`    | /cities/byId/:id | gets specific city by :id
-    `GET`    | /continents | gets all continents
-    `GET`    | /continents/byId/:id | gets specific continent by :id
-    `GET`    | /regions | gets all regions
-    `GET`    | /regions/byId/:id | gets specific region by :id
-    `GET`    | /characters/paths/:name | gets a character's path with a given name
+        

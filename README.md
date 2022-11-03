@@ -127,7 +127,6 @@ Figma Wireframe: https://www.figma.com/file/fUa2beX6Y2vNY50vHFtWAr/DYYP?node-id=
                 print("Error: \(error?.localizedDescription)")
             }
         }
-    }
 
 #### [OPTIONAL:] Existing API Endpoints
 

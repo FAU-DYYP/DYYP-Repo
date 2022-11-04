@@ -137,7 +137,7 @@ Figma Wireframe: https://www.figma.com/file/fUa2beX6Y2vNY50vHFtWAr/DYYP?node-id=
    ----------|----------|------------
     `GET`    | /v1/exchangerate/BTC | Gets the exchange rate for Bitcoin
     `GET`    | /v1/assets | Get detailed list of assets.
-    `GET`    | /v1/assets/{asset_id} | Get detailS of specified asset.
+    `GET`    | /v1/assets/{asset_id} | Get details of specified asset.
     `GET`    | /v1/assets?filter_asset_id={filter_asset_id} | Get details about a list of assets.
     `GET`    | /v1/assets/icons/{iconSize} | Gets the list of icons (of the given size) for all the assets.
     

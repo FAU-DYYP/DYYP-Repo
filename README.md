@@ -84,16 +84,51 @@ Figma Wireframe: https://www.figma.com/file/fUa2beX6Y2vNY50vHFtWAr/DYYP?node-id=
 
 ### Models
 
+**CoinAPI - Assets HTTP Request output data**
+GET /v1/assets
+GET /v1/assets/{asset_id}
+GET /v1/assets?filter_asset_id={filter_asset_id}
+
    | Property      | Type     | Description |
    | ------------- | -------- | ------------|
-   | objectId      | String   | unique id for the user post (default field) |
-   | author        | Pointer to User| image author |
-   | image         | File     | image that user posts |
-   | caption       | String   | image caption by author |
-   | commentsCount | Number   | number of comments that has been posted to an image |
-   | likesCount    | Number   | number of likes for the post |
-   | createdAt     | DateTime | date when post is created (default field) |
-   | updatedAt     | DateTime | date when post is last updated (default field) |
+   | asset_id      | String   | unique id for each asset |
+   | name          | String   | display name for asset   |
+   | data_trade_start | String (ISO 8601 standard) | date and time for first trade  |
+   | data_trade_end   | String (ISO 8601 standard) | date and time for latest trade |
+   | data_trade_count | Number   | number of trades |
+   | volume_1hrs_usd  | Number   | usd volume of all symbols associated with this asset from last 1 hour |
+   | volume_1day_usd  | Number   | usd volume of all symbols associated with this asset from last 1 day  |
+   | price_usd        | Number   | usd value of coin |
+   
+**CoinAPI - Assets Icon HTTP Request output data**
+GET /v1/assets/icons/{iconSize}
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | asset_id      | String   | unique id for each asset |
+   | url           | String   | url of icon |
+   
+   **USER**
+   
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | objectID      | String   | unique id for the user |
+   | username      | String   | display name for user  |
+   | preferredCoin | Pointer to Coin | Coin that they choose to show in feed  |
+   | ownedCoins    | Array of Pointers to Coins  | Coins the user owns in their wallet  |
+   
+   **COIN CELL**
+   
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | coinName      | String   | name of coin |
+   | CoinIcon      | File     | icon image of coin |
+   | coinPrice     | Number   | usd value of coin  |
+   | tradeVolumeByHour  | Number  | usd volume of coin by hour  |
+   | tradeVolumeByDay   | Number  | usd volume of coin by day   |
+   | tradeStartDate   | DateTime  | date for first trade   |
+   | tradeLastDate    | DateTime  | date for latest trade  |
+   
    
 ### Networking
 #### List of network requests by screen

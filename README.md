@@ -95,10 +95,10 @@ GET /v1/assets?filter_asset_id={filter_asset_id}
    | name          | String   | display name for asset   |
    | data_trade_start | String (ISO 8601 standard) | date and time for first trade  |
    | data_trade_end   | String (ISO 8601 standard) | date and time for latest trade |
-   | data_trade_count | Number   | number of trades |
-   | volume_1hrs_usd  | Number   | usd volume of all symbols associated with this asset from last 1 hour |
-   | volume_1day_usd  | Number   | usd volume of all symbols associated with this asset from last 1 day  |
-   | price_usd        | Number   | usd value of coin |
+   | data_trade_count | Integer   | number of trades |
+   | volume_1hrs_usd  | Integer   | usd volume of all symbols associated with this asset from last 1 hour |
+   | volume_1day_usd  | Integer   | usd volume of all symbols associated with this asset from last 1 day  |
+   | price_usd        | Integer   | usd value of coin |
    
 **CoinAPI - Assets Icon HTTP Request output data**
 GET /v1/assets/icons/{iconSize}
@@ -123,9 +123,9 @@ GET /v1/assets/icons/{iconSize}
    | ------------- | -------- | ------------|
    | coinName      | String   | name of coin |
    | CoinIcon      | File     | icon image of coin |
-   | coinPrice     | Number   | usd value of coin  |
-   | tradeVolumeByHour  | Number  | usd volume of coin by hour  |
-   | tradeVolumeByDay   | Number  | usd volume of coin by day   |
+   | coinPrice     | Integer   | usd value of coin  |
+   | tradeVolumeByHour  | Integer  | usd volume of coin by hour  |
+   | tradeVolumeByDay   | Integer  | usd volume of coin by day   |
    | tradeStartDate   | DateTime  | date for first trade   |
    | tradeLastDate    | DateTime  | date for latest trade  |
    

@@ -18,6 +18,10 @@
 		4B02042A28FA1B6400B4B454 /* DYPPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B02042928FA1B6400B4B454 /* DYPPUITests.swift */; };
 		4B02043B28FA1BE600B4B454 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B02043A28FA1BE600B4B454 /* APICaller.swift */; };
 		4B9886E3291345F70013554D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9886E2291345F70013554D /* LoginViewController.swift */; };
+		4BCFEDB5291C58A40015507F /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCFEDB4291C58A40015507F /* FeedViewController.swift */; };
+		4BCFEDBA291C5B0A0015507F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCFEDB9291C5B0A0015507F /* SettingsViewController.swift */; };
+		4BCFEDBF291C5D380015507F /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCFEDBE291C5D380015507F /* WalletViewController.swift */; };
+		4BCFEDC5291C5DE80015507F /* APIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCFEDC4291C5DE80015507F /* APIData.swift */; };
 		D135FDD551908A64AD8F0F37 /* Pods_DYPPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A9A9C8EA756A159D154BE2D /* Pods_DYPPTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +59,10 @@
 		4B02042B28FA1B6400B4B454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B02043A28FA1BE600B4B454 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		4B9886E2291345F70013554D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4BCFEDB4291C58A40015507F /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		4BCFEDB9291C5B0A0015507F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		4BCFEDBE291C5D380015507F /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		4BCFEDC4291C5DE80015507F /* APIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIData.swift; sourceTree = "<group>"; };
 		6A9A9C8EA756A159D154BE2D /* Pods_DYPPTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DYPPTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92B4201ABC01E023CEF27592 /* Pods-DYPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYPP.release.xcconfig"; path = "Target Support Files/Pods-DYPP/Pods-DYPP.release.xcconfig"; sourceTree = "<group>"; };
 		A571AC12BB8D1C5BADDB7D6A /* Pods_DYPP_DYPPUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DYPP_DYPPUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,9 +141,12 @@
 				4B02040D28FA1B5A00B4B454 /* Main.storyboard */,
 				4B9886E2291345F70013554D /* LoginViewController.swift */,
 				4B02041028FA1B6400B4B454 /* Assets.xcassets */,
+				4BCFEDC3291C5D8B0015507F /* Tracker API */,
 				4B02041228FA1B6400B4B454 /* LaunchScreen.storyboard */,
 				4B02041528FA1B6400B4B454 /* Info.plist */,
-				4B02043A28FA1BE600B4B454 /* APICaller.swift */,
+				4BCFEDB4291C58A40015507F /* FeedViewController.swift */,
+				4BCFEDB9291C5B0A0015507F /* SettingsViewController.swift */,
+				4BCFEDBE291C5D380015507F /* WalletViewController.swift */,
 			);
 			path = DYPP;
 			sourceTree = "<group>";
@@ -156,6 +167,15 @@
 				4B02042B28FA1B6400B4B454 /* Info.plist */,
 			);
 			path = DYPPUITests;
+			sourceTree = "<group>";
+		};
+		4BCFEDC3291C5D8B0015507F /* Tracker API */ = {
+			isa = PBXGroup;
+			children = (
+				4B02043A28FA1BE600B4B454 /* APICaller.swift */,
+				4BCFEDC4291C5DE80015507F /* APIData.swift */,
+			);
+			path = "Tracker API";
 			sourceTree = "<group>";
 		};
 		76359D8361D3AA99B8522926 /* Pods */ = {
@@ -411,8 +431,12 @@
 			files = (
 				4B9886E3291345F70013554D /* LoginViewController.swift in Sources */,
 				4B02040828FA1B5A00B4B454 /* AppDelegate.swift in Sources */,
+				4BCFEDBF291C5D380015507F /* WalletViewController.swift in Sources */,
+				4BCFEDB5291C58A40015507F /* FeedViewController.swift in Sources */,
+				4BCFEDC5291C5DE80015507F /* APIData.swift in Sources */,
 				4B02040A28FA1B5A00B4B454 /* SceneDelegate.swift in Sources */,
 				4B02043B28FA1BE600B4B454 /* APICaller.swift in Sources */,
+				4BCFEDBA291C5B0A0015507F /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

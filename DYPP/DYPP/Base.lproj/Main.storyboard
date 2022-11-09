@@ -124,7 +124,7 @@
         <!--Tracker-->
         <scene sceneID="uAa-KM-KkF">
             <objects>
-                <viewController id="bKr-VM-nU2" sceneMemberID="viewController">
+                <viewController id="bKr-VM-nU2" customClass="FeedViewController" customModule="DYPP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hGS-1e-Koq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -140,7 +140,7 @@
         <!--Wallet-->
         <scene sceneID="vxo-cJ-LCv">
             <objects>
-                <viewController id="jGB-N0-OL0" sceneMemberID="viewController">
+                <viewController id="jGB-N0-OL0" customClass="WalletViewController" customModule="DYPP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iaI-1e-U7D">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -175,7 +175,7 @@
         <!--Settings-->
         <scene sceneID="k0C-6k-oWs">
             <objects>
-                <viewController id="uMx-Wn-kev" sceneMemberID="viewController">
+                <viewController id="uMx-Wn-kev" customClass="SettingsViewController" customModule="DYPP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ook-Z7-ktx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

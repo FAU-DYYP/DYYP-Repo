@@ -22,6 +22,7 @@
 		4BCFEDBA291C5B0A0015507F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCFEDB9291C5B0A0015507F /* SettingsViewController.swift */; };
 		4BCFEDBF291C5D380015507F /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCFEDBE291C5D380015507F /* WalletViewController.swift */; };
 		4BCFEDC5291C5DE80015507F /* APIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCFEDC4291C5DE80015507F /* APIData.swift */; };
+		B2986615291EC99E00C0F64F /* CoinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2986614291EC99E00C0F64F /* CoinCell.swift */; };
 		D135FDD551908A64AD8F0F37 /* Pods_DYPPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A9A9C8EA756A159D154BE2D /* Pods_DYPPTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		6A9A9C8EA756A159D154BE2D /* Pods_DYPPTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DYPPTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92B4201ABC01E023CEF27592 /* Pods-DYPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYPP.release.xcconfig"; path = "Target Support Files/Pods-DYPP/Pods-DYPP.release.xcconfig"; sourceTree = "<group>"; };
 		A571AC12BB8D1C5BADDB7D6A /* Pods_DYPP_DYPPUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DYPP_DYPPUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2986614291EC99E00C0F64F /* CoinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCell.swift; sourceTree = "<group>"; };
 		BC115A106C774CBE18EB1BD9 /* Pods-DYPPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYPPTests.debug.xcconfig"; path = "Target Support Files/Pods-DYPPTests/Pods-DYPPTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C0BEF8CA6C95A15762BFB3EA /* Pods-DYPP-DYPPUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYPP-DYPPUITests.release.xcconfig"; path = "Target Support Files/Pods-DYPP-DYPPUITests/Pods-DYPP-DYPPUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E7356299CD5F0AE8D85CCE89 /* Pods-DYPPTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYPPTests.release.xcconfig"; path = "Target Support Files/Pods-DYPPTests/Pods-DYPPTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				4BCFEDB4291C58A40015507F /* FeedViewController.swift */,
 				4BCFEDB9291C5B0A0015507F /* SettingsViewController.swift */,
 				4BCFEDBE291C5D380015507F /* WalletViewController.swift */,
+				B2986614291EC99E00C0F64F /* CoinCell.swift */,
 			);
 			path = DYPP;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B9886E3291345F70013554D /* LoginViewController.swift in Sources */,
+				B2986615291EC99E00C0F64F /* CoinCell.swift in Sources */,
 				4B02040828FA1B5A00B4B454 /* AppDelegate.swift in Sources */,
 				4BCFEDBF291C5D380015507F /* WalletViewController.swift in Sources */,
 				4BCFEDB5291C58A40015507F /* FeedViewController.swift in Sources */,

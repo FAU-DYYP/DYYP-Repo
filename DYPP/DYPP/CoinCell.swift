@@ -8,7 +8,9 @@
 import UIKit
 
 class CoinCell: UITableViewCell {
-
+    
+    static let identifier = "CoinCell"
+    
     @IBOutlet weak var coinLogoImage: UIImageView!
     @IBOutlet weak var coinNameLabel: UILabel!
     @IBOutlet weak var informationLabel: UILabel!
@@ -24,5 +26,6 @@ class CoinCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
 
 }

@@ -9,9 +9,16 @@ import UIKit
 import Parse
 import AlamofireImage
 
+
+
+
 class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    var apiCaller = APICaller()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +26,20 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
+        
+        apiCaller.getAllCryptoData{ [weak self] result in
+            switch result{
+            case .success(let models):
+                print(models.count)
+                self?.apiCaller.cryptos = models
+                DispatchQueue.main.async{
+                    self?.tableView.reloadData()
+                }
+                        
+            case .failure(let error):
+                print("error: \(error)")
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -36,7 +57,9 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CoinCell") as! CoinCell
         
-        cell.coinNameLabel.text = "Testing"
+        print(indexPath.row)
+        
+        //cell.coinNameLabel.text = apiCaller.cryptos[0].name
         
         return cell
     }

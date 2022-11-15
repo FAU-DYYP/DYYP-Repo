@@ -29,7 +29,8 @@ DYYP is a cryptocurrency focused app: it monitors the crpyto market for prices. 
 
 **Required Must-have Stories**
 
-* Wallet View: collection view of coins, My portfolio, value of account, description of coin
+* Login View: store user login information with back4app - [x]
+* Wallet View: collection view of coins, My portfolio, value of account, description of coin - [in progress]
 * Feed View: table view of coins, value of coins
 * Settings View: UI view of team credits
 
@@ -40,6 +41,7 @@ DYYP is a cryptocurrency focused app: it monitors the crpyto market for prices. 
 * My Wallet/Portfolio: user "buys" and "sells" coins. The value of each and the total is displayed and tracked.
 * Crypto News: A small section of the feed will have a scrolling/refreshing line of text containing crypto news
 * Notifications: A notification appears when a price changes by a certain threshold
+* Store login info with hash
 
 ### 2. Screen Archetypes
 

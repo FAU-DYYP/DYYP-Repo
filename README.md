@@ -79,6 +79,8 @@ DYYP is a cryptocurrency focused app: it monitors the crpyto market for prices. 
 ### [BONUS] Digital Wireframes & Mockups
 Figma Wireframe: https://www.figma.com/file/fUa2beX6Y2vNY50vHFtWAr/DYYP?node-id=0%3A1
 
+<img src="https://raw.githubusercontent.com/FAU-DYYP/DYYP-Repo/main/dyyp%20gif1.gif" width=600>
+
 
 ### [BONUS] Interactive Prototype
 

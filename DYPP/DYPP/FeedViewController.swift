@@ -8,11 +8,17 @@
 import UIKit
 
 class FeedViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var bitcoinLabel: UILabel!
+    
+    @IBOutlet weak var currencyLabel: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
     
 
@@ -27,3 +33,20 @@ class FeedViewController: UIViewController {
     */
 
 }
+
+extension FeedViewController: CoinManagerDelegate {
+    
+    func didUpdatePrice(price: String, currency: String) {
+        
+        DispatchQueue.main.async {
+            self.bitcoinLabel.text = price
+            self.currencyLabel.text = currency
+        }
+    }
+    
+    func didFailWithError(error: Error) {
+        print(error)
+    }
+}
+
+

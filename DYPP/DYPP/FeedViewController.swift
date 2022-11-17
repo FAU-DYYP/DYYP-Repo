@@ -34,19 +34,5 @@ class FeedViewController: UIViewController {
 
 }
 
-extension FeedViewController: CoinManagerDelegate {
-    
-    func didUpdatePrice(price: String, currency: String) {
-        
-        DispatchQueue.main.async {
-            self.bitcoinLabel.text = price
-            self.currencyLabel.text = currency
-        }
-    }
-    
-    func didFailWithError(error: Error) {
-        print(error)
-    }
-}
 
 

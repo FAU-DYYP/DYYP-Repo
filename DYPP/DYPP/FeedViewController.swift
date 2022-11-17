@@ -7,18 +7,29 @@
 
 import UIKit
 
-class FeedViewController: UIViewController {
+class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+   
     
     
-    @IBOutlet weak var bitcoinLabel: UILabel!
-    
-    @IBOutlet weak var currencyLabel: UILabel!
-    
-    
+   
+    @IBOutlet weak var feedTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CoinCell") as! CoinCell
+        
+        cell.coinNameLabel.text = "Testing"
+        
+        return cell
     }
     
 

@@ -25,6 +25,7 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Do any additional setup after loading the view.
         
         apiCaller.loadCryptoData()
+        self.tableView.reloadData()
         
         super.viewDidLoad()
 
@@ -43,7 +44,7 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("tableView numberOfRowsInSection", section)
-        return 5 //TEMPORARY
+        return 15 //TEMPORARY
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -52,14 +53,12 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: "CoinCell") as! CoinCell
         
         print(indexPath.row)
-        //if(apiCaller.cryptos.count > 0){
-          //  print(apiCaller.cryptos.count)
-
-//            print(models[indexPath.row].name)
-  //          cell.coinNameLabel.text = models[indexPath.row].name
+        if(cryptos.count > 0){
+            print(cryptos.count)
+            cell.coinNameLabel.text = cryptos["Bitcoin"]!["name"] as! String
             
 
-        //}
+        }
         
         
         return cell

@@ -78,15 +78,15 @@ final class APICaller{
             } else if let data = data {
                 print("before JSONSerialization")
                 let cryptosArray = try! JSONSerialization.jsonObject(with: data) as! [[String: Any]]
-                var cryptosDict = cryptos
+
                 for item in cryptosArray
                     {
                         //add array items to dictionary as key with any value you prefer
-                        cryptosDict[item["name"] as! String] = item
+                        cryptos[item["name"] as! String] = item
                     }
                 print("before access cryptos")
-                print(cryptosDict.count)
-                print(cryptosDict["Bitcoin"])
+                print(cryptos.count)
+                print(cryptos["Bitcoin"])
                 //print(cryptos[4]["name"])
             }
         }

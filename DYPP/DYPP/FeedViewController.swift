@@ -60,15 +60,23 @@ final class APICaller{
 }
 
 
-class FeedViewController: UIViewController {
+class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    
     
     var models = [Crypto]()
     
-    var apiCaller = APICaller()
+    //TABLEVIEW
+    @IBOutlet weak var tableView: UITableView!
     
+    var apiCaller = APICaller()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //TABLEVIEW
+        tableView.dataSource = self
+        tableView.delegate = self
         
         apiCaller.getAllCryptoData{ [weak self] result in
             switch result{
@@ -76,7 +84,7 @@ class FeedViewController: UIViewController {
                 self?.models = data
                 
                 DispatchQueue.main.async {
-                  // self?.tableView.reloadData()
+                  self?.tableView.reloadData()
                 }
             case .failure(let error):
                 print("error: \(error)")
@@ -88,15 +96,20 @@ class FeedViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20
     }
-    */
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        
+        if(models.count > 0){
+            print(models[indexPath.row].name)
+            cell.textLabel?.text = models[indexPath.row].name
+        }
+        
+        return cell
+    }
 
 }
 

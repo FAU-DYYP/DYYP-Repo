@@ -128,10 +128,20 @@
                     <view key="view" contentMode="scaleToFill" id="hGS-1e-Koq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kGs-0v-Y1d">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="cIp-eE-Hc2"/>
                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tracker" image="qrcode" catalog="system" id="fey-G8-rwS"/>
+                    <connections>
+                        <outlet property="tableView" destination="kGs-0v-Y1d" id="BKr-S7-1ug"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OK4-FI-wQg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

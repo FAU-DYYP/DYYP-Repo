@@ -9,37 +9,26 @@ import UIKit
 import Parse
 import AlamofireImage
 
-
-
-
 class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+    var apiCaller = APICaller()
+    //func getModels(){
+      //  return models
+    //}
     
     @IBOutlet weak var tableView: UITableView!
     
-    var apiCaller = APICaller()
-    
+//    var apiCaller = APICaller()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
+        print("viewDidLoad-entered")
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
         
-        apiCaller.getAllCryptoData{ [weak self] result in
-            switch result{
-            case .success(let models):
-                print(models.count)
-                self?.apiCaller.cryptos = models
-                DispatchQueue.main.async{
-                    self?.tableView.reloadData()
-                }
-                        
-            case .failure(let error):
-                print("error: \(error)")
-            }
-        }
+        
+        super.viewDidLoad()
+
+        print("viewDidLoad-exit")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -47,19 +36,31 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 115
+        print("viewDidAppear")
+        
+        //trigger api, will refresh when screen accessed
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("tableView numberOfRowsInSection", section)
         return 5 //TEMPORARY
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        print("tableView cellForRowAt", indexPath)
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "CoinCell") as! CoinCell
         
         print(indexPath.row)
+        if(apiCaller.cryptos.count > 0){
+            print(apiCaller.cryptos.count)
+
+//            print(models[indexPath.row].name)
+  //          cell.coinNameLabel.text = models[indexPath.row].name
+            
+
+        }
         
-        //cell.coinNameLabel.text = apiCaller.cryptos[0].name
         
         return cell
     }

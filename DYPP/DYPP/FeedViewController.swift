@@ -106,6 +106,13 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if(models.count > 0){
             print(models[indexPath.row].name)
             cell.nameLabel?.text = models[indexPath.row].name
+            
+            if let showPrice = models[indexPath.row].price_usd as? Double {
+                cell.price_usdLabel?.text = "USD $" + String(round(showPrice * 1000) / 1000)
+            }
+            
+            //cell.volume_1hrs_usdLabel?.text = "\(models[indexPath.row].volume_1hrs_usd)"
+            //cell.volume_1day_usdLabel?.text = "\(models[indexPath.row].volume_1day_usd)"
         }
         
         return cell

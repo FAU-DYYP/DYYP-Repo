@@ -111,6 +111,17 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 cell.price_usdLabel?.text = "USD $" + String(round(showPrice * 1000) / 1000)
             }
             
+            if let show1hrVolume = models[indexPath.row].volume_1hrs_usd as? Float {
+                cell.volume_1hrs_usdLabel?.text = "volume 1hr $" +
+                    String(round(show1hrVolume * 1000) / 1000)
+            }
+            
+            if let show1dayVolume =
+                models[indexPath.row].volume_1day_usd as? Float {
+                cell.volume_1day_usdLabel?.text = "volume 1day $" +
+                    String(round(show1dayVolume * 1000) / 1000)
+            }
+            
             //cell.volume_1hrs_usdLabel?.text = "\(models[indexPath.row].volume_1hrs_usd)"
             //cell.volume_1day_usdLabel?.text = "\(models[indexPath.row].volume_1day_usd)"
         }

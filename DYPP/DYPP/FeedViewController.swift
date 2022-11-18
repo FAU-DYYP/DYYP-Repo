@@ -101,11 +101,11 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell") as! FeedCell
         
         if(models.count > 0){
             print(models[indexPath.row].name)
-            cell.textLabel?.text = models[indexPath.row].name
+            cell.nameLabel?.text = models[indexPath.row].name
         }
         
         return cell

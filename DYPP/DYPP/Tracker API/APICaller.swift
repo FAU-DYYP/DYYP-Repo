@@ -7,17 +7,17 @@
 
 import Foundation
 
-struct Crypto: Codable{
-    var asset_id: String
-    var name: String
-    var price_usd: Double?
-    var volume_1hrs_usd: Float?
-    var volume_1day_usd: Float?
-}
-struct Icon: Codable{
-    var asset_id: String
-    var id_icon: URL
-}
+//struct Crypto: Codable{
+//    var asset_id: String
+//    var name: String
+//    var price_usd: Double?
+//    var volume_1hrs_usd: Float?
+//    var volume_1day_usd: Float?
+//}
+//struct Icon: Codable{
+//    var asset_id: String
+//    var id_icon: URL
+//}
 
 /* asset json format
 {
@@ -42,21 +42,14 @@ struct Icon: Codable{
 */
 
 
-struct CryptoDataStruct {
-    var cryptoArray = [Crypto]()
-}
+//struct CryptoDataStruct {
+//    var cryptoArray = [Crypto]()
+//}
+var cryptos = [String:[String:Any]]()
 
 final class APICaller{
     //let shared = APICaller()
     
-    /*
-    struct coinViewModel{
-        let name: String
-        let price_usd: String
-    }
-     */
-    var cryptos = [Crypto]()
-
     
     
     let baseURL = "https://rest.coinapi.io/v1/"
@@ -68,58 +61,36 @@ final class APICaller{
         print("APICaller init")
     }
     
-    public func getAllCryptoData(completion: @escaping (Result<[Crypto], Error>) -> Void){
-        guard let url = URL(string: baseURL + assets + "?apikey=" + apikey) else {
+    public func loadCryptoData() {
+        
+        guard let assetsUrl = URL(string: baseURL + assets + "?apikey=" + apikey) else {
             print("did not get url")
             return
         }
-        let task = URLSession.shared.dataTask(with: url){data, _, error in
-            guard let data = data, error == nil else {
-                print("urlsession error")
-                return
-            }
-            do {
-                self.cryptos = try JSONDecoder().decode([Crypto].self, from : data)
-                //global.CryptoDataStruct.
-                completion(.success(self.cryptos))
-                
-            }
-            catch{
-                completion(.failure(error))
+        
+        let request = URLRequest(url: assetsUrl, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
+        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
+        print("before let task")
+        let task = session.dataTask(with: request) { (data, response, error) in
+            // This will run when the network request returns
+            if let error = error {
+                print(error.localizedDescription)
+            } else if let data = data {
+                print("before JSONSerialization")
+                let cryptosArray = try! JSONSerialization.jsonObject(with: data) as! [[String: Any]]
+                var cryptosDict = cryptos
+                for item in cryptosArray
+                    {
+                        //add array items to dictionary as key with any value you prefer
+                        cryptosDict[item["name"] as! String] = item
+                    }
+                print("before access cryptos")
+                print(cryptosDict.count)
+                print(cryptosDict["Bitcoin"])
+                //print(cryptos[4]["name"])
             }
         }
         task.resume()
     }
 }
-
-
-
-/*
- 
- struct Response: Codable {
-     let results: coinAPIResult
-     let status: String
- }
-
- struct coinAPIResult: Codable{
-     
- }
- 
- 
- struct CoinData: Decodable {
-     let rate: Double
- }
-
- func didUpdatePrice(price: String, currency: String) {
-     
-     DispatchQueue.main.async {
-         //self.bitcoinLabel.text = price
-         //self.currencyLabel.text = currency
-     }
- }
-
- func didFailWithError(error: Error) {
-     print(error)
- }
- */
 

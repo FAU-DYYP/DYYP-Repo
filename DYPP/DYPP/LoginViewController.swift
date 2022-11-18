@@ -12,7 +12,7 @@ import Parse
 
 class LoginViewController: UIViewController {
     var apiCaller = APICaller()
-    var models = [Crypto]()
+    //var models = [Crypto]()
     
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -24,27 +24,27 @@ class LoginViewController: UIViewController {
         PFUser.logInWithUsername(inBackground: username, password: password)
         {   (user, error) in
             if user != nil {
-                print("calling getAllCryptoData")
-                self.apiCaller.getAllCryptoData{ [weak self] result in
-                    switch result{
-                    case .success(let data):
-                        //models as NSDictionary
-                        //print(models.count)
-                        //CryptoDataStruct.cryptoArray = models
-                        
-                        //print(models[0])
-                        self?.models = data
-                        print("getAllCryptoData function complete")
-                        
-//                        DispatchQueue.main.async{
-//                            WalletViewController.tableView.reloadData()
-//                        }
-
-                                
-                    case .failure(let error):
-                        print("error: \(error)")
-                    }
-                }
+//                print("calling getAllCryptoData")
+//                self.apiCaller.getAllCryptoData{ [weak self] result in
+//                    switch result{
+//                    case .success(let data):
+//                        //models as NSDictionary
+//                        //print(models.count)
+//                        //CryptoDataStruct.cryptoArray = models
+//
+//                        //print(models[0])
+//                        self?.models = data
+//                        print("getAllCryptoData function complete")
+//
+////                        DispatchQueue.main.async{
+////                            WalletViewController.tableView.reloadData()
+////                        }
+//
+//
+//                    case .failure(let error):
+//                        print("error: \(error)")
+//                    }
+//                }
                         self.performSegue(withIdentifier: "loginViewSegue", sender: nil)
                 
             }

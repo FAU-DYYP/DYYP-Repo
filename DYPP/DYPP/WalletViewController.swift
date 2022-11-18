@@ -11,9 +11,8 @@ import AlamofireImage
 
 class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var apiCaller = APICaller()
-    //func getModels(){
-      //  return models
-    //}
+    
+    
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -25,6 +24,7 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.dataSource = self
         // Do any additional setup after loading the view.
         
+        apiCaller.loadCryptoData()
         
         super.viewDidLoad()
 
@@ -52,14 +52,14 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: "CoinCell") as! CoinCell
         
         print(indexPath.row)
-        if(apiCaller.cryptos.count > 0){
-            print(apiCaller.cryptos.count)
+        //if(apiCaller.cryptos.count > 0){
+          //  print(apiCaller.cryptos.count)
 
 //            print(models[indexPath.row].name)
   //          cell.coinNameLabel.text = models[indexPath.row].name
             
 
-        }
+        //}
         
         
         return cell

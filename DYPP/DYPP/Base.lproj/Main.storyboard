@@ -501,10 +501,7 @@
         <image name="ETHUSDT" width="180" height="132"/>
         <image name="Gradient" width="286" height="572"/>
         <image name="creditcard" catalog="system" width="128" height="88"/>
-<<<<<<< Updated upstream
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
-=======
->>>>>>> Stashed changes
         <image name="person.crop.circle.badge.xmark.fill" catalog="system" width="128" height="114"/>
         <image name="qrcode" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +12,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="DYPP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="DYPP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,7 +68,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DYPP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l38-My-H5X">
-                                <rect key="frame" x="127" y="119" width="194" height="91"/>
+                                <rect key="frame" x="127" y="123" width="194" height="91"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="70"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -124,7 +125,7 @@
         <!--Tracker-->
         <scene sceneID="uAa-KM-KkF">
             <objects>
-                <viewController id="bKr-VM-nU2" customClass="FeedViewController" customModule="DYPP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FeedViewController" id="bKr-VM-nU2" customClass="FeedViewController" customModule="DYPP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hGS-1e-Koq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -134,7 +135,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedCell" rowHeight="136" id="gsU-V8-fE2" customClass="FeedCell" customModule="DYPP" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="136"/>
+                                        <rect key="frame" x="0.0" y="50" width="414" height="136"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gsU-V8-fE2" id="qwx-dg-alv">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="136"/>
@@ -223,19 +224,19 @@
         <!--Wallet-->
         <scene sceneID="vxo-cJ-LCv">
             <objects>
-                <viewController id="jGB-N0-OL0" customClass="WalletViewController" customModule="DYPP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalletViewController" id="jGB-N0-OL0" customClass="WalletViewController" customModule="DYPP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iaI-1e-U7D">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Tg2-8C-ynH">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Tg2-8C-ynH">
                                 <rect key="frame" x="0.0" y="352" width="414" height="461"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CoinCell" rowHeight="200" id="tUz-u1-jea" customClass="CoinCell" customModule="DYPP" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="200"/>
+                                        <rect key="frame" x="0.0" y="50" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tUz-u1-jea" id="ywA-89-trN">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
@@ -375,12 +376,12 @@
         <!--Tab Bar Controller-->
         <scene sceneID="J0j-yD-6nJ">
             <objects>
-                <tabBarController modalPresentationStyle="fullScreen" id="K9u-Xv-Gh8" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="UITabBarController" modalPresentationStyle="fullScreen" id="K9u-Xv-Gh8" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9GU-cT-aRc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.87102184869999999" green="0.87102184869999999" blue="0.87102184869999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.91774603330000004" green="0.91774603330000004" blue="0.91774603330000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.91774603330000004" green="0.91774603330000004" blue="0.91774603330000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="jGB-N0-OL0" kind="relationship" relationship="viewControllers" id="ovE-Sx-ccj"/>
@@ -395,26 +396,113 @@
         <!--Settings-->
         <scene sceneID="k0C-6k-oWs">
             <objects>
-                <viewController id="uMx-Wn-kev" customClass="SettingsViewController" customModule="DYPP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" id="uMx-Wn-kev" customClass="SettingsViewController" customModule="DYPP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ook-Z7-ktx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="C6J-Oj-lEv">
+                                <rect key="frame" x="67" y="82" width="280" height="279"/>
+                                <color key="backgroundColor" red="0.87102184869999999" green="0.87102184869999999" blue="0.87102184869999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="C6J-Oj-lEv" secondAttribute="height" multiplier="1:1" id="Arj-F8-YZt"/>
+                                    <constraint firstAttribute="height" constant="280" id="a7T-BN-7Jm"/>
+                                    <constraint firstAttribute="width" constant="280" id="wyV-Pa-Iv4"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Phw-7A-hNh" appends="YES" id="gbz-uP-ZVq"/>
+                                </connections>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTD-Mj-7EA">
+                                <rect key="frame" x="64" y="408.5" width="283" height="50.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="DISPLAY NAME">
+                                    <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="28"/>
+                                    <color key="baseForegroundColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="baseBackgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onDisplay:" destination="uMx-Wn-kev" eventType="touchUpInside" id="o1V-Dk-pi3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KzO-pm-Qwg">
+                                <rect key="frame" x="64" y="510" width="283" height="51"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="PREFERRED COIN">
+                                    <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="28"/>
+                                    <color key="baseForegroundColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="baseBackgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onPreferred:" destination="uMx-Wn-kev" eventType="touchUpInside" id="f4N-sA-xtU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOx-U1-66U">
+                                <rect key="frame" x="64" y="610" width="283" height="51"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="THEME">
+                                    <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="28"/>
+                                    <color key="baseForegroundColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="baseBackgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onTheme:" destination="uMx-Wn-kev" eventType="touchUpInside" id="Vm6-TW-dL3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ejd-5L-ycb">
+                                <rect key="frame" x="207" y="697" width="140" height="50"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Log Out">
+                                    <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="28"/>
+                                    <color key="baseForegroundColor" red="0.089267229789999999" green="0.089267229789999999" blue="0.089267229789999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="baseBackgroundColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onLogOut:" destination="uMx-Wn-kev" eventType="touchUpInside" id="098-GU-fXV"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vcf-Rt-AJz"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.1517708518" green="0.1517708518" blue="0.1517708518" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KzO-pm-Qwg" firstAttribute="leading" secondItem="vcf-Rt-AJz" secondAttribute="leading" constant="64" id="3hK-Z5-e6S"/>
+                            <constraint firstItem="LOx-U1-66U" firstAttribute="leading" secondItem="vcf-Rt-AJz" secondAttribute="leading" constant="64" id="7oR-Rz-JHz"/>
+                            <constraint firstItem="vcf-Rt-AJz" firstAttribute="trailing" secondItem="LOx-U1-66U" secondAttribute="trailing" constant="67" id="COe-aA-5FW"/>
+                            <constraint firstItem="LOx-U1-66U" firstAttribute="top" secondItem="KzO-pm-Qwg" secondAttribute="bottom" constant="49" id="INE-hT-CEL"/>
+                            <constraint firstItem="bTD-Mj-7EA" firstAttribute="top" secondItem="C6J-Oj-lEv" secondAttribute="bottom" constant="47" id="JmE-eq-Y3Y"/>
+                            <constraint firstItem="vcf-Rt-AJz" firstAttribute="trailing" secondItem="C6J-Oj-lEv" secondAttribute="trailing" constant="67" id="ZYM-ED-VpE"/>
+                            <constraint firstItem="vcf-Rt-AJz" firstAttribute="bottom" secondItem="Ejd-5L-ycb" secondAttribute="bottom" constant="66" id="cSg-Hl-kYD"/>
+                            <constraint firstItem="vcf-Rt-AJz" firstAttribute="trailing" secondItem="bTD-Mj-7EA" secondAttribute="trailing" constant="67" id="guH-YQ-uqt"/>
+                            <constraint firstItem="KzO-pm-Qwg" firstAttribute="top" secondItem="bTD-Mj-7EA" secondAttribute="bottom" constant="51" id="h6d-Lc-Asi"/>
+                            <constraint firstItem="Ejd-5L-ycb" firstAttribute="top" secondItem="LOx-U1-66U" secondAttribute="bottom" constant="36" id="j6n-Em-40M"/>
+                            <constraint firstItem="vcf-Rt-AJz" firstAttribute="trailing" secondItem="KzO-pm-Qwg" secondAttribute="trailing" constant="67" id="pRQ-dI-SC2"/>
+                            <constraint firstItem="bTD-Mj-7EA" firstAttribute="leading" secondItem="vcf-Rt-AJz" secondAttribute="leading" constant="64" id="pf0-kC-4UD"/>
+                            <constraint firstItem="Ejd-5L-ycb" firstAttribute="leading" secondItem="vcf-Rt-AJz" secondAttribute="leading" constant="207" id="qYT-7F-25W"/>
+                            <constraint firstItem="vcf-Rt-AJz" firstAttribute="trailing" secondItem="Ejd-5L-ycb" secondAttribute="trailing" constant="67" id="ra2-kP-tet"/>
+                            <constraint firstItem="C6J-Oj-lEv" firstAttribute="leading" secondItem="vcf-Rt-AJz" secondAttribute="leading" constant="67" id="yEb-oy-SLw"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="person.crop.circle.badge.xmark.fill" catalog="system" id="jga-zW-iB4"/>
                     <navigationItem key="navigationItem" id="Iwc-vZ-105"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FFc-cj-CGj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Phw-7A-hNh">
+                    <connections>
+                        <action selector="onProfileSelect:" destination="uMx-Wn-kev" id="Vug-bA-Rp7"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1738" y="-452"/>
+            <point key="canvasLocation" x="1737.68115942029" y="-452.00892857142856"/>
         </scene>
     </scenes>
     <resources>
         <image name="ETHUSDT" width="180" height="132"/>
         <image name="Gradient" width="286" height="572"/>
         <image name="creditcard" catalog="system" width="128" height="88"/>
-        <image name="person.crop.circle.badge.xmark.fill" catalog="system" width="128" height="113"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="person.crop.circle.badge.xmark.fill" catalog="system" width="128" height="114"/>
         <image name="qrcode" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

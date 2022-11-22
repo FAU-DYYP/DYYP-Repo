@@ -83,7 +83,9 @@ Figma Wireframe: https://www.figma.com/file/fUa2beX6Y2vNY50vHFtWAr/DYYP?node-id=
 <img src="https://raw.githubusercontent.com/FAU-DYYP/DYYP-Repo/main/dyyp%20gif1.gif" width=600>
 
 #### Sprint 2 Progress
-<img src="https://raw.githubusercontent.com/FAU-DYYP/DYYP-Repo/main/dyyp%20gif1.gif" width=600>
+API gets data and is accessible. Wallet and Feed both access the data. 
+Settings view first implementation.
+<img src="https://raw.githubusercontent.com/FAU-DYYP/DYYP-Repo/main/dyppgif2.gif" width=600>
 
 ### [BONUS] Interactive Prototype
 

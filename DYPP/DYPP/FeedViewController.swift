@@ -88,10 +88,10 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 as! String
                 cell.symbolLabel?.text = apiCaller.cryptos[xrp]!["asset_id"] as! String
                 cell.coinLabel.af.setImage(withURL: xrpIMG!)
-                if let showBCHPrice = apiCaller.cryptos[xrp]!["price_usd"]
+                if let showXRPPrice = apiCaller.cryptos[xrp]!["price_usd"]
                     as? Double {
                     cell.price_usdLabel?.text = "USD $" +
-                        String(round(showBCHPrice * 10000) / 10000)
+                        String(round(showXRPPrice * 10000) / 10000)
                 }
             }
             

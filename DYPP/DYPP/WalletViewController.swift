@@ -10,9 +10,7 @@ import Parse
 import AlamofireImage
 
 class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    var apiCaller = APICaller()
-    
+        
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -45,11 +43,11 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         //cell.coinNameLabel.text = "Testing"
         
         //tables load before data finishes loading
-        if(cryptos.count > 0){
-            print(cryptos.count)
+        if(apiCaller.cryptos.count > 0){
+            print(apiCaller.cryptos.count)
             
             //dictionary of dictionaries
-            cell.coinNameLabel.text = cryptos["BTC"]!["name"] as! String
+            cell.coinNameLabel.text = apiCaller.cryptos["BTC"]!["name"] as! String
             
 
         }

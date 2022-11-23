@@ -45,13 +45,13 @@ import Foundation
 //struct CryptoDataStruct {
 //    var cryptoArray = [Crypto]()
 //}
-var cryptos = [String:[String:Any]]()
-var crypto_icons = [String:URL]()
+
+var apiCaller = APICaller()
 
 final class APICaller{
-    //let shared = APICaller()
     
-    
+    public var cryptos = [String:[String:Any]]()
+    public var crypto_icons = [String:URL]()
     
     let baseURL = "https://rest.coinapi.io/v1/"
     let apikey = "7D9C95F3-3ADC-4031-A8CF-31E241D77EFB"
@@ -83,12 +83,11 @@ final class APICaller{
                 for item in cryptosArray
                     {
                         //add array items to dictionary as key with value
-                        cryptos[item["asset_id"] as! String] = item
+                        self.cryptos[item["asset_id"] as! String] = item
                     }
                 print("before access cryptos")
-                print(cryptos.count)
-                print(cryptos["BTC"])
-                //print(cryptos[4]["name"])
+                print(self.cryptos.count)
+                print(self.cryptos["BTC"])
             }
         }
         task.resume()
@@ -117,12 +116,12 @@ final class APICaller{
                         let asset_id = item["asset_id"]!
                         let asset_url = URL(string: item["url"]!)
                         //crypto_icons[item["asset_id"] as! String] = item
-                        crypto_icons[asset_id] = asset_url
+                        self.crypto_icons[asset_id] = asset_url
                     
                     }
                 print("before access cryptos")
-                print(crypto_icons.count)
-                print(crypto_icons["BTC"])
+                print(self.crypto_icons.count)
+                print(self.crypto_icons["BTC"])
             }
         }
         task.resume()

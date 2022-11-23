@@ -29,7 +29,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -40,6 +40,12 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let xrp = "XRP"
         let doge = "DOGE"
         let ltc = "LTC"
+        let xmr = "XMR"
+        let dot = "DOT"
+        let xlm = "XLM"
+        let etc = "ETC"
+        
+        
         
         let btcIMG = apiCaller.crypto_icons["BTC"]
         let bchIMG = apiCaller.crypto_icons["BCH"]
@@ -47,6 +53,10 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let xrpIMG = apiCaller.crypto_icons["XRP"]
         let dogeIMG = apiCaller.crypto_icons["DOGE"]
         let ltcIMG = apiCaller.crypto_icons["LTC"]
+        let xmrIMG = apiCaller.crypto_icons["XMR"]
+        let dotIMG = apiCaller.crypto_icons["DOT"]
+        let xlmIMG = apiCaller.crypto_icons["XLM"]
+        let etcIMG = apiCaller.crypto_icons["ETC"]
         
         
         
@@ -118,6 +128,56 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
                         String(round(showLTCPrice * 1000) / 1000)
                 }
             }
+            
+            if indexPath.row == 6 {
+                cell.nameLabel?.text = apiCaller.cryptos[xmr]!["name"]
+                as! String
+                cell.symbolLabel?.text = apiCaller.cryptos[xmr]!["asset_id"] as! String
+                cell.coinLabel.af.setImage(withURL: xmrIMG!)
+                if let showXMRPrice = apiCaller.cryptos[xmr]!["price_usd"]
+                    as? Double {
+                    cell.price_usdLabel?.text = "USD $" +
+                        String(round(showXMRPrice * 1000) / 1000)
+                }
+            }
+            
+            if indexPath.row == 7 {
+                cell.nameLabel?.text = apiCaller.cryptos[dot]!["name"]
+                as! String
+                cell.symbolLabel?.text = apiCaller.cryptos[dot]!["asset_id"] as! String
+                cell.coinLabel.af.setImage(withURL: dotIMG!)
+                if let showDOTPrice = apiCaller.cryptos[dot]!["price_usd"]
+                    as? Double {
+                    cell.price_usdLabel?.text = "USD $" +
+                        String(round(showDOTPrice * 100) / 100)
+                }
+            }
+            
+            if indexPath.row == 8 {
+                cell.nameLabel?.text = apiCaller.cryptos[xlm]!["name"]
+                as! String
+                cell.symbolLabel?.text = apiCaller.cryptos[xlm]!["asset_id"] as! String
+                cell.coinLabel.af.setImage(withURL: xlmIMG!)
+                if let showXLMPrice = apiCaller.cryptos[xlm]!["price_usd"]
+                    as? Double {
+                    cell.price_usdLabel?.text = "USD $" +
+                        String(round(showXLMPrice * 10000) / 10000)
+                }
+            }
+            
+            if indexPath.row == 9 {
+                cell.nameLabel?.text = apiCaller.cryptos[etc]!["name"]
+                as! String
+                cell.symbolLabel?.text = apiCaller.cryptos[etc]!["asset_id"] as! String
+                cell.coinLabel.af.setImage(withURL: etcIMG!)
+                if let showETCPrice = apiCaller.cryptos[etc]!["price_usd"]
+                    as? Double {
+                    cell.price_usdLabel?.text = "USD $" +
+                        String(round(showETCPrice * 100) / 100)
+                }
+            }
+            
+            
         }
         
         

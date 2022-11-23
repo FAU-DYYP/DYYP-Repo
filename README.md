@@ -30,9 +30,9 @@ DYYP is a cryptocurrency focused app: it monitors the crpyto market for prices. 
 **Required Must-have Stories**
 
 * - [x] Login View: store user login information with back4app 
-* Wallet View: collection view of coins, My portfolio, value of account, description of coin - [in progress]
-* Feed View: table view of coins, value of coins
-* Settings View: UI view of team credits
+* - [ ] Wallet View: collection view of coins, My portfolio, value of account, description of coin - [in progress]
+* - [ ] Feed View: table view of coins, value of coins - [in progress]
+* - [ ] Settings View: UI view of team credits - [in progress]
 
 **Optional Nice-to-have Stories**
 
@@ -79,8 +79,13 @@ DYYP is a cryptocurrency focused app: it monitors the crpyto market for prices. 
 ### [BONUS] Digital Wireframes & Mockups
 Figma Wireframe: https://www.figma.com/file/fUa2beX6Y2vNY50vHFtWAr/DYYP?node-id=0%3A1
 
+#### Sprint 1 Progress
 <img src="https://raw.githubusercontent.com/FAU-DYYP/DYYP-Repo/main/dyyp%20gif1.gif" width=600>
 
+#### Sprint 2 Progress
+API gets data and is accessible. Wallet and Feed both access the data. 
+Settings view first implementation.
+<img src="https://raw.githubusercontent.com/FAU-DYYP/DYYP-Repo/main/dyppgif2.gif" width=600>
 
 ### [BONUS] Interactive Prototype
 

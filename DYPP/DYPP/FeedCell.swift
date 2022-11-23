@@ -11,11 +11,11 @@ class FeedCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     
+    
+    @IBOutlet weak var symbolLabel: UILabel!
+    
+    
     @IBOutlet weak var price_usdLabel: UILabel!
-    
-    @IBOutlet weak var volume_1hrs_usdLabel: UILabel!
-    
-    @IBOutlet weak var volume_1day_usdLabel: UILabel!
     
     @IBOutlet weak var coinLabel: UIImageView!
     

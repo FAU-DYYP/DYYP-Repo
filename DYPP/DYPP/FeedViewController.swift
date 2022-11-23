@@ -33,19 +33,19 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell") as! FeedCell
         
         if(cryptos.count > 0){
-            cell.nameLabel?.text = cryptos["Bitcoin"]!["name"] as! String
+            cell.nameLabel?.text = cryptos["BTC"]!["name"] as! String
             
-            if let showPrice = cryptos["Bitcoin"]!["price_usd"] as? Double {
+            if let showPrice = cryptos["BTC"]!["price_usd"] as? Double {
                 cell.price_usdLabel?.text = "USD $" + String(round(showPrice * 1000) / 1000)
             }
             
-            if let show1hrVolume = cryptos["Bitcoin"]!["volume_1hrs_usd"] as? Float {
+            if let show1hrVolume = cryptos["BTC"]!["volume_1hrs_usd"] as? Float {
                 cell.volume_1hrs_usdLabel?.text = "volume 1hr $" +
                     String(round(show1hrVolume * 1000) / 1000)
             }
             
             if let show1dayVolume =
-                cryptos["Bitcoin"]!["volume_1hrs_usd"] as? Float {
+                cryptos["BTC"]!["volume_1hrs_usd"] as? Float {
                 cell.volume_1day_usdLabel?.text = "volume 1day $" +
                     String(round(show1dayVolume * 1000) / 1000)
             }

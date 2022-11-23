@@ -23,6 +23,7 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Do any additional setup after loading the view.
         
         apiCaller.loadCryptoData()
+        apiCaller.loadCryptoIcons()
         
     }
     
@@ -48,7 +49,7 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
             print(cryptos.count)
             
             //dictionary of dictionaries
-            cell.coinNameLabel.text = cryptos["Bitcoin"]!["name"] as! String
+            cell.coinNameLabel.text = cryptos["BTC"]!["name"] as! String
             
 
         }

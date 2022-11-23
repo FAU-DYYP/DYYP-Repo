@@ -46,6 +46,7 @@ import Foundation
 //    var cryptoArray = [Crypto]()
 //}
 var cryptos = [String:[String:Any]]()
+var crypto_icons = [String:URL]()
 
 final class APICaller{
     //let shared = APICaller()
@@ -55,7 +56,7 @@ final class APICaller{
     let baseURL = "https://rest.coinapi.io/v1/"
     let apikey = "7D9C95F3-3ADC-4031-A8CF-31E241D77EFB"
     let assets = "assets/"
-    let icons = "assets/icons/"
+    let icons = "assets/icons/tiny/"
     
     public init() {
         print("APICaller init")
@@ -81,13 +82,47 @@ final class APICaller{
 
                 for item in cryptosArray
                     {
-                        //add array items to dictionary as key with any value you prefer
-                        cryptos[item["name"] as! String] = item
+                        //add array items to dictionary as key with value
+                        cryptos[item["asset_id"] as! String] = item
                     }
                 print("before access cryptos")
                 print(cryptos.count)
-                print(cryptos["Bitcoin"])
+                print(cryptos["BTC"])
                 //print(cryptos[4]["name"])
+            }
+        }
+        task.resume()
+    }
+    public func loadCryptoIcons() {
+        
+        guard let iconsUrl = URL(string: baseURL + icons + "?apikey=" + apikey) else {
+            print("did not get url")
+            return
+        }
+        
+        let request = URLRequest(url: iconsUrl, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
+        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
+        print("before let task")
+        let task = session.dataTask(with: request) { (data, response, error) in
+            // This will run when the network request returns
+            if let error = error {
+                print(error.localizedDescription)
+            } else if let data = data {
+                print("before JSONSerialization")
+                let iconsArray = try! JSONSerialization.jsonObject(with: data) as! [[String: String]]
+
+                for item in iconsArray
+                    {
+                        //add array items to dictionary as key with value
+                        let asset_id = item["asset_id"]!
+                        let asset_url = URL(string: item["url"]!)
+                        //crypto_icons[item["asset_id"] as! String] = item
+                        crypto_icons[asset_id] = asset_url
+                    
+                    }
+                print("before access cryptos")
+                print(crypto_icons.count)
+                print(crypto_icons["BTC"])
             }
         }
         task.resume()

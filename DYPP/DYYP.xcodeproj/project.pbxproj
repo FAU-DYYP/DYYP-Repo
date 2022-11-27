@@ -14,8 +14,8 @@
 		4B02040F28FA1B5A00B4B454 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B02040D28FA1B5A00B4B454 /* Main.storyboard */; };
 		4B02041128FA1B6400B4B454 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B02041028FA1B6400B4B454 /* Assets.xcassets */; };
 		4B02041428FA1B6400B4B454 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B02041228FA1B6400B4B454 /* LaunchScreen.storyboard */; };
-		4B02041F28FA1B6400B4B454 /* DYPPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B02041E28FA1B6400B4B454 /* DYPPTests.swift */; };
-		4B02042A28FA1B6400B4B454 /* DYPPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B02042928FA1B6400B4B454 /* DYPPUITests.swift */; };
+		4B02041F28FA1B6400B4B454 /* DYYPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B02041E28FA1B6400B4B454 /* DYYPTests.swift */; };
+		4B02042A28FA1B6400B4B454 /* DYYPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B02042928FA1B6400B4B454 /* DYYPUITests.swift */; };
 		4B02043B28FA1BE600B4B454 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B02043A28FA1BE600B4B454 /* APICaller.swift */; };
 		4B0EBB862927FA8F00C182DA /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0EBB852927FA8F00C182DA /* FeedCell.swift */; };
 		4B9886E3291345F70013554D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9886E2291345F70013554D /* LoginViewController.swift */; };
@@ -46,18 +46,18 @@
 
 /* Begin PBXFileReference section */
 		2C847DBFAA119DEE227EDEAF /* Pods-DYPP-DYPPUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYPP-DYPPUITests.debug.xcconfig"; path = "Target Support Files/Pods-DYPP-DYPPUITests/Pods-DYPP-DYPPUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		4B02040428FA1B5A00B4B454 /* DYPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B02040428FA1B5A00B4B454 /* DYYP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYYP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B02040728FA1B5A00B4B454 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B02040928FA1B5A00B4B454 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4B02040E28FA1B5A00B4B454 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B02041028FA1B6400B4B454 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B02041328FA1B6400B4B454 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B02041528FA1B6400B4B454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4B02041A28FA1B6400B4B454 /* DYPPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DYPPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4B02041E28FA1B6400B4B454 /* DYPPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DYPPTests.swift; sourceTree = "<group>"; };
+		4B02041A28FA1B6400B4B454 /* DYYPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DYYPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B02041E28FA1B6400B4B454 /* DYYPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DYYPTests.swift; sourceTree = "<group>"; };
 		4B02042028FA1B6400B4B454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4B02042528FA1B6400B4B454 /* DYPPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DYPPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4B02042928FA1B6400B4B454 /* DYPPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DYPPUITests.swift; sourceTree = "<group>"; };
+		4B02042528FA1B6400B4B454 /* DYYPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DYYPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B02042928FA1B6400B4B454 /* DYYPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DYYPUITests.swift; sourceTree = "<group>"; };
 		4B02042B28FA1B6400B4B454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B02043A28FA1BE600B4B454 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		4B0EBB852927FA8F00C182DA /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
@@ -118,9 +118,9 @@
 		4B0203FB28FA1B5A00B4B454 = {
 			isa = PBXGroup;
 			children = (
-				4B02040628FA1B5A00B4B454 /* DYPP */,
-				4B02041D28FA1B6400B4B454 /* DYPPTests */,
-				4B02042828FA1B6400B4B454 /* DYPPUITests */,
+				4B02040628FA1B5A00B4B454 /* DYYP */,
+				4B02041D28FA1B6400B4B454 /* DYYPTests */,
+				4B02042828FA1B6400B4B454 /* DYYPUITests */,
 				4B02040528FA1B5A00B4B454 /* Products */,
 				76359D8361D3AA99B8522926 /* Pods */,
 				350B26125D7773BACE9028F4 /* Frameworks */,
@@ -130,14 +130,14 @@
 		4B02040528FA1B5A00B4B454 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4B02040428FA1B5A00B4B454 /* DYPP.app */,
-				4B02041A28FA1B6400B4B454 /* DYPPTests.xctest */,
-				4B02042528FA1B6400B4B454 /* DYPPUITests.xctest */,
+				4B02040428FA1B5A00B4B454 /* DYYP.app */,
+				4B02041A28FA1B6400B4B454 /* DYYPTests.xctest */,
+				4B02042528FA1B6400B4B454 /* DYYPUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4B02040628FA1B5A00B4B454 /* DYPP */ = {
+		4B02040628FA1B5A00B4B454 /* DYYP */ = {
 			isa = PBXGroup;
 			children = (
 				4B02040728FA1B5A00B4B454 /* AppDelegate.swift */,
@@ -154,25 +154,25 @@
 				B2986614291EC99E00C0F64F /* CoinCell.swift */,
 				4B0EBB852927FA8F00C182DA /* FeedCell.swift */,
 			);
-			path = DYPP;
+			path = DYYP;
 			sourceTree = "<group>";
 		};
-		4B02041D28FA1B6400B4B454 /* DYPPTests */ = {
+		4B02041D28FA1B6400B4B454 /* DYYPTests */ = {
 			isa = PBXGroup;
 			children = (
-				4B02041E28FA1B6400B4B454 /* DYPPTests.swift */,
+				4B02041E28FA1B6400B4B454 /* DYYPTests.swift */,
 				4B02042028FA1B6400B4B454 /* Info.plist */,
 			);
-			path = DYPPTests;
+			path = DYYPTests;
 			sourceTree = "<group>";
 		};
-		4B02042828FA1B6400B4B454 /* DYPPUITests */ = {
+		4B02042828FA1B6400B4B454 /* DYYPUITests */ = {
 			isa = PBXGroup;
 			children = (
-				4B02042928FA1B6400B4B454 /* DYPPUITests.swift */,
+				4B02042928FA1B6400B4B454 /* DYYPUITests.swift */,
 				4B02042B28FA1B6400B4B454 /* Info.plist */,
 			);
-			path = DYPPUITests;
+			path = DYYPUITests;
 			sourceTree = "<group>";
 		};
 		4BCFEDC3291C5D8B0015507F /* Tracker API */ = {
@@ -200,9 +200,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4B02040328FA1B5A00B4B454 /* DYPP */ = {
+		4B02040328FA1B5A00B4B454 /* DYYP */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4B02042E28FA1B6400B4B454 /* Build configuration list for PBXNativeTarget "DYPP" */;
+			buildConfigurationList = 4B02042E28FA1B6400B4B454 /* Build configuration list for PBXNativeTarget "DYYP" */;
 			buildPhases = (
 				E2073A99715143DCD1CEA82C /* [CP] Check Pods Manifest.lock */,
 				4B02040028FA1B5A00B4B454 /* Sources */,
@@ -214,14 +214,14 @@
 			);
 			dependencies = (
 			);
-			name = DYPP;
+			name = DYYP;
 			productName = DYPP;
-			productReference = 4B02040428FA1B5A00B4B454 /* DYPP.app */;
+			productReference = 4B02040428FA1B5A00B4B454 /* DYYP.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4B02041928FA1B6400B4B454 /* DYPPTests */ = {
+		4B02041928FA1B6400B4B454 /* DYYPTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4B02043128FA1B6400B4B454 /* Build configuration list for PBXNativeTarget "DYPPTests" */;
+			buildConfigurationList = 4B02043128FA1B6400B4B454 /* Build configuration list for PBXNativeTarget "DYYPTests" */;
 			buildPhases = (
 				7C1E8FA4E31F331EC0E1E903 /* [CP] Check Pods Manifest.lock */,
 				4B02041628FA1B6400B4B454 /* Sources */,
@@ -233,14 +233,14 @@
 			dependencies = (
 				4B02041C28FA1B6400B4B454 /* PBXTargetDependency */,
 			);
-			name = DYPPTests;
+			name = DYYPTests;
 			productName = DYPPTests;
-			productReference = 4B02041A28FA1B6400B4B454 /* DYPPTests.xctest */;
+			productReference = 4B02041A28FA1B6400B4B454 /* DYYPTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		4B02042428FA1B6400B4B454 /* DYPPUITests */ = {
+		4B02042428FA1B6400B4B454 /* DYYPUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4B02043428FA1B6400B4B454 /* Build configuration list for PBXNativeTarget "DYPPUITests" */;
+			buildConfigurationList = 4B02043428FA1B6400B4B454 /* Build configuration list for PBXNativeTarget "DYYPUITests" */;
 			buildPhases = (
 				4D00E4711AD8101E6E68B629 /* [CP] Check Pods Manifest.lock */,
 				4B02042128FA1B6400B4B454 /* Sources */,
@@ -253,9 +253,9 @@
 			dependencies = (
 				4B02042728FA1B6400B4B454 /* PBXTargetDependency */,
 			);
-			name = DYPPUITests;
+			name = DYYPUITests;
 			productName = DYPPUITests;
-			productReference = 4B02042528FA1B6400B4B454 /* DYPPUITests.xctest */;
+			productReference = 4B02042528FA1B6400B4B454 /* DYYPUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -280,7 +280,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4B0203FF28FA1B5A00B4B454 /* Build configuration list for PBXProject "DYPP" */;
+			buildConfigurationList = 4B0203FF28FA1B5A00B4B454 /* Build configuration list for PBXProject "DYYP" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -293,9 +293,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4B02040328FA1B5A00B4B454 /* DYPP */,
-				4B02041928FA1B6400B4B454 /* DYPPTests */,
-				4B02042428FA1B6400B4B454 /* DYPPUITests */,
+				4B02040328FA1B5A00B4B454 /* DYYP */,
+				4B02041928FA1B6400B4B454 /* DYYPTests */,
+				4B02042428FA1B6400B4B454 /* DYYPUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -452,7 +452,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B02041F28FA1B6400B4B454 /* DYPPTests.swift in Sources */,
+				4B02041F28FA1B6400B4B454 /* DYYPTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,7 +460,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B02042A28FA1B6400B4B454 /* DYPPUITests.swift in Sources */,
+				4B02042A28FA1B6400B4B454 /* DYYPUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,12 +469,12 @@
 /* Begin PBXTargetDependency section */
 		4B02041C28FA1B6400B4B454 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4B02040328FA1B5A00B4B454 /* DYPP */;
+			target = 4B02040328FA1B5A00B4B454 /* DYYP */;
 			targetProxy = 4B02041B28FA1B6400B4B454 /* PBXContainerItemProxy */;
 		};
 		4B02042728FA1B6400B4B454 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4B02040328FA1B5A00B4B454 /* DYPP */;
+			target = 4B02040328FA1B5A00B4B454 /* DYYP */;
 			targetProxy = 4B02042628FA1B6400B4B454 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -623,14 +623,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S23EGKVD27;
-				INFOPLIST_FILE = DYPP/Info.plist;
+				INFOPLIST_FILE = DYYP/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = DYYP;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.group14.DYPP;
+				PRODUCT_BUNDLE_IDENTIFIER = com.group14.DYYP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -645,14 +645,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S23EGKVD27;
-				INFOPLIST_FILE = DYPP/Info.plist;
+				INFOPLIST_FILE = DYYP/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = DYYP;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.group14.DYPP;
+				PRODUCT_BUNDLE_IDENTIFIER = com.group14.DYYP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -678,7 +678,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DYPP.app/DYPP";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DYYP.app/DYYP";
 			};
 			name = Debug;
 		};
@@ -701,7 +701,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DYPP.app/DYPP";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DYYP.app/DYYP";
 			};
 			name = Release;
 		};
@@ -750,7 +750,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4B0203FF28FA1B5A00B4B454 /* Build configuration list for PBXProject "DYPP" */ = {
+		4B0203FF28FA1B5A00B4B454 /* Build configuration list for PBXProject "DYYP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4B02042C28FA1B6400B4B454 /* Debug */,
@@ -759,7 +759,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4B02042E28FA1B6400B4B454 /* Build configuration list for PBXNativeTarget "DYPP" */ = {
+		4B02042E28FA1B6400B4B454 /* Build configuration list for PBXNativeTarget "DYYP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4B02042F28FA1B6400B4B454 /* Debug */,
@@ -768,7 +768,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4B02043128FA1B6400B4B454 /* Build configuration list for PBXNativeTarget "DYPPTests" */ = {
+		4B02043128FA1B6400B4B454 /* Build configuration list for PBXNativeTarget "DYYPTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4B02043228FA1B6400B4B454 /* Debug */,
@@ -777,7 +777,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4B02043428FA1B6400B4B454 /* Build configuration list for PBXNativeTarget "DYPPUITests" */ = {
+		4B02043428FA1B6400B4B454 /* Build configuration list for PBXNativeTarget "DYYPUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4B02043528FA1B6400B4B454 /* Debug */,

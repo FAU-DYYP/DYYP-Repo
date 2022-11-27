@@ -1,0 +1,6 @@
+framework module Pods_DYYP {
+  umbrella header "Pods-DYYP-umbrella.h"
+
+  export *
+  module * { export * }
+}

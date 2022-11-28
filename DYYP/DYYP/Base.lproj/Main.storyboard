@@ -449,6 +449,18 @@
                                     <action selector="onPreferred:" destination="uMx-Wn-kev" eventType="touchUpInside" id="f4N-sA-xtU"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DISPLAY NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvL-0X-civ">
+                                <rect key="frame" x="67" y="478" width="103" height="19"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PREFERRED COIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5R-fF-Cig">
+                                <rect key="frame" x="67" y="553" width="117" height="19"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vcf-Rt-AJz"/>
                         <color key="backgroundColor" red="0.1517708518" green="0.1517708518" blue="0.1517708518" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -464,12 +476,16 @@
                             <constraint firstItem="Pad-7E-wa2" firstAttribute="bottom" secondItem="ONb-A3-IHS" secondAttribute="bottom" id="d2x-S6-BVm"/>
                             <constraint firstItem="C6J-Oj-lEv" firstAttribute="top" secondItem="vcf-Rt-AJz" secondAttribute="top" constant="116" id="ggr-F2-0am"/>
                             <constraint firstItem="Ejd-5L-ycb" firstAttribute="top" secondItem="LOx-U1-66U" secondAttribute="bottom" constant="36" id="j6n-Em-40M"/>
+                            <constraint firstItem="KzO-pm-Qwg" firstAttribute="top" secondItem="J5R-fF-Cig" secondAttribute="bottom" constant="8" symbolic="YES" id="kkA-Rh-bgr"/>
                             <constraint firstItem="vcf-Rt-AJz" firstAttribute="trailing" secondItem="Pad-7E-wa2" secondAttribute="trailing" constant="67" id="ld5-Fp-QXs"/>
+                            <constraint firstItem="ONb-A3-IHS" firstAttribute="top" secondItem="jvL-0X-civ" secondAttribute="bottom" constant="8" symbolic="YES" id="mb9-zr-3fC"/>
                             <constraint firstItem="Pad-7E-wa2" firstAttribute="leading" secondItem="ONb-A3-IHS" secondAttribute="trailing" constant="8" symbolic="YES" id="nu8-yf-V7v"/>
                             <constraint firstItem="vcf-Rt-AJz" firstAttribute="trailing" secondItem="KzO-pm-Qwg" secondAttribute="trailing" constant="67" id="pRQ-dI-SC2"/>
                             <constraint firstItem="Ejd-5L-ycb" firstAttribute="leading" secondItem="vcf-Rt-AJz" secondAttribute="leading" constant="207" id="qYT-7F-25W"/>
                             <constraint firstItem="vcf-Rt-AJz" firstAttribute="trailing" secondItem="Ejd-5L-ycb" secondAttribute="trailing" constant="67" id="ra2-kP-tet"/>
+                            <constraint firstItem="jvL-0X-civ" firstAttribute="leading" secondItem="J5R-fF-Cig" secondAttribute="leading" id="tnD-kI-OVO"/>
                             <constraint firstItem="KzO-pm-Qwg" firstAttribute="top" secondItem="ONb-A3-IHS" secondAttribute="bottom" constant="41" id="v0g-4a-ztd"/>
+                            <constraint firstItem="jvL-0X-civ" firstAttribute="leading" secondItem="ONb-A3-IHS" secondAttribute="leading" id="vup-uC-dYF"/>
                             <constraint firstItem="LOx-U1-66U" firstAttribute="top" secondItem="KzO-pm-Qwg" secondAttribute="bottom" constant="39" id="xvk-Vr-U7N"/>
                             <constraint firstItem="C6J-Oj-lEv" firstAttribute="leading" secondItem="vcf-Rt-AJz" secondAttribute="leading" constant="67" id="yEb-oy-SLw"/>
                             <constraint firstItem="Pad-7E-wa2" firstAttribute="leading" secondItem="ONb-A3-IHS" secondAttribute="trailing" constant="8" symbolic="YES" id="zwt-T7-PRf"/>

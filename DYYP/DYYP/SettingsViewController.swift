@@ -31,7 +31,7 @@ class SettingsViewController: UIViewController {
         }
         else {
             //from Apple Developer
-            let alert = UIAlertController(title: "My Alert", message: "This is an alert.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "INVALID", message: "Please provide a username to change.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
             NSLog("The \"OK\" alert occured.")
             }))

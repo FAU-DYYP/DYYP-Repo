@@ -25,6 +25,12 @@ class LoginViewController: UIViewController {
             }
             else {
                 print("Error: \(error?.localizedDescription)")
+                //from Apple Developer
+                let alert = UIAlertController(title: "ERROR", message: error?.localizedDescription, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                NSLog("The \"OK\" alert occured.")
+                }))
+                self.present(alert, animated: true, completion: nil)
             }
         }
     }
@@ -42,6 +48,14 @@ class LoginViewController: UIViewController {
                     print("Error: \(error?.localizedDescription)")
                 }
             }
+        }
+        else {
+            //from Apple Developer
+            let alert = UIAlertController(title: "ERROR", message: "username/email required.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            NSLog("The \"OK\" alert occured.")
+            }))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     override func viewDidLoad() {

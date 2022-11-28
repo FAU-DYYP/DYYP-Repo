@@ -403,13 +403,6 @@
                                     <outletCollection property="gestureRecognizers" destination="Phw-7A-hNh" appends="YES" id="gbz-uP-ZVq"/>
                                 </connections>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTD-Mj-7EA">
-                                <rect key="frame" x="64" y="491" width="283" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="onDisplay:" destination="uMx-Wn-kev" eventType="touchUpInside" id="o1V-Dk-pi3"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KzO-pm-Qwg">
                                 <rect key="frame" x="64" y="572" width="283" height="30"/>
                                 <state key="normal" title="Button"/>
@@ -431,6 +424,23 @@
                                     <action selector="onLogOut:" destination="uMx-Wn-kev" eventType="touchUpInside" id="098-GU-fXV"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ONb-A3-IHS">
+                                <rect key="frame" x="67" y="505" width="203" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pad-7E-wa2">
+                                <rect key="frame" x="278" y="505" width="69" height="34"/>
+                                <color key="backgroundColor" red="0.36470588240000001" green="0.6705882353" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="CHANGE">
+                                    <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                    <color key="baseBackgroundColor" red="0.36470588240000001" green="0.6705882353" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onDisplayChange:" destination="uMx-Wn-kev" eventType="touchUpInside" id="LzY-Es-eKe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vcf-Rt-AJz"/>
                         <color key="backgroundColor" red="0.1517708518" green="0.1517708518" blue="0.1517708518" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -438,22 +448,30 @@
                             <constraint firstItem="KzO-pm-Qwg" firstAttribute="leading" secondItem="vcf-Rt-AJz" secondAttribute="leading" constant="64" id="3hK-Z5-e6S"/>
                             <constraint firstItem="LOx-U1-66U" firstAttribute="leading" secondItem="vcf-Rt-AJz" secondAttribute="leading" constant="64" id="7oR-Rz-JHz"/>
                             <constraint firstItem="vcf-Rt-AJz" firstAttribute="trailing" secondItem="LOx-U1-66U" secondAttribute="trailing" constant="67" id="COe-aA-5FW"/>
+                            <constraint firstItem="ONb-A3-IHS" firstAttribute="top" secondItem="C6J-Oj-lEv" secondAttribute="bottom" constant="61" id="G6k-to-I3P"/>
                             <constraint firstItem="LOx-U1-66U" firstAttribute="top" secondItem="KzO-pm-Qwg" secondAttribute="bottom" constant="49" id="INE-hT-CEL"/>
-                            <constraint firstItem="bTD-Mj-7EA" firstAttribute="top" secondItem="C6J-Oj-lEv" secondAttribute="bottom" constant="47" id="JmE-eq-Y3Y"/>
+                            <constraint firstItem="Pad-7E-wa2" firstAttribute="top" secondItem="ONb-A3-IHS" secondAttribute="top" id="Lnw-Xt-Vlb"/>
+                            <constraint firstItem="C6J-Oj-lEv" firstAttribute="leading" secondItem="ONb-A3-IHS" secondAttribute="leading" id="Xl2-52-wCj"/>
                             <constraint firstItem="vcf-Rt-AJz" firstAttribute="trailing" secondItem="C6J-Oj-lEv" secondAttribute="trailing" constant="67" id="ZYM-ED-VpE"/>
                             <constraint firstItem="vcf-Rt-AJz" firstAttribute="bottom" secondItem="Ejd-5L-ycb" secondAttribute="bottom" constant="66" id="cSg-Hl-kYD"/>
-                            <constraint firstItem="vcf-Rt-AJz" firstAttribute="trailing" secondItem="bTD-Mj-7EA" secondAttribute="trailing" constant="67" id="guH-YQ-uqt"/>
-                            <constraint firstItem="KzO-pm-Qwg" firstAttribute="top" secondItem="bTD-Mj-7EA" secondAttribute="bottom" constant="51" id="h6d-Lc-Asi"/>
+                            <constraint firstItem="KzO-pm-Qwg" firstAttribute="top" secondItem="ONb-A3-IHS" secondAttribute="bottom" constant="33" id="cvl-ax-ynT"/>
+                            <constraint firstItem="Pad-7E-wa2" firstAttribute="bottom" secondItem="ONb-A3-IHS" secondAttribute="bottom" id="d2x-S6-BVm"/>
+                            <constraint firstItem="C6J-Oj-lEv" firstAttribute="top" secondItem="vcf-Rt-AJz" secondAttribute="top" constant="116" id="ggr-F2-0am"/>
                             <constraint firstItem="Ejd-5L-ycb" firstAttribute="top" secondItem="LOx-U1-66U" secondAttribute="bottom" constant="36" id="j6n-Em-40M"/>
+                            <constraint firstItem="vcf-Rt-AJz" firstAttribute="trailing" secondItem="Pad-7E-wa2" secondAttribute="trailing" constant="67" id="ld5-Fp-QXs"/>
+                            <constraint firstItem="Pad-7E-wa2" firstAttribute="leading" secondItem="ONb-A3-IHS" secondAttribute="trailing" constant="8" symbolic="YES" id="nu8-yf-V7v"/>
                             <constraint firstItem="vcf-Rt-AJz" firstAttribute="trailing" secondItem="KzO-pm-Qwg" secondAttribute="trailing" constant="67" id="pRQ-dI-SC2"/>
-                            <constraint firstItem="bTD-Mj-7EA" firstAttribute="leading" secondItem="vcf-Rt-AJz" secondAttribute="leading" constant="64" id="pf0-kC-4UD"/>
                             <constraint firstItem="Ejd-5L-ycb" firstAttribute="leading" secondItem="vcf-Rt-AJz" secondAttribute="leading" constant="207" id="qYT-7F-25W"/>
                             <constraint firstItem="vcf-Rt-AJz" firstAttribute="trailing" secondItem="Ejd-5L-ycb" secondAttribute="trailing" constant="67" id="ra2-kP-tet"/>
                             <constraint firstItem="C6J-Oj-lEv" firstAttribute="leading" secondItem="vcf-Rt-AJz" secondAttribute="leading" constant="67" id="yEb-oy-SLw"/>
+                            <constraint firstItem="Pad-7E-wa2" firstAttribute="leading" secondItem="ONb-A3-IHS" secondAttribute="trailing" constant="8" symbolic="YES" id="zwt-T7-PRf"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="person.crop.circle.badge.xmark.fill" catalog="system" id="jga-zW-iB4"/>
                     <navigationItem key="navigationItem" id="Iwc-vZ-105"/>
+                    <connections>
+                        <outlet property="usernameField" destination="ONb-A3-IHS" id="Opp-TT-aKo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FFc-cj-CGj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="Phw-7A-hNh">

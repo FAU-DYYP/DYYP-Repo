@@ -11,15 +11,34 @@ import AlamofireImage
 
 class SettingsViewController: UIViewController {
     
+    @IBOutlet weak var usernameField: UITextField!
     
     @IBAction func onProfileSelect(_ sender: Any) {
         print("onProfileSelect pressed")
     }
     
-    
-    @IBAction func onDisplay(_ sender: Any) {
-        print("onDisplay pressed")
+    @IBAction func onDisplayChange(_ sender: Any) {
+        if usernameField.text != "" {
+            let user = PFUser.current()!
+            user.username = usernameField.text
+            
+            let name = user.username
+            print (name)
+            usernameField.text = ""
+            usernameField.placeholder = name
+            
+            user.saveInBackground()
+        }
+        else {
+            //from Apple Developer
+            let alert = UIAlertController(title: "INVALID", message: "Please provide a username to change.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            NSLog("The \"OK\" alert occured.")
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
+    
     
     @IBAction func onPreferred(_ sender: Any) {
         print("onPreferred pressed")
@@ -45,6 +64,9 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let user = PFUser.current()!
+        let name = user.username
+        usernameField.placeholder = name
     }
     
 

@@ -11,20 +11,42 @@ import AlamofireImage
 
 var settings = SettingsViewController()
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var preferredCoinSelect: UIButton!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var preferredCoinLabel: UILabel!
+    @IBOutlet weak var profileImageView: UIImageView!
     
     // initializing settings global class
     //var settings = [PFObject]()
     
     
+    // profile pic change
     @IBAction func onProfileSelect(_ sender: Any) {
         print("onProfileSelect pressed")
+        
+        let selector = UIImagePickerController()
+        selector.delegate = self
+        selector.allowsEditing = true
+        
+        selector.sourceType = .photoLibrary
+        
+        present(selector, animated: true, completion: nil)
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let profilePic = info[.editedImage] as! UIImage
+        
+        let size = CGSize(width: 300, height: 300)
+        let scaledImage = profilePic.af_imageScaled(to: size)
+        
+        profileImageView.image = scaledImage
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    // username change
     @IBAction func onDisplayChange(_ sender: Any) {
         if usernameField.text != "" {
             let user = PFUser.current()!
@@ -37,7 +59,6 @@ class SettingsViewController: UIViewController {
             user.saveInBackground()
         }
         else {
-            //from Apple Developer
             let alert = UIAlertController(title: "INVALID", message: "Please provide a username to change.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
             NSLog("The \"OK\" alert occured.")
@@ -46,6 +67,7 @@ class SettingsViewController: UIViewController {
         }
     }
     
+    // preferred coin
     func preferredCoinSetup(){
 
         let action = {(action : UIAction) in
@@ -62,10 +84,12 @@ class SettingsViewController: UIViewController {
         preferredCoinSelect.menu = menu
         }
     
+    // theme selection
     @IBAction func onTheme(_ sender: Any) {
         print("onTheme pressed")
     }
     
+    // logging out
     @IBAction func onLogOut(_ sender: Any) {
         PFUser.logOut()
         

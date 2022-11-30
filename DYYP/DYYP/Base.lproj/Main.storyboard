@@ -607,6 +607,7 @@
                     <connections>
                         <outlet property="preferredCoinLabel" destination="TS6-tT-qA8" id="H3z-kZ-Vy0"/>
                         <outlet property="preferredCoinSelect" destination="b82-Sb-Zbm" id="OU1-Cu-eL8"/>
+                        <outlet property="profileImageView" destination="C6J-Oj-lEv" id="yWe-JC-5Kb"/>
                         <outlet property="usernameField" destination="ONb-A3-IHS" id="Vq9-T8-eYp"/>
                     </connections>
                 </viewController>

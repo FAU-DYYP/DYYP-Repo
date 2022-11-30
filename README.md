@@ -86,6 +86,7 @@ Figma Wireframe: https://www.figma.com/file/fUa2beX6Y2vNY50vHFtWAr/DYYP?node-id=
 API gets data and is accessible. Wallet and Feed both access the data. 
 Settings view first implementation.
 <img src="https://raw.githubusercontent.com/FAU-DYYP/DYYP-Repo/main/dyppgif2.gif" width=600>
+http://g.recordit.co/u8BtQLhRji.gif
 
 ### [BONUS] Interactive Prototype
 

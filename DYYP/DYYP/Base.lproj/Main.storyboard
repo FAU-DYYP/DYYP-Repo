@@ -166,6 +166,38 @@
                                                     <color key="textColor" systemColor="systemGreenColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyr-5H-QKh">
+                                                    <rect key="frame" x="130" y="93" width="95" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="gray" title="Purchase"/>
+                                                    <connections>
+                                                        <action selector="purchaseButton:" destination="gsU-V8-fE2" eventType="touchUpInside" id="hhg-ww-Mrt"/>
+                                                    </connections>
+                                                </button>
+                                                <textField hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="af8-iH-Rhn">
+                                                    <rect key="frame" x="262" y="94" width="69" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84l-gX-WII">
+                                                    <rect key="frame" x="250" y="99" width="11" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wlc-x6-PK6">
+                                                    <rect key="frame" x="327" y="94" width="85" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Confirm"/>
+                                                    <connections>
+                                                        <action selector="confirmButton:" destination="gsU-V8-fE2" eventType="touchUpInside" id="ZnK-eU-NUe"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="QeE-N5-5UF" firstAttribute="leading" secondItem="qwx-dg-alv" secondAttribute="leading" constant="13" id="2vA-jq-kXx"/>
@@ -183,8 +215,11 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="coinLabel" destination="QeE-N5-5UF" id="4cr-9o-swS"/>
+                                            <outlet property="confirmButtonOutlet" destination="Wlc-x6-PK6" id="g2f-H2-P1t"/>
+                                            <outlet property="dollarsign" destination="84l-gX-WII" id="0yU-C9-pTh"/>
                                             <outlet property="nameLabel" destination="2SJ-SP-hVI" id="Xgn-eS-lsP"/>
                                             <outlet property="price_usdLabel" destination="MK8-oK-BvC" id="tkd-br-SSf"/>
+                                            <outlet property="purchaseAmount" destination="af8-iH-Rhn" id="pA1-K9-04R"/>
                                             <outlet property="symbolLabel" destination="fyH-u7-uei" id="xYX-jV-iRQ"/>
                                         </connections>
                                     </tableViewCell>
@@ -503,6 +538,9 @@
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

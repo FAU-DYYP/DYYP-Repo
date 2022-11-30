@@ -19,6 +19,30 @@ class FeedCell: UITableViewCell {
     
     @IBOutlet weak var coinLabel: UIImageView!
     
+    @IBAction func purchaseButton(_ sender: Any) {
+        dollarsign.isHidden = false
+        confirmButtonOutlet.isHidden = false
+        confirmButtonOutlet.isEnabled = true
+        purchaseAmount.isEnabled = true
+        purchaseAmount.isHidden = false
+        purchaseAmount.becomeFirstResponder()
+    }
+    @IBAction func confirmButton(_ sender: Any) {
+        confirmButtonOutlet.isHidden = true
+        confirmButtonOutlet.isEnabled = false
+        dollarsign.isHidden = true
+        print((nameLabel.text ?? "coin") + (purchaseAmount.text ?? "0.00"))
+        purchaseAmount.text = ""
+        purchaseAmount.isEnabled = false
+        purchaseAmount.isHidden = true
+        
+    }
+    
+    @IBOutlet weak var confirmButtonOutlet: UIButton!
+    @IBOutlet weak var dollarsign: UILabel!
+    
+    @IBOutlet weak var purchaseAmount: UITextField!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

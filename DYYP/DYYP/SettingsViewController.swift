@@ -9,6 +9,8 @@ import UIKit
 import Parse
 import AlamofireImage
 
+var settings = SettingsViewController()
+
 class SettingsViewController: UIViewController {
     
     @IBOutlet weak var usernameField: UITextField!
@@ -23,7 +25,7 @@ class SettingsViewController: UIViewController {
             user.username = usernameField.text
             
             let name = user.username
-            print (name)
+            print (name ?? "username")
             usernameField.text = ""
             usernameField.placeholder = name
             

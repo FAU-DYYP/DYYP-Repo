@@ -166,32 +166,28 @@
                                                     <color key="textColor" systemColor="systemGreenColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyr-5H-QKh">
-                                                    <rect key="frame" x="130" y="93" width="95" height="35"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyr-5H-QKh">
+                                                    <rect key="frame" x="140" y="93" width="95" height="35"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="gray" title="Purchase"/>
                                                     <connections>
                                                         <action selector="purchaseButton:" destination="gsU-V8-fE2" eventType="touchUpInside" id="hhg-ww-Mrt"/>
                                                     </connections>
                                                 </button>
-                                                <textField hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="af8-iH-Rhn">
-                                                    <rect key="frame" x="262" y="94" width="69" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <textField hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="af8-iH-Rhn">
+                                                    <rect key="frame" x="255" y="91" width="66" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84l-gX-WII">
-                                                    <rect key="frame" x="250" y="99" width="11" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84l-gX-WII">
+                                                    <rect key="frame" x="243" y="99" width="11" height="21"/>
                                                     <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wlc-x6-PK6">
-                                                    <rect key="frame" x="327" y="94" width="85" height="35"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wlc-x6-PK6">
+                                                    <rect key="frame" x="329" y="93" width="85" height="35"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Confirm"/>
                                                     <connections>
@@ -201,16 +197,29 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="QeE-N5-5UF" firstAttribute="leading" secondItem="qwx-dg-alv" secondAttribute="leading" constant="13" id="2vA-jq-kXx"/>
+                                                <constraint firstAttribute="bottom" secondItem="lyr-5H-QKh" secondAttribute="bottom" constant="8" id="2wd-fR-gyW"/>
+                                                <constraint firstItem="lyr-5H-QKh" firstAttribute="top" secondItem="MK8-oK-BvC" secondAttribute="bottom" constant="3" id="31b-Uw-xkq"/>
                                                 <constraint firstItem="MK8-oK-BvC" firstAttribute="leading" secondItem="QeE-N5-5UF" secondAttribute="trailing" constant="8" symbolic="YES" id="5NL-d1-0fO"/>
+                                                <constraint firstItem="84l-gX-WII" firstAttribute="leading" secondItem="lyr-5H-QKh" secondAttribute="trailing" constant="8" symbolic="YES" id="98l-wB-fsr"/>
                                                 <constraint firstItem="MK8-oK-BvC" firstAttribute="top" secondItem="fyH-u7-uei" secondAttribute="bottom" constant="8" symbolic="YES" id="Bfh-pw-uBd"/>
                                                 <constraint firstItem="QeE-N5-5UF" firstAttribute="top" secondItem="qwx-dg-alv" secondAttribute="top" constant="11" id="Bvo-49-Pf7"/>
+                                                <constraint firstItem="lyr-5H-QKh" firstAttribute="leading" secondItem="QeE-N5-5UF" secondAttribute="trailing" constant="8" symbolic="YES" id="Esr-g5-EeX"/>
+                                                <constraint firstItem="af8-iH-Rhn" firstAttribute="leading" secondItem="84l-gX-WII" secondAttribute="trailing" constant="1" id="FV3-pF-rIC"/>
+                                                <constraint firstAttribute="bottom" secondItem="Wlc-x6-PK6" secondAttribute="bottom" constant="8" id="J8y-My-t2I"/>
+                                                <constraint firstItem="Wlc-x6-PK6" firstAttribute="leading" secondItem="af8-iH-Rhn" secondAttribute="trailing" constant="8" symbolic="YES" id="JeV-8K-zT8"/>
                                                 <constraint firstItem="fyH-u7-uei" firstAttribute="top" secondItem="2SJ-SP-hVI" secondAttribute="bottom" constant="8" symbolic="YES" id="NeY-fV-XVU"/>
                                                 <constraint firstItem="fyH-u7-uei" firstAttribute="top" secondItem="2SJ-SP-hVI" secondAttribute="bottom" constant="8" symbolic="YES" id="OOa-Kr-Atz"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="QeE-N5-5UF" secondAttribute="bottom" constant="8" id="Ppg-f7-AKH"/>
                                                 <constraint firstItem="2SJ-SP-hVI" firstAttribute="leading" secondItem="QeE-N5-5UF" secondAttribute="trailing" constant="8" symbolic="YES" id="Rz2-0w-HjD"/>
+                                                <constraint firstItem="af8-iH-Rhn" firstAttribute="top" secondItem="qwx-dg-alv" secondAttribute="topMargin" constant="80" id="SI5-aM-UJz"/>
+                                                <constraint firstItem="af8-iH-Rhn" firstAttribute="bottom" secondItem="qwx-dg-alv" secondAttribute="bottomMargin" id="STB-DB-m00"/>
+                                                <constraint firstItem="Wlc-x6-PK6" firstAttribute="top" secondItem="qwx-dg-alv" secondAttribute="top" constant="93" id="U66-aU-yPs"/>
                                                 <constraint firstItem="2SJ-SP-hVI" firstAttribute="top" secondItem="qwx-dg-alv" secondAttribute="topMargin" id="gR2-KH-WFt"/>
                                                 <constraint firstItem="fyH-u7-uei" firstAttribute="leading" secondItem="QeE-N5-5UF" secondAttribute="trailing" constant="8" symbolic="YES" id="gsU-Tn-Mzb"/>
+                                                <constraint firstItem="84l-gX-WII" firstAttribute="top" secondItem="qwx-dg-alv" secondAttribute="topMargin" constant="88" id="kUU-qH-PK0"/>
                                                 <constraint firstItem="MK8-oK-BvC" firstAttribute="top" secondItem="fyH-u7-uei" secondAttribute="bottom" constant="8" symbolic="YES" id="pgR-q2-zum"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="84l-gX-WII" secondAttribute="bottom" constant="5" id="ykq-AZ-1Sh"/>
+                                                <constraint firstAttribute="trailing" secondItem="Wlc-x6-PK6" secondAttribute="trailing" id="zKT-4Q-7Do"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

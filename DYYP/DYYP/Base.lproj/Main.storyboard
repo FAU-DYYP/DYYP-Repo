@@ -469,7 +469,7 @@
                                     <constraint firstAttribute="height" constant="34" id="aLp-lQ-55T"/>
                                     <constraint firstAttribute="width" constant="140" id="qCd-Bv-Itx"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <menu key="menu" id="WB4-Te-Rrs">
                                     <children>
                                         <command title="Item 1" id="Nlg-uA-W6P"/>

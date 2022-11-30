@@ -15,6 +15,10 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var preferredCoinLabel: UILabel!
     
+    // initializing settings global class
+    //var settings = [PFObject]()
+    
+    
     @IBAction func onProfileSelect(_ sender: Any) {
         print("onProfileSelect pressed")
     }
@@ -27,7 +31,6 @@ class SettingsViewController: UIViewController {
             let name = user.username
             print (name)
             usernameField.text = ""
-            usernameField.placeholder = name
             
             user.saveInBackground()
         }
@@ -42,11 +45,13 @@ class SettingsViewController: UIViewController {
     }
     
     func preferredCoinSetup(){
+
         let action = {(action : UIAction) in
             print(action.title)
             self.preferredCoinLabel.text = action.title
         }
         
+        // UPDATE LATER - All Coins to List
         let menu = UIMenu(children : [
         UIAction(title: "None Selected", state: .on, handler: action),
         UIAction(title: "Opt 1", handler: action),

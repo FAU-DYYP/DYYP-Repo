@@ -298,11 +298,57 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OWNED: 0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFb-rp-i9y">
-                                                    <rect key="frame" x="20" y="137" width="374" height="52"/>
+                                                    <rect key="frame" x="204.5" y="137" width="189.5" height="52"/>
                                                     <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="42"/>
                                                     <color key="textColor" red="0.36470588235294116" green="0.6705882352941176" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOB-2y-jbe">
+                                                    <rect key="frame" x="6" y="129" width="102" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" title="Purchase">
+                                                        <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="purchaseButton:" destination="tUz-u1-jea" eventType="touchUpInside" id="7a8-E6-1da"/>
+                                                    </connections>
+                                                </button>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuE-Bj-Abl">
+                                                    <rect key="frame" x="116" y="137" width="11" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" systemColor="systemBackgroundColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gz3-CJ-miR">
+                                                    <rect key="frame" x="135" y="129" width="69" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCl-NL-CZi">
+                                                    <rect key="frame" x="127" y="165" width="85" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" title="Confirm">
+                                                        <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="confirmButton:" destination="tUz-u1-jea" eventType="touchUpInside" id="sII-uv-OG4"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvK-9L-C05">
+                                                    <rect key="frame" x="20" y="165" width="52" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" title="Sell">
+                                                        <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="sellButton:" destination="tUz-u1-jea" eventType="touchUpInside" id="lcl-Fl-Yg7"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="zFb-rp-i9y" firstAttribute="trailing" secondItem="ywA-89-trN" secondAttribute="trailingMargin" id="21C-Oj-CJl"/>
@@ -312,7 +358,6 @@
                                                 <constraint firstItem="Ym1-D3-zWd" firstAttribute="top" secondItem="1sH-Ic-9hc" secondAttribute="bottom" constant="8" symbolic="YES" id="EPj-TV-4jb"/>
                                                 <constraint firstItem="1sH-Ic-9hc" firstAttribute="trailing" secondItem="Ym1-D3-zWd" secondAttribute="trailing" id="Jz9-fH-IcI"/>
                                                 <constraint firstItem="zFb-rp-i9y" firstAttribute="bottom" secondItem="ywA-89-trN" secondAttribute="bottomMargin" id="Kef-mR-Xql"/>
-                                                <constraint firstItem="zFb-rp-i9y" firstAttribute="leading" secondItem="ywA-89-trN" secondAttribute="leadingMargin" id="VAs-NT-pSa"/>
                                                 <constraint firstItem="Ym1-D3-zWd" firstAttribute="top" secondItem="1sH-Ic-9hc" secondAttribute="bottom" constant="8" symbolic="YES" id="Xbf-ff-QUw"/>
                                                 <constraint firstItem="Kj9-yh-ar5" firstAttribute="top" secondItem="ywA-89-trN" secondAttribute="topMargin" id="Xgq-p3-WO4"/>
                                                 <constraint firstItem="zFb-rp-i9y" firstAttribute="top" secondItem="Ym1-D3-zWd" secondAttribute="bottom" constant="8" symbolic="YES" id="aH9-HL-q0v"/>
@@ -328,8 +373,11 @@
                                         <connections>
                                             <outlet property="coinLogoImage" destination="Kj9-yh-ar5" id="lGR-PY-jVa"/>
                                             <outlet property="coinNameLabel" destination="1sH-Ic-9hc" id="6U1-yc-Gze"/>
+                                            <outlet property="confirmButtonOutlet" destination="UCl-NL-CZi" id="4lF-cm-7rL"/>
+                                            <outlet property="dollarsign" destination="xuE-Bj-Abl" id="HBu-7b-o8D"/>
                                             <outlet property="informationLabel" destination="Ym1-D3-zWd" id="PJK-9Y-9WH"/>
                                             <outlet property="ownedLabel" destination="zFb-rp-i9y" id="JKh-OD-LlF"/>
+                                            <outlet property="purchaseAmount" destination="Gz3-CJ-miR" id="01o-1U-9Ba"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

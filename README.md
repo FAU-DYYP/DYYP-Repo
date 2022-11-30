@@ -86,7 +86,10 @@ Figma Wireframe: https://www.figma.com/file/fUa2beX6Y2vNY50vHFtWAr/DYYP?node-id=
 API gets data and is accessible. Wallet and Feed both access the data. 
 Settings view first implementation.
 <img src="https://raw.githubusercontent.com/FAU-DYYP/DYYP-Repo/main/dyppgif2.gif" width=600>
-http://g.recordit.co/u8BtQLhRji.gif
+
+#### Sprint 3 Progress
+Coin Icons, Appearance Improvements, Mockup Values, Purchase/Sell Buttons (values recorded but not yet used), Username Changing 
+<img src="https://raw.githubusercontent.com/FAU-DYYP/DYYP-Repo/main/u8BtQLhRji.gif" width=600>
 
 ### [BONUS] Interactive Prototype
 

@@ -13,7 +13,13 @@ var settings = SettingsViewController()
 
 class SettingsViewController: UIViewController {
     
+    @IBOutlet weak var preferredCoinSelect: UIButton!
     @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var preferredCoinLabel: UILabel!
+    
+    // initializing settings global class
+    //var settings = [PFObject]()
+    
     
     @IBAction func onProfileSelect(_ sender: Any) {
         print("onProfileSelect pressed")
@@ -27,7 +33,6 @@ class SettingsViewController: UIViewController {
             let name = user.username
             print (name ?? "username")
             usernameField.text = ""
-            usernameField.placeholder = name
             
             user.saveInBackground()
         }
@@ -41,10 +46,21 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    
-    @IBAction func onPreferred(_ sender: Any) {
-        print("onPreferred pressed")
-    }
+    func preferredCoinSetup(){
+
+        let action = {(action : UIAction) in
+            print(action.title)
+            self.preferredCoinLabel.text = action.title
+        }
+        
+        // UPDATE LATER - All Coins to List
+        let menu = UIMenu(children : [
+        UIAction(title: "None Selected", state: .on, handler: action),
+        UIAction(title: "Opt 1", handler: action),
+        UIAction(title: "Opt 2", handler: action)])
+        
+        preferredCoinSelect.menu = menu
+        }
     
     @IBAction func onTheme(_ sender: Any) {
         print("onTheme pressed")
@@ -65,10 +81,13 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Display Name
         let user = PFUser.current()!
         let name = user.username
         usernameField.placeholder = name
+        
+        // Preferred Coin
+        preferredCoinSetup()
     }
     
 

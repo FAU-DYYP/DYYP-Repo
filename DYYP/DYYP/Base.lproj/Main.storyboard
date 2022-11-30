@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -514,13 +515,13 @@
                                     <action selector="onLogOut:" destination="uMx-Wn-kev" eventType="touchUpInside" id="098-GU-fXV"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ONb-A3-IHS">
-                                <rect key="frame" x="67" y="505" width="203" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ONb-A3-IHS">
+                                <rect key="frame" x="67" y="479" width="203" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pad-7E-wa2">
-                                <rect key="frame" x="278" y="505" width="69" height="34"/>
+                                <rect key="frame" x="278" y="479" width="69" height="34"/>
                                 <color key="backgroundColor" red="0.36470588240000001" green="0.6705882353" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="CHANGE">
@@ -531,38 +532,72 @@
                                     <action selector="onDisplayChange:" destination="uMx-Wn-kev" eventType="touchUpInside" id="LzY-Es-eKe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KzO-pm-Qwg">
-                                <rect key="frame" x="64" y="580" width="283" height="30"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" red="0.1122387202" green="0.1122387202" blue="0.1122387202" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DISPLAY NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvL-0X-civ">
+                                <rect key="frame" x="67" y="452" width="103" height="19"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PREFERRED COIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5R-fF-Cig">
+                                <rect key="frame" x="67" y="521" width="117" height="19"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COIN NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TS6-tT-qA8">
+                                <rect key="frame" x="67" y="548" width="132" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="132" id="0r6-GG-sEE"/>
+                                    <constraint firstAttribute="height" constant="34" id="xLV-4I-uO6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b82-Sb-Zbm">
+                                <rect key="frame" x="207" y="548" width="140" height="34"/>
+                                <color key="backgroundColor" red="0.36470588240000001" green="0.6705882353" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="aLp-lQ-55T"/>
+                                    <constraint firstAttribute="width" constant="140" id="qCd-Bv-Itx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                <menu key="menu" id="WB4-Te-Rrs">
+                                    <children>
+                                        <command title="Item 1" id="Nlg-uA-W6P"/>
+                                        <command title="Item 2" id="QBj-CX-dyp"/>
+                                    </children>
+                                </menu>
+                                <state key="normal" title="SELECT...">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="onPreferred:" destination="uMx-Wn-kev" eventType="touchUpInside" id="f4N-sA-xtU"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vcf-Rt-AJz"/>
                         <color key="backgroundColor" red="0.1517708518" green="0.1517708518" blue="0.1517708518" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="KzO-pm-Qwg" firstAttribute="leading" secondItem="vcf-Rt-AJz" secondAttribute="leading" constant="64" id="3hK-Z5-e6S"/>
                             <constraint firstItem="LOx-U1-66U" firstAttribute="leading" secondItem="vcf-Rt-AJz" secondAttribute="leading" constant="64" id="7oR-Rz-JHz"/>
+                            <constraint firstItem="b82-Sb-Zbm" firstAttribute="top" secondItem="TS6-tT-qA8" secondAttribute="top" id="BKB-LE-Xwt"/>
                             <constraint firstItem="vcf-Rt-AJz" firstAttribute="trailing" secondItem="LOx-U1-66U" secondAttribute="trailing" constant="67" id="COe-aA-5FW"/>
-                            <constraint firstItem="ONb-A3-IHS" firstAttribute="top" secondItem="C6J-Oj-lEv" secondAttribute="bottom" constant="61" id="G6k-to-I3P"/>
+                            <constraint firstItem="b82-Sb-Zbm" firstAttribute="leading" secondItem="TS6-tT-qA8" secondAttribute="trailing" constant="8" symbolic="YES" id="Gv1-UF-B2E"/>
+                            <constraint firstItem="ONb-A3-IHS" firstAttribute="top" secondItem="jvL-0X-civ" secondAttribute="bottom" constant="8" id="LRO-KF-esH"/>
                             <constraint firstItem="Pad-7E-wa2" firstAttribute="top" secondItem="ONb-A3-IHS" secondAttribute="top" id="Lnw-Xt-Vlb"/>
+                            <constraint firstItem="TS6-tT-qA8" firstAttribute="top" secondItem="J5R-fF-Cig" secondAttribute="bottom" constant="8" symbolic="YES" id="Lo0-Lw-QOV"/>
                             <constraint firstItem="C6J-Oj-lEv" firstAttribute="leading" secondItem="ONb-A3-IHS" secondAttribute="leading" id="Xl2-52-wCj"/>
                             <constraint firstItem="vcf-Rt-AJz" firstAttribute="trailing" secondItem="C6J-Oj-lEv" secondAttribute="trailing" constant="67" id="ZYM-ED-VpE"/>
                             <constraint firstItem="vcf-Rt-AJz" firstAttribute="bottom" secondItem="Ejd-5L-ycb" secondAttribute="bottom" constant="66" id="cSg-Hl-kYD"/>
                             <constraint firstItem="Pad-7E-wa2" firstAttribute="bottom" secondItem="ONb-A3-IHS" secondAttribute="bottom" id="d2x-S6-BVm"/>
+                            <constraint firstItem="J5R-fF-Cig" firstAttribute="top" secondItem="ONb-A3-IHS" secondAttribute="bottom" constant="8" symbolic="YES" id="eGH-Yx-8bh"/>
                             <constraint firstItem="C6J-Oj-lEv" firstAttribute="top" secondItem="vcf-Rt-AJz" secondAttribute="top" constant="116" id="ggr-F2-0am"/>
                             <constraint firstItem="Ejd-5L-ycb" firstAttribute="top" secondItem="LOx-U1-66U" secondAttribute="bottom" constant="36" id="j6n-Em-40M"/>
+                            <constraint firstItem="vcf-Rt-AJz" firstAttribute="trailing" secondItem="b82-Sb-Zbm" secondAttribute="trailing" constant="67" id="lAk-bs-ZKK"/>
                             <constraint firstItem="vcf-Rt-AJz" firstAttribute="trailing" secondItem="Pad-7E-wa2" secondAttribute="trailing" constant="67" id="ld5-Fp-QXs"/>
                             <constraint firstItem="Pad-7E-wa2" firstAttribute="leading" secondItem="ONb-A3-IHS" secondAttribute="trailing" constant="8" symbolic="YES" id="nu8-yf-V7v"/>
-                            <constraint firstItem="vcf-Rt-AJz" firstAttribute="trailing" secondItem="KzO-pm-Qwg" secondAttribute="trailing" constant="67" id="pRQ-dI-SC2"/>
                             <constraint firstItem="Ejd-5L-ycb" firstAttribute="leading" secondItem="vcf-Rt-AJz" secondAttribute="leading" constant="207" id="qYT-7F-25W"/>
                             <constraint firstItem="vcf-Rt-AJz" firstAttribute="trailing" secondItem="Ejd-5L-ycb" secondAttribute="trailing" constant="67" id="ra2-kP-tet"/>
-                            <constraint firstItem="KzO-pm-Qwg" firstAttribute="top" secondItem="ONb-A3-IHS" secondAttribute="bottom" constant="41" id="v0g-4a-ztd"/>
-                            <constraint firstItem="LOx-U1-66U" firstAttribute="top" secondItem="KzO-pm-Qwg" secondAttribute="bottom" constant="39" id="xvk-Vr-U7N"/>
+                            <constraint firstItem="jvL-0X-civ" firstAttribute="leading" secondItem="J5R-fF-Cig" secondAttribute="leading" id="tnD-kI-OVO"/>
+                            <constraint firstItem="jvL-0X-civ" firstAttribute="top" secondItem="C6J-Oj-lEv" secondAttribute="bottom" constant="8" id="vqG-pw-eY0"/>
+                            <constraint firstItem="jvL-0X-civ" firstAttribute="leading" secondItem="ONb-A3-IHS" secondAttribute="leading" id="vup-uC-dYF"/>
                             <constraint firstItem="C6J-Oj-lEv" firstAttribute="leading" secondItem="vcf-Rt-AJz" secondAttribute="leading" constant="67" id="yEb-oy-SLw"/>
                             <constraint firstItem="Pad-7E-wa2" firstAttribute="leading" secondItem="ONb-A3-IHS" secondAttribute="trailing" constant="8" symbolic="YES" id="zwt-T7-PRf"/>
                         </constraints>
@@ -570,7 +605,9 @@
                     <tabBarItem key="tabBarItem" title="Settings" image="person.crop.circle.badge.xmark.fill" catalog="system" id="jga-zW-iB4"/>
                     <navigationItem key="navigationItem" id="Iwc-vZ-105"/>
                     <connections>
-                        <outlet property="usernameField" destination="ONb-A3-IHS" id="Opp-TT-aKo"/>
+                        <outlet property="preferredCoinLabel" destination="TS6-tT-qA8" id="H3z-kZ-Vy0"/>
+                        <outlet property="preferredCoinSelect" destination="b82-Sb-Zbm" id="OU1-Cu-eL8"/>
+                        <outlet property="usernameField" destination="ONb-A3-IHS" id="Vq9-T8-eYp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FFc-cj-CGj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

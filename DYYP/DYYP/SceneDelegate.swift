@@ -27,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             let main = UIStoryboard(name: "Main", bundle: nil)
             let feedView = main.instantiateViewController(withIdentifier: "UITabBarController")
-            
+            settings.parseUserData()
             window?.rootViewController = feedView
         } else {
             PFUser.logOut()

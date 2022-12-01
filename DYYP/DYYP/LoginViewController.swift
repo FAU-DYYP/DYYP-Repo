@@ -14,8 +14,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
-    var settings = PFObject(className: "Settings")
-    
     @IBAction func onSignIn(_ sender: Any) {
         let username = usernameField.text!
         let password = passwordField.text!
@@ -23,7 +21,9 @@ class LoginViewController: UIViewController {
         PFUser.logInWithUsername(inBackground: username, password: password)
         {   (user, error) in
             if user != nil {
-                        self.performSegue(withIdentifier: "loginViewSegue", sender: nil)
+                settings.parseUserData()
+                
+                self.performSegue(withIdentifier: "loginViewSegue", sender: nil)
             }
             else {
                 print("Error: \(error?.localizedDescription)")
@@ -44,17 +44,7 @@ class LoginViewController: UIViewController {
             user.password = passwordField.text
             user.signUpInBackground { (success, error) in
                 if error != nil {
-                    
-                    self.settings["theme_color"] = "5DAB50"
-                    self.settings["author"] = PFUser.current()!
-                    self.settings.saveInBackground { (success,error) in
-                        if success {
-                            print("Saved")
-                        } else {
-                            print("Save Failed")
-                        }
-                    }
-                    
+                    settings.parseUserData()
                     self.performSegue(withIdentifier: "loginViewSegue", sender: nil)
                 }
                 else {
@@ -70,7 +60,6 @@ class LoginViewController: UIViewController {
             }))
             self.present(alert, animated: true, completion: nil)
         }
-        
     }
     override func viewDidLoad() {
         super.viewDidLoad()

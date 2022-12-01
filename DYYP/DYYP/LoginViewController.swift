@@ -21,7 +21,9 @@ class LoginViewController: UIViewController {
         PFUser.logInWithUsername(inBackground: username, password: password)
         {   (user, error) in
             if user != nil {
-                        self.performSegue(withIdentifier: "loginViewSegue", sender: nil)
+                settings.parseUserData()
+                
+                self.performSegue(withIdentifier: "loginViewSegue", sender: nil)
             }
             else {
                 print("Error: \(error?.localizedDescription)")
@@ -42,7 +44,8 @@ class LoginViewController: UIViewController {
             user.password = passwordField.text
             user.signUpInBackground { (success, error) in
                 if error != nil {
-                            self.performSegue(withIdentifier: "loginViewSegue", sender: nil)
+                    settings.parseUserData()
+                    self.performSegue(withIdentifier: "loginViewSegue", sender: nil)
                 }
                 else {
                     print("Error: \(error?.localizedDescription)")

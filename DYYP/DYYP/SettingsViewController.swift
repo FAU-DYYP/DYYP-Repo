@@ -17,7 +17,9 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var preferredCoinLabel: UILabel!
     
-    // initializing settings global class
+    //var currentUserData = PFObject(withoutDataWithObjectId: <#T##String?#>)
+    //convenience init(userData: String, dictionary: [String : Any]?)
+        // initializing settings global class
     //var settings = [PFObject]()
     
     
@@ -44,6 +46,42 @@ class SettingsViewController: UIViewController {
             }))
             self.present(alert, animated: true, completion: nil)
         }
+    }
+    
+    func parseUserData(){
+        let userData = PFObject(className:"UserData")
+        userData["username"] = PFUser.current()!
+        userData["BTCowned"] = 10
+        userData.saveInBackground { (succeeded, error)  in
+            if (succeeded) {
+                // The object has been saved.
+                print("userdata object saved")
+            } else {
+                // There was a problem, check error.description
+            }
+        }
+        
+        //found nil...
+        //print(userData.objectId!)
+        
+        
+    }
+    
+    func getUserData(){
+        let query = PFQuery(className: "UserData")
+        query.findObjectsInBackground{(objects, error) -> Void in
+            if error == nil {
+                if let returnedobjects = objects {
+                    for object in returnedobjects{
+                        print(object["username"]!)
+                        print(object.objectId!)
+                        
+                    }
+                }
+            }
+            
+        }
+        
     }
     
     func preferredCoinSetup(){
@@ -85,6 +123,8 @@ class SettingsViewController: UIViewController {
         let user = PFUser.current()!
         let name = user.username
         usernameField.placeholder = name
+        getUserData()
+        
         
         // Preferred Coin
         preferredCoinSetup()

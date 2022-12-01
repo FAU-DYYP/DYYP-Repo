@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             //logged in
             let main = UIStoryboard(name: "Main", bundle: nil)
             let feedView = main.instantiateViewController(withIdentifier: "UITabBarController")
-            
+            settings.parseUserData()
             window?.rootViewController = feedView
         }
     }

@@ -13,6 +13,8 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     @IBOutlet weak var tableView: UITableView!
     
+    let walletRefreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,6 +26,11 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         apiCaller.loadCryptoData()
         apiCaller.loadCryptoIcons()
         
+        loadWallet()
+        
+        walletRefreshControl.addTarget(self, action: #selector(loadWallet), for: .valueChanged)
+        tableView.refreshControl = walletRefreshControl
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -32,6 +39,14 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 115
         self.tableView.reloadData()
+        self.loadWallet()
+    }
+    
+    @objc func loadWallet() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.tableView.reloadData()
+            self.walletRefreshControl.endRefreshing()
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

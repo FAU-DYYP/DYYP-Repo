@@ -17,6 +17,11 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var preferredCoinLabel: UILabel!
     @IBOutlet weak var preferredCoinSelect: UIButton!
     
+    var userDataId = ""
+    var userData = PFObject(className: "userData")
+    //public var userDataDict = [String:Any]()
+    
+    
     @IBAction func onProfileSelect(_ sender: Any) {
         print("onProfileSelect pressed")
     }
@@ -54,12 +59,11 @@ class SettingsViewController: UIViewController {
             if error == nil {
                 if let returnedobjects = objects {
                     for object in returnedobjects{
-                        print(object["username"]!)
-                        print(object.objectId!)
                         if object["username"] as! String == PFUser.current()!.username! as String {
                             userexists = true
-                            print("found user")
-                            print(userexists)
+                            self.userDataId = object.objectId!
+                            print(self.userDataId)
+                            self.userData = object
                         }
                         
                     }
@@ -71,6 +75,8 @@ class SettingsViewController: UIViewController {
                 userData.saveInBackground { (succeeded, error)  in
                     if (succeeded) {
                         // The object has been saved.
+                        userData.pinInBackground()
+                        self.userData = userData
                         print("userdata object saved")
                     } else {
                         // There was a problem, check error.description
@@ -80,6 +86,7 @@ class SettingsViewController: UIViewController {
             }
             else{
                 print("user exists")
+                userData.pinInBackground()
             }
             
         }
@@ -89,18 +96,16 @@ class SettingsViewController: UIViewController {
     }
     
     func getUserData(){
-        let query = PFQuery(className: "UserData")
-        query.findObjectsInBackground{(objects, error) -> Void in
+        let query = PFQuery(className:"userData")
+        query.getObjectInBackground(withId: userDataId) { (userData, error) in
             if error == nil {
-                if let returnedobjects = objects {
-                    for object in returnedobjects{
-                        print(object["username"]!)
-                        print(object.objectId!)
-                        
-                    }
-                }
+                // Success!
+                userData?.pinInBackground()
+                print("pinning in background")
+                //self.userData = userData!
+            } else {
+                // Fail!
             }
-            
         }
         
     }

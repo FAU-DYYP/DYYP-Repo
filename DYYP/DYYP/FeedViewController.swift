@@ -42,6 +42,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.tableView.reloadData()
             self.feedRefreshControl.endRefreshing()
+            //settings.getUserData()
+            print(settings.userData["username"] ?? "data not there yet")
         }
     }
     

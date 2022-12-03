@@ -13,12 +13,10 @@ var settings = SettingsViewController()
 
 class SettingsViewController: UIViewController {
     
-    @IBOutlet weak var preferredCoinSelect: UIButton!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var preferredCoinLabel: UILabel!
+    @IBOutlet weak var preferredCoinSelect: UIButton!
     
-    
-        
     @IBAction func onProfileSelect(_ sender: Any) {
         print("onProfileSelect pressed")
     }
@@ -121,7 +119,7 @@ class SettingsViewController: UIViewController {
         UIAction(title: "Opt 2", handler: action)])
         
         preferredCoinSelect.menu = menu
-        }
+    }
     
     @IBAction func onTheme(_ sender: Any) {
         print("onTheme pressed")

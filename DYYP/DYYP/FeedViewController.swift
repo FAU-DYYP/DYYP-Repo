@@ -15,6 +15,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     //TABLEVIEW
     @IBOutlet weak var tableView: UITableView!
     
+    let feedRefreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,23 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         //DARKMODE
         overrideUserInterfaceStyle = .dark
+        loadPrices()
         
+        feedRefreshControl.addTarget(self, action: #selector(loadPrices), for: .valueChanged)
+        tableView.refreshControl = feedRefreshControl
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.loadPrices()
+    }
+
+    
+    @objc func loadPrices() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.tableView.reloadData()
+            self.feedRefreshControl.endRefreshing()
+        }
     }
     
 

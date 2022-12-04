@@ -63,6 +63,12 @@ class LoginViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Default to dark mode
+        let delegate = UIApplication.shared.windows.first
+        delegate?.overrideUserInterfaceStyle = .dark
+        
+        //Secure password
         passwordField.isSecureTextEntry = true
     }
     

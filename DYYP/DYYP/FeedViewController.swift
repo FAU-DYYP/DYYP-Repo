@@ -25,7 +25,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.delegate = self
         
         //DARKMODE
-        overrideUserInterfaceStyle = .dark
+        //overrideUserInterfaceStyle = .light
+        
         loadPrices()
         
         feedRefreshControl.addTarget(self, action: #selector(loadPrices), for: .valueChanged)

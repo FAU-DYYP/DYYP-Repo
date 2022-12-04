@@ -164,6 +164,10 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Default Dark Mode
+        modeToggleButton.isOn = true
+        appearanceTextLabel.text = "DARK MODE"
+        
         // Display Name
         let user = PFUser.current()!
         let name = user.username

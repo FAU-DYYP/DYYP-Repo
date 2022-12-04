@@ -8,11 +8,11 @@
 import UIKit
 import Parse
 import AlamofireImage
+import Foundation
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -20,13 +20,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         
+        
         if PFUser.current() != nil {
             //logged in
+            print("NOT NIL")
+            
             let main = UIStoryboard(name: "Main", bundle: nil)
             let feedView = main.instantiateViewController(withIdentifier: "UITabBarController")
             settings.parseUserData()
             window?.rootViewController = feedView
+        } else {
+            PFUser.logOut()
+            
+            let main = UIStoryboard(name: "Main", bundle: nil)
+            let loginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
+            
+            //setting window
+            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let delegate = windowScene.delegate as? SceneDelegate else {return}
+            
+            delegate.window?.rootViewController = loginViewController
         }
+         
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

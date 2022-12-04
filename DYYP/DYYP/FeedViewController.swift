@@ -43,7 +43,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
             self.tableView.reloadData()
             self.feedRefreshControl.endRefreshing()
             //settings.getUserData()
-            print(settings.userData["username"] ?? "data not there yet")
+            //print(settings.userData["username"] ?? "data not there yet")
         }
     }
     

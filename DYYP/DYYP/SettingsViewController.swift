@@ -42,11 +42,6 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    var userDataId = ""
-    var userData = PFObject(className: "userData")
-    //public var userDataDict = [String:Any]()
-    
-    
     @IBAction func onProfileSelect(_ sender: Any) {
         print("onProfileSelect pressed")
     }
@@ -73,7 +68,7 @@ class SettingsViewController: UIViewController {
     }
     
     func parseUserData(){
-        var userData = PFObject(className:"UserData")
+        let userData = PFObject(className:"UserData")
         userData["user"] = PFUser.current()!
         userData["username"] = PFUser.current()!.username! as String
         userData["BTCowned"] = 10
@@ -84,11 +79,12 @@ class SettingsViewController: UIViewController {
             if error == nil {
                 if let returnedobjects = objects {
                     for object in returnedobjects{
+                        print(object["username"]!)
+                        print(object.objectId!)
                         if object["username"] as! String == PFUser.current()!.username! as String {
                             userexists = true
-                            self.userDataId = object.objectId!
-                            print(self.userDataId)
-                            self.userData = object
+                            print("found user")
+                            print(userexists)
                         }
                         
                     }
@@ -100,8 +96,6 @@ class SettingsViewController: UIViewController {
                 userData.saveInBackground { (succeeded, error)  in
                     if (succeeded) {
                         // The object has been saved.
-                        //userData.pinInBackground()
-                        self.userData = userData
                         print("userdata object saved")
                     } else {
                         // There was a problem, check error.description
@@ -111,7 +105,6 @@ class SettingsViewController: UIViewController {
             }
             else{
                 print("user exists")
-                //userData.pinInBackground()
             }
             
         }
@@ -121,47 +114,22 @@ class SettingsViewController: UIViewController {
     }
     
     func getUserData(){
-        let query = PFQuery(className:"userData")
-        query.getObjectInBackground(withId: self.userDataId) { (userData, error) in
+        let query = PFQuery(className: "UserData")
+        query.findObjectsInBackground{(objects, error) -> Void in
             if error == nil {
-                // Success!
-                //userData?.pinInBackground()
-                //print("pinning in background")
-                self.userData = userData!
-            } else {
-                // Fail!
+                if let returnedobjects = objects {
+                    for object in returnedobjects{
+                        print(object["username"]!)
+                        print(object.objectId!)
+                        
+                    }
+                }
             }
+            
         }
         
     }
-    func updateUserData(){
-        let query = PFQuery(className:"userData")
-        query.getObjectInBackground(withId: self.userDataId) { (userData, error) in
-            if let error = error {
-                print(error.localizedDescription)
-                print("error spot 1")
-                print(self.userDataId)
-            } else if var userData = userData {
-                userData = self.userData
-                userData.saveInBackground()
-            }
-        }
-    }
-    /*
-    func updateUserData(){
-        let query = PFQuery(className:"userData")
-        query.getObjectInBackground(withId: self.userDataId) { (userData: PFObject?, error: Error?) in
-            if let error = error {
-                print(error.localizedDescription)
-                print("error spot 1")
-                print(self.userDataId)
-            } else if var userData = userData {
-                userData = self.userData
-                userData.saveInBackground()
-            }
-        }
-    }
-    */
+    
     func preferredCoinSetup(){
         
         print("Setting up")
@@ -199,14 +167,8 @@ class SettingsViewController: UIViewController {
         let user = PFUser.current()!
         let name = user.username
         usernameField.placeholder = name
-<<<<<<< HEAD
-        //getUserData()
-        
-        
-=======
         getUserData()
 
->>>>>>> newSettingsBranch
         // Preferred Coin
         preferredCoinSetup()
     }

@@ -15,7 +15,32 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var preferredCoinLabel: UILabel!
+    @IBOutlet weak var displayNameStaticLabel: UILabel!
+    @IBOutlet weak var preferredCoinStaticLabel: UILabel!
     @IBOutlet weak var preferredCoinSelect: UIButton!
+    @IBOutlet weak var profileButton: UIButton!
+    @IBOutlet weak var logOutButton: UIButton!
+    @IBOutlet weak var appearanceStaticLabel: UILabel!
+    @IBOutlet weak var appearanceTextLabel: UILabel!
+    @IBOutlet weak var modeToggleButton: UISwitch!
+    
+    @IBAction func onToggleMode(_ sender: UISwitch) {
+        if #available(iOS 13.0, *) {
+            let delegate = UIApplication.shared.windows.first
+            if sender.isOn {
+                delegate?.overrideUserInterfaceStyle = .dark
+                self.appearanceTextLabel.text = "DARK MODE"
+                return
+            }
+            delegate?.overrideUserInterfaceStyle = .light
+            self.appearanceTextLabel.text = "LIGHT MODE"
+            return
+        } else {
+            self.appearanceTextLabel.isHidden = true
+            self.appearanceStaticLabel.isHidden = true
+            self.modeToggleButton.isHidden = true
+        }
+    }
     
     @IBAction func onProfileSelect(_ sender: Any) {
         print("onProfileSelect pressed")
@@ -106,6 +131,8 @@ class SettingsViewController: UIViewController {
     }
     
     func preferredCoinSetup(){
+        
+        print("Setting up")
 
         let action = {(action : UIAction) in
             print(action.title)
@@ -119,10 +146,6 @@ class SettingsViewController: UIViewController {
         UIAction(title: "Opt 2", handler: action)])
         
         preferredCoinSelect.menu = menu
-    }
-    
-    @IBAction func onTheme(_ sender: Any) {
-        print("onTheme pressed")
     }
     
     @IBAction func onLogOut(_ sender: Any) {
@@ -139,14 +162,13 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Display Name
         let user = PFUser.current()!
         let name = user.username
         usernameField.placeholder = name
         getUserData()
-        
-        
+
         // Preferred Coin
         preferredCoinSetup()
     }

@@ -54,6 +54,7 @@ class SettingsViewController: UIViewController {
             let name = user.username
             print (name ?? "username")
             usernameField.text = ""
+            usernameField.placeholder = name
             
             user.saveInBackground()
         }

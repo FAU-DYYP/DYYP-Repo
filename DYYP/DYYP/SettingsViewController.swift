@@ -176,7 +176,7 @@ class SettingsViewController: UIViewController {
         let user = PFUser.current()!
         let name = user.username
         usernameField.placeholder = name
-        getUserData()
+        //getUserData()
         
         
         // Preferred Coin

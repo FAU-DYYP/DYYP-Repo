@@ -14,6 +14,8 @@ class CoinCell: UITableViewCell {
     @IBOutlet weak var coinNameLabel: UILabel!
     @IBOutlet weak var informationLabel: UILabel!
     @IBOutlet weak var ownedLabel: UILabel!
+    @IBOutlet weak var purchaseStaticButton: UIButton!
+    @IBOutlet weak var sellStaticButton: UIButton!
     
     @IBAction func purchaseButton(_ sender: Any) {
         buying = true
@@ -23,7 +25,9 @@ class CoinCell: UITableViewCell {
         purchaseAmount.isEnabled = true
         purchaseAmount.isHidden = false
         purchaseAmount.becomeFirstResponder()
-        
+     
+        self.purchaseStaticButton.backgroundColor = UIColor.lightGray
+        self.sellStaticButton.backgroundColor = UIColor(named: "Toggle Colors")
     }
     
     @IBAction func sellButton(_ sender: Any) {
@@ -34,6 +38,9 @@ class CoinCell: UITableViewCell {
         purchaseAmount.isEnabled = true
         purchaseAmount.isHidden = false
         purchaseAmount.becomeFirstResponder()
+        
+        self.sellStaticButton.backgroundColor = UIColor.lightGray
+        self.purchaseStaticButton.backgroundColor = UIColor(named: "Toggle Colors")
     }
     
     @IBAction func confirmButton(_ sender: Any) {
@@ -48,6 +55,8 @@ class CoinCell: UITableViewCell {
         purchaseAmount.isEnabled = false
         purchaseAmount.isHidden = true
         
+        self.purchaseStaticButton.backgroundColor = UIColor(named: "Toggle Colors")
+        self.sellStaticButton.backgroundColor = UIColor(named: "Toggle Colors")
     }
     
     @IBOutlet weak var purchaseAmount: UITextField!

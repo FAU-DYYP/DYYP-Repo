@@ -31,7 +31,10 @@ class FeedCell: UITableViewCell {
         confirmButtonOutlet.isHidden = true
         confirmButtonOutlet.isEnabled = false
         dollarsign.isHidden = true
-        print((nameLabel.text ?? "coin") + (purchaseAmount.text ?? "0.00"))
+        print((nameLabel.text ?? "coin") + " $" + (purchaseAmount.text ?? "0.00"))
+        settings.userData[(nameLabel.text ?? "coin")] = 5
+        settings.updateUserData()
+        print(settings.userData)
         purchaseAmount.text = ""
         purchaseAmount.isEnabled = false
         purchaseAmount.isHidden = true

@@ -33,12 +33,12 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
             if sender.isOn {
                 delegate?.overrideUserInterfaceStyle = .dark
                 self.appearanceTextLabel.text = "DARK MODE"
-                self.updateUserData(dataKey: "darkMode", dataValue: true)
+                settings.updateUserData(dataKey: "darkMode", dataValue: true)
                 return
             }
             delegate?.overrideUserInterfaceStyle = .light
             self.appearanceTextLabel.text = "LIGHT MODE"
-            self.updateUserData(dataKey: "darkMode", dataValue: false)
+            settings.updateUserData(dataKey: "darkMode", dataValue: false)
             return
         } else {
             self.appearanceTextLabel.isHidden = true
@@ -75,7 +75,7 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
         let imageData = profileImage.image!.pngData()
         let file = PFFileObject(name: "image.png", data: imageData!)
         let backUp = PFFileObject(name: "image.png", data: (UIImage(named: "DYYPERV3")?.pngData())!)
-        self.updateUserImage(dataKey: "profileImage", dataValue: (file ?? backUp)!)
+        //self.updateUserImage(dataKey: "profileImage", dataValue: (file ?? backUp)!)
         
         dismiss(animated: true, completion: nil)
     }
@@ -215,7 +215,7 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
         let action = {(action : UIAction) in
             print(action.title)
             self.preferredCoinLabel.text = action.title
-            self.updateUserData(dataKey: "preferredCoin", dataValue: action.title)
+            //self.updateUserData(dataKey: "preferredCoin", dataValue: action.title)
         }
         
         // UPDATE LATER - All Coins to List
@@ -243,8 +243,8 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
         super.viewDidLoad()
         
         //Default Dark/Light Mode
-        if (self.userData["darkMode"] != nil) == true {
-            if self.userData["darkMode"] as! Bool == true {
+        if (settings.userData["darkMode"] != nil) == true {
+            if settings.userData["darkMode"] as! Bool == true {
                 modeToggleButton.isOn = true
                 appearanceTextLabel.text = "DARK MODE"
                 let delegate = UIApplication.shared.windows.first
@@ -269,12 +269,12 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
 
         // Preferred Coin
         preferredCoinSetup()
-        if self.userData["preferredCoin"] != nil {
+        if settings.userData["preferredCoin"] != nil {
             preferredCoinLabel.text = self.userData["preferredCoin"] as? String
             
         } else {
             preferredCoinLabel.text = "None Selected"
-            self.updateUserData(dataKey: "preferredCoin", dataValue: "None Selected")
+            settings.updateUserData(dataKey: "preferredCoin", dataValue: "None Selected")
         }
     }
     

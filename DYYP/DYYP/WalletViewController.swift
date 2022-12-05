@@ -14,7 +14,6 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var tableView: UITableView!
     
     let walletRefreshControl = UIRefreshControl()
-    var settings = SettingsViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()

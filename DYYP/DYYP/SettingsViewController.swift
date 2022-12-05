@@ -128,6 +128,7 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
                     self.userData["user"] = PFUser.current()!
                     self.userData["username"] = PFUser.current()!.username! as String
                     self.userData["dyypcoin"] = 0.00
+                    self.userData["darkMode"] = true
                     self.userData.saveInBackground { (succeeded, error)  in
                         if (succeeded) {
                             // The object has been saved.

@@ -105,13 +105,9 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
     func displayModeCheck(){
         //Default Dark/Light Mode
         if settings.userData["darkMode"] as! Bool == true {
-            settings.modeToggleButton.isOn = true
-            settings.appearanceTextLabel.text = "DARK MODE"
             let delegate = UIApplication.shared.windows.first
             delegate?.overrideUserInterfaceStyle = .dark
         } else {
-            settings.modeToggleButton.isOn = false
-            settings.appearanceTextLabel.text = "LIGHT MODE"
             let delegate = UIApplication.shared.windows.first
             delegate?.overrideUserInterfaceStyle = .light
         }
@@ -159,7 +155,7 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
                 }
                 else{
                     print("user exists")
-                    //settings.displayModeCheck()
+                    settings.displayModeCheck()
                 }
                 
             }
@@ -261,6 +257,19 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Display Mode
+        //Default Dark/Light Mode
+        if settings.userData["darkMode"] as! Bool == true {
+            self.modeToggleButton.isOn = true
+            self.appearanceTextLabel.text = "DARK MODE"
+            let delegate = UIApplication.shared.windows.first
+            delegate?.overrideUserInterfaceStyle = .dark
+        } else {
+            self.modeToggleButton.isOn = false
+            self.appearanceTextLabel.text = "LIGHT MODE"
+            let delegate = UIApplication.shared.windows.first
+            delegate?.overrideUserInterfaceStyle = .light
+        }
         
         // Display Name
         let user = PFUser.current()!

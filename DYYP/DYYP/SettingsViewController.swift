@@ -125,11 +125,11 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
                 print("if user exists before save")
                 print(userexists)
                 if (userexists == false){
-                    self.userData["user"] = PFUser.current()!
-                    self.userData["username"] = PFUser.current()!.username! as String
-                    self.userData["dyypcoin"] = 0.00
-                    self.userData["darkMode"] = true
-                    self.userData.saveInBackground { (succeeded, error)  in
+                    settings.userData["user"] = PFUser.current()!
+                    settings.userData["username"] = PFUser.current()!.username! as String
+                    settings.userData["dyypcoin"] = 0.00
+                    settings.userData["darkMode"] = true
+                    settings.userData.saveInBackground { (succeeded, error)  in
                         if (succeeded) {
                             // The object has been saved.
                             print("userdata object saved")
@@ -148,26 +148,26 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
 
     func getUserData(){
             let query = PFQuery(className:"UserData")
-            query.getObjectInBackground(withId: self.userData.objectId ?? "not loaded") { (userData, error) in
+            query.getObjectInBackground(withId: settings.userData.objectId ?? "not loaded") { (userData, error) in
                 if error == nil {
                     // Success!
-                    self.userData = userData ?? self.userData
-                    print(self.userData["username"] as! String + " got userData")
+                    settings.userData = userData ?? self.userData
+                    print(settings.userData["username"] as! String + " got userData")
                 } else {
                     // Fail!
-                    print(self.userData.objectId ?? "not loaded")
+                    print(settings.userData.objectId ?? "not loaded")
                 }
             }
             
     }
     func updateUserData(dataKey: String, dataValue: Any){
             let query = PFQuery(className:"UserData")
-            query.getObjectInBackground(withId: self.userData.objectId ?? "not loaded") { (userData, error) in
+            query.getObjectInBackground(withId: settings.userData.objectId ?? "not loaded") { (userData, error) in
                 if error == nil {
                     // Success!
-                    self.userData[dataKey] = dataValue
-                    print(self.userData["username"] as! String + " updating userData")
-                    self.userData.saveInBackground { (succeeded, error)  in
+                    settings.userData[dataKey] = dataValue
+                    print(settings.userData["username"] as! String + " updating userData")
+                    settings.userData.saveInBackground { (succeeded, error)  in
                         if (succeeded) {
                             // The object has been saved.
                             print("userdata object updated")
@@ -177,7 +177,7 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
                     }
                 } else {
                     // Fail!
-                    print(self.userData.objectId ?? "not loaded")
+                    print(settings.userData.objectId ?? "not loaded")
                 }
             }
             
@@ -186,12 +186,12 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
     //EXPERIMENT
     func updateUserImage(dataKey: String, dataValue: PFFileObject){
             let query = PFQuery(className:"UserData")
-            query.getObjectInBackground(withId: self.userData.objectId ?? "not loaded") { (userData, error) in
+            query.getObjectInBackground(withId: settings.userData.objectId ?? "not loaded") { (userData, error) in
                 if error == nil {
                     // Success!
-                    self.userData[dataKey] = dataValue
-                    print(self.userData["username"] as! String + " updating userData")
-                    self.userData.saveInBackground { (succeeded, error)  in
+                    settings.userData[dataKey] = dataValue
+                    print(settings.userData["username"] as! String + " updating userData")
+                    settings.userData.saveInBackground { (succeeded, error)  in
                         if (succeeded) {
                             // The object has been saved.
                             print("userdata file updated")
@@ -201,7 +201,7 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
                     }
                 } else {
                     // Fail!
-                    print(self.userData.objectId ?? "not loaded")
+                    print(settings.userData.objectId ?? "not loaded")
                 }
             }
             
@@ -243,23 +243,16 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
         super.viewDidLoad()
         
         //Default Dark/Light Mode
-        if (settings.userData["darkMode"] != nil) == true {
-            if settings.userData["darkMode"] as! Bool == true {
-                modeToggleButton.isOn = true
-                appearanceTextLabel.text = "DARK MODE"
-                let delegate = UIApplication.shared.windows.first
-                delegate?.overrideUserInterfaceStyle = .dark
-            } else {
-                modeToggleButton.isOn = false
-                appearanceTextLabel.text = "LIGHT MODE"
-                let delegate = UIApplication.shared.windows.first
-                delegate?.overrideUserInterfaceStyle = .light
-            }
-        } else {
+        if settings.userData["darkMode"] as! Bool == true {
             modeToggleButton.isOn = true
             appearanceTextLabel.text = "DARK MODE"
             let delegate = UIApplication.shared.windows.first
             delegate?.overrideUserInterfaceStyle = .dark
+        } else {
+            modeToggleButton.isOn = false
+            appearanceTextLabel.text = "LIGHT MODE"
+            let delegate = UIApplication.shared.windows.first
+            delegate?.overrideUserInterfaceStyle = .light
         }
         
         // Display Name
@@ -270,7 +263,7 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
         // Preferred Coin
         preferredCoinSetup()
         if settings.userData["preferredCoin"] != nil {
-            preferredCoinLabel.text = self.userData["preferredCoin"] as? String
+            preferredCoinLabel.text = settings.userData["preferredCoin"] as? String
             
         } else {
             preferredCoinLabel.text = "None Selected"

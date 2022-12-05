@@ -53,6 +53,10 @@ class CoinCell: UITableViewCell {
         
         var purchase = (Double(purchaseAmount.text!) ?? 0.00)
         if buying == false {
+            if purchase > owned{
+                purchase = owned
+                purchaseAmount.text = String(owned)
+            }
             purchase = purchase * -1
         }
         purchase = purchase + owned

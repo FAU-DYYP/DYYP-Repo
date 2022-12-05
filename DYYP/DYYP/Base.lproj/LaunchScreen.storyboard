@@ -17,18 +17,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DYYPLogoV2" translatesAutoresizingMaskIntoConstraints="NO" id="QSE-nW-oPC">
-                                <rect key="frame" x="87" y="384" width="240" height="128"/>
-                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DYYPApp" translatesAutoresizingMaskIntoConstraints="NO" id="mlh-br-335">
+                                <rect key="frame" x="63" y="304" width="288" height="288"/>
+                                <color key="backgroundColor" name="Toggle Colors"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="mlh-br-335" secondAttribute="height" multiplier="1:1" id="gGc-Yn-ChS"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" name="Toggle Colors"/>
+                        <color key="backgroundColor" red="0.36517721409999998" green="0.66946136950000001" blue="0.31404960160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="QSE-nW-oPC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="336" id="GnO-G8-psI"/>
-                            <constraint firstItem="QSE-nW-oPC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="IRX-4A-fjb"/>
-                            <constraint firstItem="QSE-nW-oPC" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="YCX-GE-LdF"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QSE-nW-oPC" secondAttribute="trailing" constant="87" id="reM-S1-lnQ"/>
+                            <constraint firstItem="mlh-br-335" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="63" id="77f-sm-cut"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mlh-br-335" secondAttribute="trailing" constant="63" id="NrN-DX-jw2"/>
+                            <constraint firstItem="mlh-br-335" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="256" id="c09-6E-0nG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mlh-br-335" secondAttribute="bottom" constant="270" id="sov-0J-SBY"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -38,7 +41,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="DYYPLogoV2" width="1790" height="1086"/>
+        <image name="DYYPApp" width="2048" height="2048"/>
         <namedColor name="Toggle Colors">
             <color red="0.95399999618530273" green="0.75" blue="0.15800000727176666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

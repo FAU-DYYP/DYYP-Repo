@@ -14,13 +14,24 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var tableView: UITableView!
     
     let walletRefreshControl = UIRefreshControl()
+    var settings = SettingsViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Default to dark mode
-        let delegate = UIApplication.shared.windows.first
-        delegate?.overrideUserInterfaceStyle = .dark
+        //Default Dark/Light Mode
+        if (settings.userData["darkMode"] != nil) == true {
+            if settings.userData["darkMode"] as! Bool == true {
+                let delegate = UIApplication.shared.windows.first
+                delegate?.overrideUserInterfaceStyle = .dark
+            } else {
+                let delegate = UIApplication.shared.windows.first
+                delegate?.overrideUserInterfaceStyle = .light
+            }
+        } else {
+            let delegate = UIApplication.shared.windows.first
+            delegate?.overrideUserInterfaceStyle = .dark
+        }
         
         tableView.delegate = self
         tableView.dataSource = self

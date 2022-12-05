@@ -11,7 +11,8 @@ import AlamofireImage
 
 var settings = SettingsViewController()
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     var userData = PFObject(className:"UserData")
     
     @IBOutlet weak var usernameField: UITextField!
@@ -24,6 +25,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var appearanceStaticLabel: UILabel!
     @IBOutlet weak var appearanceTextLabel: UILabel!
     @IBOutlet weak var modeToggleButton: UISwitch!
+    @IBOutlet weak var profileImage: UIImageView!
     
     @IBAction func onToggleMode(_ sender: UISwitch) {
         if #available(iOS 13.0, *) {
@@ -31,10 +33,12 @@ class SettingsViewController: UIViewController {
             if sender.isOn {
                 delegate?.overrideUserInterfaceStyle = .dark
                 self.appearanceTextLabel.text = "DARK MODE"
+                self.updateUserData(dataKey: "darkMode", dataValue: true)
                 return
             }
             delegate?.overrideUserInterfaceStyle = .light
             self.appearanceTextLabel.text = "LIGHT MODE"
+            self.updateUserData(dataKey: "darkMode", dataValue: false)
             return
         } else {
             self.appearanceTextLabel.isHidden = true
@@ -45,6 +49,35 @@ class SettingsViewController: UIViewController {
     
     @IBAction func onProfileSelect(_ sender: Any) {
         print("onProfileSelect pressed")
+        
+        // from Parstagram
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            picker.sourceType = .camera
+        } else {
+            picker.sourceType = .photoLibrary
+        }
+        
+        present(picker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[.editedImage] as! UIImage
+        
+        let size = CGSize(width: 300, height: 300)
+        let scaledImage = image.af.imageAspectScaled(toFill: size)
+        
+        profileImage.image = scaledImage
+        //PFFile
+        let imageData = profileImage.image!.pngData()
+        let file = PFFileObject(name: "image.png", data: imageData!)
+        let backUp = PFFileObject(name: "image.png", data: (UIImage(named: "DYYPERV3")?.pngData())!)
+        self.updateUserImage(dataKey: "profileImage", dataValue: (file ?? backUp)!)
+        
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func onDisplayChange(_ sender: Any) {
@@ -148,6 +181,30 @@ class SettingsViewController: UIViewController {
             }
             
     }
+    
+    //EXPERIMENT
+    func updateUserImage(dataKey: String, dataValue: PFFileObject){
+            let query = PFQuery(className:"UserData")
+            query.getObjectInBackground(withId: self.userData.objectId ?? "not loaded") { (userData, error) in
+                if error == nil {
+                    // Success!
+                    self.userData[dataKey] = dataValue
+                    print(self.userData["username"] as! String + " updating userData")
+                    self.userData.saveInBackground { (succeeded, error)  in
+                        if (succeeded) {
+                            // The object has been saved.
+                            print("userdata file updated")
+                        } else {
+                            // There was a problem, check error.description
+                        }
+                    }
+                } else {
+                    // Fail!
+                    print(self.userData.objectId ?? "not loaded")
+                }
+            }
+            
+    }
 
     
     func preferredCoinSetup(){
@@ -157,6 +214,7 @@ class SettingsViewController: UIViewController {
         let action = {(action : UIAction) in
             print(action.title)
             self.preferredCoinLabel.text = action.title
+            self.updateUserData(dataKey: "preferredCoin", dataValue: action.title)
         }
         
         // UPDATE LATER - All Coins to List
@@ -183,9 +241,25 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Default Dark Mode
-        modeToggleButton.isOn = true
-        appearanceTextLabel.text = "DARK MODE"
+        //Default Dark/Light Mode
+        if (self.userData["darkMode"] != nil) == true {
+            if self.userData["darkMode"] as! Bool == true {
+                modeToggleButton.isOn = true
+                appearanceTextLabel.text = "DARK MODE"
+                let delegate = UIApplication.shared.windows.first
+                delegate?.overrideUserInterfaceStyle = .dark
+            } else {
+                modeToggleButton.isOn = false
+                appearanceTextLabel.text = "LIGHT MODE"
+                let delegate = UIApplication.shared.windows.first
+                delegate?.overrideUserInterfaceStyle = .light
+            }
+        } else {
+            modeToggleButton.isOn = true
+            appearanceTextLabel.text = "DARK MODE"
+            let delegate = UIApplication.shared.windows.first
+            delegate?.overrideUserInterfaceStyle = .dark
+        }
         
         // Display Name
         let user = PFUser.current()!
@@ -194,6 +268,13 @@ class SettingsViewController: UIViewController {
 
         // Preferred Coin
         preferredCoinSetup()
+        if self.userData["preferredCoin"] != nil {
+            preferredCoinLabel.text = self.userData["preferredCoin"] as? String
+            
+        } else {
+            preferredCoinLabel.text = "None Selected"
+            self.updateUserData(dataKey: "preferredCoin", dataValue: "None Selected")
+        }
     }
     
 

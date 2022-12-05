@@ -78,8 +78,9 @@
                                     <action selector="onSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aUE-Sj-dfM"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DYYPLogoV3" translatesAutoresizingMaskIntoConstraints="NO" id="tBR-Xc-Uhc">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DYYPLogoV2" translatesAutoresizingMaskIntoConstraints="NO" id="tBR-Xc-Uhc">
                                 <rect key="frame" x="41" y="161" width="333" height="177"/>
+                                <color key="backgroundColor" name="Toggle Colors"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="333" id="bPV-cx-c9V"/>
                                     <constraint firstAttribute="height" constant="177" id="wae-qI-2cc"/>
@@ -772,6 +773,7 @@
                         <outlet property="preferredCoinSelect" destination="zFw-Nc-Oom" id="IQ1-1d-fwy"/>
                         <outlet property="preferredCoinStaticLabel" destination="J5R-fF-Cig" id="BEK-AK-wjt"/>
                         <outlet property="profileButton" destination="Pad-7E-wa2" id="4c0-Nh-wPC"/>
+                        <outlet property="profileImage" destination="C6J-Oj-lEv" id="1po-Tq-LKP"/>
                         <outlet property="usernameField" destination="ONb-A3-IHS" id="Vq9-T8-eYp"/>
                     </connections>
                 </viewController>
@@ -789,7 +791,7 @@
         <image name="DYYPERV1" width="2048" height="2048"/>
         <image name="DYYPERV2" width="2048" height="2048"/>
         <image name="DYYPERV3" width="2048" height="2048"/>
-        <image name="DYYPLogoV3" width="1790" height="1086"/>
+        <image name="DYYPLogoV2" width="1790" height="1086"/>
         <image name="camera" catalog="system" width="128" height="93"/>
         <image name="creditcard" catalog="system" width="128" height="88"/>
         <image name="list.bullet" catalog="system" width="128" height="87"/>

@@ -143,6 +143,7 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
                     settings.userData["username"] = PFUser.current()!.username! as String
                     settings.userData["dyypcoin"] = 0.00
                     settings.userData["darkMode"] = true
+                    settings.userData["preferredCoin"] = "BTC"
                     settings.userData.saveInBackground { (succeeded, error)  in
                         if (succeeded) {
                             // The object has been saved.
@@ -288,7 +289,7 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
 
         // Preferred Coin
         preferredCoinSetup()
-        if settings.userData["preferredCoin"] as! String == "None Selected" {
+        if ((settings.userData["preferredCoin"] as! String) ?? "None Selected") == "None Selected" {
             preferredCoinLabel.text = "BTC-Bitcoin"
         }
     }

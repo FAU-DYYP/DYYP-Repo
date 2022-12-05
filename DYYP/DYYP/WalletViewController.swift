@@ -18,15 +18,6 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Default Dark/Light Mode
-        if (settings.userData["darkMode"] as! Bool ?? true) == true {
-            let delegate = UIApplication.shared.windows.first
-            delegate?.overrideUserInterfaceStyle = .dark
-        } else {
-            let delegate = UIApplication.shared.windows.first
-            delegate?.overrideUserInterfaceStyle = .light
-        }
-        
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.

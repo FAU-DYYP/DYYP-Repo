@@ -47,10 +47,16 @@ class CoinCell: UITableViewCell {
         confirmButtonOutlet.isHidden = true
         confirmButtonOutlet.isEnabled = false
         dollarsign.isHidden = true
-        if buying == false{
-            purchaseAmount.text = "-" + purchaseAmount.text!
+
+        print((coinNameLabel.text ?? "dyypcoin") + " $" + (purchaseAmount.text ?? "0.00"))
+        var owned = (settings.userData[coinNameLabel.text ?? "dyypcoin"] as? Double ?? 0.00)
+        
+        var purchase = (Double(purchaseAmount.text!) ?? 0.00)
+        if buying == false {
+            purchase = purchase * -1
         }
-        print((coinNameLabel.text ?? "coin") + (purchaseAmount.text ?? "0.00"))
+        purchase = purchase + owned
+        settings.updateUserData(dataKey: (coinNameLabel.text ?? "dyypcoin"), dataValue: purchase)
         purchaseAmount.text = ""
         purchaseAmount.isEnabled = false
         purchaseAmount.isHidden = true

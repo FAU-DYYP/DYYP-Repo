@@ -12,6 +12,7 @@ import AlamofireImage
 var settings = SettingsViewController()
 
 class SettingsViewController: UIViewController {
+    var userData = PFObject(className:"UserData")
     
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var preferredCoinLabel: UILabel!
@@ -69,67 +70,85 @@ class SettingsViewController: UIViewController {
     }
     
     func parseUserData(){
-        let userData = PFObject(className:"UserData")
-        userData["user"] = PFUser.current()!
-        userData["username"] = PFUser.current()!.username! as String
-        userData["BTCowned"] = 10
-        var userexists = false
-        
-        let query = PFQuery(className: "UserData")
-        query.findObjectsInBackground{(objects, error) -> Void in
-            if error == nil {
-                if let returnedobjects = objects {
-                    for object in returnedobjects{
-                        print(object["username"]!)
-                        print(object.objectId!)
-                        if object["username"] as! String == PFUser.current()!.username! as String {
-                            userexists = true
-                            print("found user")
-                            print(userexists)
+
+            var userexists = false
+            
+            let query = PFQuery(className: "UserData")
+            query.findObjectsInBackground{(objects, error) -> Void in
+                if error == nil {
+                    if let returnedobjects = objects {
+                        for object in returnedobjects{
+                            print(object["username"]!)
+                            print(object.objectId!)
+                            if object["username"] as! String == PFUser.current()!.username! as String {
+                                userexists = true
+                                self.userData = object
+                                print(self.userData)
+                            }
+                            
                         }
-                        
                     }
                 }
-            }
-            print("if user exists before save")
-            print(userexists)
-            if (userexists == false){
-                userData.saveInBackground { (succeeded, error)  in
-                    if (succeeded) {
-                        // The object has been saved.
-                        print("userdata object saved")
-                    } else {
-                        // There was a problem, check error.description
+                print("if user exists before save")
+                print(userexists)
+                if (userexists == false){
+                    self.userData["user"] = PFUser.current()!
+                    self.userData["username"] = PFUser.current()!.username! as String
+                    self.userData["dyypcoin"] = 0.00
+                    self.userData.saveInBackground { (succeeded, error)  in
+                        if (succeeded) {
+                            // The object has been saved.
+                            print("userdata object saved")
+                        } else {
+                            // There was a problem, check error.description
+                        }
                     }
+                    
+                }
+                else{
+                    print("user exists")
                 }
                 
             }
-            else{
-                print("user exists")
-            }
-            
-        }
-        
-        
-        
     }
-    
+
     func getUserData(){
-        let query = PFQuery(className: "UserData")
-        query.findObjectsInBackground{(objects, error) -> Void in
-            if error == nil {
-                if let returnedobjects = objects {
-                    for object in returnedobjects{
-                        print(object["username"]!)
-                        print(object.objectId!)
-                        
-                    }
+            let query = PFQuery(className:"UserData")
+            query.getObjectInBackground(withId: self.userData.objectId ?? "not loaded") { (userData, error) in
+                if error == nil {
+                    // Success!
+                    self.userData = userData ?? self.userData
+                    print(self.userData["username"] as! String + " got userData")
+                } else {
+                    // Fail!
+                    print(self.userData.objectId ?? "not loaded")
                 }
             }
             
-        }
-        
     }
+    func updateUserData(dataKey: String, dataValue: Any){
+            let query = PFQuery(className:"UserData")
+            query.getObjectInBackground(withId: self.userData.objectId ?? "not loaded") { (userData, error) in
+                if error == nil {
+                    // Success!
+                    self.userData[dataKey] = dataValue
+                    print(self.userData["username"] as! String + " updating userData")
+                    self.userData.saveInBackground { (succeeded, error)  in
+                        if (succeeded) {
+                            // The object has been saved.
+                            print("userdata object updated")
+                        } else {
+                            // There was a problem, check error.description
+                        }
+                    }
+                } else {
+                    // Fail!
+                    print(self.userData.objectId ?? "not loaded")
+                }
+            }
+            
+    }
+
     
     func preferredCoinSetup(){
         
@@ -172,7 +191,6 @@ class SettingsViewController: UIViewController {
         let user = PFUser.current()!
         let name = user.username
         usernameField.placeholder = name
-        getUserData()
 
         // Preferred Coin
         preferredCoinSetup()

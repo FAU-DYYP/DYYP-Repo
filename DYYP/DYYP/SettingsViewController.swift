@@ -229,15 +229,25 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
 
         let action = {(action : UIAction) in
             print(action.title)
+            let index = (action.title).index(before: (action.title).firstIndex(of: "-")!)
+            let name = action.title[...index]
+            print(name)
             self.preferredCoinLabel.text = action.title
-            //self.updateUserData(dataKey: "preferredCoin", dataValue: action.title)
+            settings.updateUserData(dataKey: "preferredCoin", dataValue: name)
         }
         
         // UPDATE LATER - All Coins to List
         let menu = UIMenu(children : [
-        UIAction(title: "None Selected", state: .on, handler: action),
-        UIAction(title: "Opt 1", handler: action),
-        UIAction(title: "Opt 2", handler: action)])
+        UIAction(title: "BTC-Bitcoin", state: .on, handler: action),
+        UIAction(title: "BCH-Bitcoin Cash", handler: action),
+        UIAction(title: "ETH-Etherium", handler: action),
+        UIAction(title: "ETH-Etherium", handler: action),
+        UIAction(title: "ETH-Etherium", handler: action),
+        UIAction(title: "ETH-Etherium", handler: action),
+        UIAction(title: "ETH-Etherium", handler: action),
+        UIAction(title: "ETH-Etherium", handler: action),
+        UIAction(title: "ETH-Etherium", handler: action)
+        ])
         
         preferredCoinSelect.menu = menu
     }
@@ -278,14 +288,11 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
 
         // Preferred Coin
         preferredCoinSetup()
-        if settings.userData["preferredCoin"] != nil {
-            preferredCoinLabel.text = settings.userData["preferredCoin"] as? String
-            
-        } else {
-            preferredCoinLabel.text = "None Selected"
-            settings.updateUserData(dataKey: "preferredCoin", dataValue: "None Selected")
+        if settings.userData["preferredCoin"] as! String == "None Selected" {
+            preferredCoinLabel.text = "BTC-Bitcoin"
         }
     }
+    
     
 
     /*

@@ -90,9 +90,14 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.coinNameLabel?.text = apiCaller.cryptos[doge]!["name"] as! String
                 cell.coinLogoImage.af.setImage(withURL: dogeIMG!)
                 cell.informationLabel?.text = apiCaller.cryptos[doge]!["data_start"] as! String
+                var owned = (settings.userData[cell.coinNameLabel.text ?? "dyypcoin"] as? Double ?? 0.00)
+                if let showDOGEPrice = apiCaller.cryptos[doge]!["price_usd"]
+                    as? Double {
+                    owned = owned/(round(showDOGEPrice * 10000) / 10000)
+                }
                 if let ownedDoge = apiCaller.cryptos[doge]!["asset_id"] as?
                     String {
-                    cell.ownedLabel?.text = "42.344 " + String(ownedDoge)
+                    cell.ownedLabel?.text = String(owned) + String(ownedDoge)
                 }
             }
             if indexPath.row == 1 {

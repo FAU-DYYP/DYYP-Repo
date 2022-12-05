@@ -31,10 +31,14 @@ class FeedCell: UITableViewCell {
         confirmButtonOutlet.isHidden = true
         confirmButtonOutlet.isEnabled = false
         dollarsign.isHidden = true
-        print((nameLabel.text ?? "coin") + " $" + (purchaseAmount.text ?? "0.00"))
-        //settings.userData[(nameLabel.text ?? "coin")] = 5
-        //settings.updateUserData()
-        //print(settings.userData)
+
+        print((nameLabel.text ?? "dyypcoin") + " $" + (purchaseAmount.text ?? "0.00"))
+        var owned = (settings.userData[nameLabel.text ?? "dyypcoin"] as? Double ?? 0.00)
+        
+        var purchase = (Double(purchaseAmount.text!) ?? 0.00)
+        
+        purchase = purchase + owned
+        settings.updateUserData(dataKey: (nameLabel.text ?? "dyypcoin"), dataValue: purchase)
         purchaseAmount.text = ""
         purchaseAmount.isEnabled = false
         purchaseAmount.isHidden = true

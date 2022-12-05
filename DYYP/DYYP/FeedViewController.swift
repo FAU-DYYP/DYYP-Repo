@@ -201,7 +201,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
         }
         
-        
+        cell.purchaseAmount.isHidden = true
+        cell.confirmButtonOutlet.isHidden = true
         return cell
     }
 

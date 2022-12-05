@@ -50,7 +50,8 @@ class CoinCell: UITableViewCell {
 
         print((coinNameLabel.text ?? "dyypcoin") + " $" + (purchaseAmount.text ?? "0.00"))
         var owned = (settings.userData[coinNameLabel.text ?? "dyypcoin"] as? Double ?? 0.00)
-        
+        let ownedLabelText = ownedLabel.text ?? "0.00"
+        let price = owned / (Double(ownedLabelText) ?? 0.00)
         var purchase = (Double(purchaseAmount.text!) ?? 0.00)
         if buying == false {
             if purchase > owned{
@@ -64,7 +65,8 @@ class CoinCell: UITableViewCell {
         purchaseAmount.text = ""
         purchaseAmount.isEnabled = false
         purchaseAmount.isHidden = true
-        
+        print(ownedLabel.text ?? "not found")
+        //ownedLabel.text = String(purchase / price)
         self.purchaseStaticButton.backgroundColor = UIColor(named: "Toggle Colors")
         self.sellStaticButton.backgroundColor = UIColor(named: "Toggle Colors")
     }

@@ -75,7 +75,7 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
         let imageData = profileImage.image!.pngData()
         let file = PFFileObject(name: "image.png", data: imageData!)
         let backUp = PFFileObject(name: "image.png", data: (UIImage(named: "DYYPERV3")?.pngData())!)
-        //self.updateUserImage(dataKey: "profileImage", dataValue: (file ?? backUp)!)
+        settings.updateUserImage(dataKey: "profileImage", dataValue: (file ?? backUp)!)
         
         dismiss(animated: true, completion: nil)
     }
@@ -250,12 +250,13 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
         UIAction(title: "BTC-Bitcoin", state: .on, handler: action),
         UIAction(title: "BCH-Bitcoin Cash", handler: action),
         UIAction(title: "ETH-Etherium", handler: action),
-        UIAction(title: "ETH-Etherium", handler: action),
-        UIAction(title: "ETH-Etherium", handler: action),
-        UIAction(title: "ETH-Etherium", handler: action),
-        UIAction(title: "ETH-Etherium", handler: action),
-        UIAction(title: "ETH-Etherium", handler: action),
-        UIAction(title: "ETH-Etherium", handler: action)
+        UIAction(title: "XRP-Ripple", handler: action),
+        UIAction(title: "DOGE-DogeCoin", handler: action),
+        UIAction(title: "LTC-Litecoin", handler: action),
+        UIAction(title: "XMR-Monero", handler: action),
+        UIAction(title: "DOT-Polkadot", handler: action),
+        UIAction(title: "XLM-Stellar Lumens", handler: action),
+        UIAction(title: "ETC-Ethereum Classic", handler: action)
         ])
         
         preferredCoinSelect.menu = menu
@@ -277,7 +278,6 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
         super.viewDidLoad()
         
         // Display Mode
-        //Default Dark/Light Mode
         if settings.userData["darkMode"] as! Bool == true {
             self.modeToggleButton.isOn = true
             self.appearanceTextLabel.text = "DARK MODE"
@@ -300,6 +300,12 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
         if ((settings.userData["preferredCoin"] as! String) ?? "None Selected") == "None Selected" {
             preferredCoinLabel.text = "BTC-Bitcoin"
         }
+        
+        // Profile Image
+        let imageFile = settings.userData["profileImage"] as! PFFileObject
+        let urlString = imageFile.url!
+        let url = URL(string: urlString)!
+        self.profileImage.af.setImage(withURL: url)
     }
     
     

@@ -54,7 +54,9 @@ final class APICaller{
     public var crypto_icons = [String:URL]()
     
     let baseURL = "https://rest.coinapi.io/v1/"
-    let apikey = "7D9C95F3-3ADC-4031-A8CF-31E241D77EFB"
+    //let apikey = "7D9C95F3-3ADC-4031-A8CF-31E241D77EFB" // Main Key
+    //let apikey = "6B2D17E3-07E0-47DF-A44E-688437365EA9" // Peyton's Key
+    let apikey = "5B0BFEBF-34C3-4627-830D-7F5E4DA829CE" // Dustin's key
     let assets = "assets/"
     let icons = "assets/icons/tiny/"
     

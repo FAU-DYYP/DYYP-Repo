@@ -151,7 +151,11 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
             query.getObjectInBackground(withId: settings.userData.objectId ?? "not loaded") { (userData, error) in
                 if error == nil {
                     // Success!
+<<<<<<< HEAD
                     settings.userData = userData ?? settings.userData
+=======
+                    settings.userData = userData ?? self.userData
+>>>>>>> 368a73e771d9ff48ac5dcc3ae04c0cb362155ec3
                     print(settings.userData["username"] as! String + " got userData")
                 } else {
                     // Fail!
@@ -243,23 +247,16 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
         super.viewDidLoad()
         
         //Default Dark/Light Mode
-        if (settings.userData["darkMode"] != nil) == true {
-            if settings.userData["darkMode"] as! Bool == true {
-                modeToggleButton.isOn = true
-                appearanceTextLabel.text = "DARK MODE"
-                let delegate = UIApplication.shared.windows.first
-                delegate?.overrideUserInterfaceStyle = .dark
-            } else {
-                modeToggleButton.isOn = false
-                appearanceTextLabel.text = "LIGHT MODE"
-                let delegate = UIApplication.shared.windows.first
-                delegate?.overrideUserInterfaceStyle = .light
-            }
-        } else {
+        if settings.userData["darkMode"] as! Bool == true {
             modeToggleButton.isOn = true
             appearanceTextLabel.text = "DARK MODE"
             let delegate = UIApplication.shared.windows.first
             delegate?.overrideUserInterfaceStyle = .dark
+        } else {
+            modeToggleButton.isOn = false
+            appearanceTextLabel.text = "LIGHT MODE"
+            let delegate = UIApplication.shared.windows.first
+            delegate?.overrideUserInterfaceStyle = .light
         }
         
         // Display Name

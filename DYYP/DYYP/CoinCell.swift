@@ -49,7 +49,7 @@ class CoinCell: UITableViewCell {
         dollarsign.isHidden = true
 
         print((coinNameLabel.text ?? "dyypcoin") + " $" + (purchaseAmount.text ?? "0.00"))
-        var owned = (settings.userData[coinNameLabel.text ?? "dyypcoin"] as? Double ?? 0.00)
+        var owned = (settings.userData[settings.whiteRemover(string: coinNameLabel.text ?? "dyypcoin")] as? Double ?? 0.00)
         let ownedLabelText = ownedLabel.text ?? "0.00"
         let price = owned / (Double(ownedLabelText) ?? 0.00)
         var purchase = (Double(purchaseAmount.text!) ?? 0.00)
@@ -61,7 +61,7 @@ class CoinCell: UITableViewCell {
             purchase = purchase * -1
         }
         purchase = purchase + owned
-        settings.updateUserData(dataKey: (coinNameLabel.text ?? "dyypcoin"), dataValue: purchase)
+        settings.updateUserData(dataKey: (settings.whiteRemover(string: coinNameLabel.text ?? "dyypcoin") ?? "dyypcoin"), dataValue: purchase)
         purchaseAmount.text = ""
         purchaseAmount.isEnabled = false
         purchaseAmount.isHidden = true

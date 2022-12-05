@@ -222,6 +222,14 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
             }
             
     }
+    
+    func whiteRemover(string: String) -> String {
+        return string.replacingOccurrences(of: " ", with: "_")
+    }
+    
+    func hyphenRemover(string: String) -> String {
+        return string.replacingOccurrences(of: "_", with: " ")
+    }
 
     
     func preferredCoinSetup(){

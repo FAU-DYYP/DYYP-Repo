@@ -20,6 +20,7 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dyyperTextBubble.isHidden = false
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -101,27 +102,11 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
             print("Default")
         }
         
-        // Change Values for Specs
-        //let currentCoins = (settings.userData["coinsOwned"] as! Array<String>)
         
-        //if currentCoins[0] == "dyypcoin" {
-            // user is new
-            //print("just started!")
-        //} else {
-            //if currentCoins.count >= 1 {
-                // LOOP THROUGH ARRAY AND DISPLAY
-            //}
-        //}
-        
-        
-//        if preferredCoin == "None Selected" {
-//            preferredCoin = "BTC"
-//        }
-        
-        if (currentCoins.count == 1) && (currentCoins[0] == "DYYP"){
+        if (currentCoins.count == 1){
             //dyyper appear
             dyyperTextBubble.isHidden = false
-        } else if (currentCoins.count >= 1) {
+        } else if (currentCoins.count > 1) {
             //dyyper hide
             dyyperTextBubble.isHidden = true
             
@@ -138,10 +123,6 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 let coinName = settings.whiteRemover(string: cell.coinNameLabel.text ?? "DYYP")
                 var owned = (settings.userData[coinName] as? Double ?? 0.00)
                 cell.ownedLabel.text = (String(owned))
-//                if let price = apiCaller.cryptos[currentCoin]!["price_usd"] as? Double {
-//                    owned = owned / price
-//                    
-//                }
                 
             }
         }

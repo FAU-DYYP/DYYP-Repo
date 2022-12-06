@@ -13,6 +13,8 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var dyyperTextBubble: UIImageView!
+    @IBOutlet weak var onSignUpOutlet: UIButton!
     
     @IBAction func onSignIn(_ sender: Any) {
         let username = usernameField.text!
@@ -22,6 +24,8 @@ class LoginViewController: UIViewController {
         {   (user, error) in
             if user != nil {
                 settings.parseUserData()
+                apiCaller.loadCryptoData()
+                apiCaller.loadCryptoIcons()
                 
                 self.performSegue(withIdentifier: "loginViewSegue", sender: nil)
             }
@@ -38,13 +42,21 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func onSignUp(_ sender: Any) {
+        
         let user = PFUser()
         if usernameField.text != "" && passwordField.text != "" {
+            //dyyper
+            dyyperTextBubble.isHidden = false
+            onSignUpOutlet.isEnabled = false
+            onSignUpOutlet.isHidden = true
+            
             user.username = usernameField.text
             user.password = passwordField.text
             user.signUpInBackground { (success, error) in
                 if error != nil {
                     settings.parseUserData()
+                    apiCaller.loadCryptoData()
+                    apiCaller.loadCryptoIcons()
                     self.performSegue(withIdentifier: "loginViewSegue", sender: nil)
                 }
                 else {
@@ -63,6 +75,9 @@ class LoginViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //hide dyyper
+        dyyperTextBubble.isHidden = true
         
         //Default to dark mode
         let delegate = UIApplication.shared.windows.first

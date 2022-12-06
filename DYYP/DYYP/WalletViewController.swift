@@ -14,6 +14,7 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var totalCoinsLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var totalEarningsLabel: UILabel!
+    @IBOutlet weak var dyyperTextBubble: UIImageView!
     
     let walletRefreshControl = UIRefreshControl()
     
@@ -24,9 +25,6 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.dataSource = self
         // Do any additional setup after loading the view.
         tableView.reloadData()
-        
-        apiCaller.loadCryptoData()
-        apiCaller.loadCryptoIcons()
         
         loadWallet()
         
@@ -43,6 +41,9 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        //dyyper
+        dyyperTextBubble.isHidden = false
+        
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 115
         self.tableView.reloadData()
@@ -57,27 +58,49 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10 //TEMPORARY
+        var coins = [String]()
+        
+        if (settings.userData["coinsOwned"]) != nil {
+            coins = (settings.userData["coinsOwned"] as! Array<String>)
+            print("coinsOwned Length")
+            return coins.count - 1
+        } else {
+            print("10")
+            return 10
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CoinCell") as! CoinCell
-        var preferredCoin = (settings.userData["preferredCoin"] ?? "BTC") as! String
+//        var preferredCoin = (settings.userData["preferredCoin"] ?? "BTC") as! String
         
-        let coinArray = [preferredCoin, "BCH", "ETH", "XRP", "DOGE", "LTC", "XMR", "DOT", "XLM", "ETC"]
-        let imageArray = [
-            apiCaller.crypto_icons[preferredCoin],
-            apiCaller.crypto_icons["BCH"],
-            apiCaller.crypto_icons["ETH"],
-            apiCaller.crypto_icons["XRP"],
-            apiCaller.crypto_icons["DOGE"],
-            apiCaller.crypto_icons["LTC"],
-            apiCaller.crypto_icons["XMR"],
-            apiCaller.crypto_icons["DOT"],
-            apiCaller.crypto_icons["XLM"],
-            apiCaller.crypto_icons["ETC"]
-        ]
+//        let coinArray = [preferredCoin, "BCH", "ETH", "XRP", "DOGE", "LTC", "XMR", "DOT", "XLM", "ETC"]
+//        let imageArray = [
+//            apiCaller.crypto_icons[preferredCoin],
+//            apiCaller.crypto_icons["BCH"],
+//            apiCaller.crypto_icons["ETH"],
+//            apiCaller.crypto_icons["XRP"],
+//            apiCaller.crypto_icons["DOGE"],
+//            apiCaller.crypto_icons["LTC"],
+//            apiCaller.crypto_icons["XMR"],
+//            apiCaller.crypto_icons["DOT"],
+//            apiCaller.crypto_icons["XLM"],
+//            apiCaller.crypto_icons["ETC"]
+//        ]
+        
+        var currentCoins = [String]()
+        
+        if (settings.userData["coinsOwned"]) != nil {
+            currentCoins = (settings.userData["coinsOwned"] as! Array<String>)
+            if (currentCoins.count == 1) && (currentCoins[0] == "DYYP"){
+                dyyperTextBubble.isHidden = false
+            }
+            print("Owned")
+        } else {
+            currentCoins = ["DYYP", "BCH", "ETH", "XRP", "DOGE", "LTC", "XMR", "DOT", "XLM", "ETC"]
+            print("Default")
+        }
         
         // Change Values for Specs
         //let currentCoins = (settings.userData["coinsOwned"] as! Array<String>)
@@ -92,28 +115,35 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         //}
         
         
-        if preferredCoin == "None Selected" {
-            preferredCoin = "BTC"
-        }
+//        if preferredCoin == "None Selected" {
+//            preferredCoin = "BTC"
+//        }
         
-        
-        if(apiCaller.cryptos.count > 0){
-            var currentCoin = coinArray[indexPath.row]
-            var currentImg = imageArray[indexPath.row]
-            if preferredCoin == currentCoin && indexPath.row != 0 {
-                currentCoin = "BTC"
-                currentImg = apiCaller.crypto_icons["BTC"]
-            }
-            cell.coinNameLabel?.text = apiCaller.cryptos[currentCoin]!["name"] as! String
-            cell.informationLabel?.text = apiCaller.cryptos[currentCoin]!["asset_id"] as! String
-            cell.coinLogoImage.af.setImage(withURL: currentImg!)
-            let coinName = settings.whiteRemover(string: cell.coinNameLabel.text ?? "dyypcoin")
-            var owned = (settings.userData[coinName] as? Double ?? 0.00)
-            if let price = apiCaller.cryptos[currentCoin]!["price_usd"] as? Double {
-                owned = owned / price
-                cell.ownedLabel.text = (String(owned))
-            }
+        if (currentCoins.count == 1) && (currentCoins[0] == "DYYP"){
+            //dyyper appear
+            dyyperTextBubble.isHidden = false
+        } else if (currentCoins.count >= 1) {
+            //dyyper hide
+            dyyperTextBubble.isHidden = true
             
+            if(apiCaller.cryptos.count > 0){
+                var currentCoin = currentCoins[indexPath.row + 1]
+                var currentImg = apiCaller.crypto_icons[currentCoins[indexPath.row + 1]]
+//                if preferredCoin == currentCoin && indexPath.row != 1 {
+//                    currentCoin = "BTC"
+//                    currentImg = apiCaller.crypto_icons["BTC"]!
+//                }
+                cell.coinNameLabel?.text = apiCaller.cryptos[currentCoin]!["name"] as! String
+                cell.informationLabel?.text = apiCaller.cryptos[currentCoin]!["asset_id"] as! String
+                cell.coinLogoImage.af.setImage(withURL: currentImg!)
+                let coinName = settings.whiteRemover(string: cell.coinNameLabel.text ?? "DYYP")
+                var owned = (settings.userData[coinName] as? Double ?? 0.00)
+                if let price = apiCaller.cryptos[currentCoin]!["price_usd"] as? Double {
+                    owned = owned / price
+                    cell.ownedLabel.text = (String(owned))
+                }
+                
+            }
         }
         
         cell.purchaseAmount.isHidden = true

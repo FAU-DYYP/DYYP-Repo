@@ -16,6 +16,7 @@ class CoinCell: UITableViewCell {
     @IBOutlet weak var ownedLabel: UILabel!
     @IBOutlet weak var purchaseStaticButton: UIButton!
     @IBOutlet weak var sellStaticButton: UIButton!
+    @IBOutlet weak var sellButtonOutlet: UIButton!
     
     @IBAction func purchaseButton(_ sender: Any) {
         buying = true
@@ -73,14 +74,9 @@ class CoinCell: UITableViewCell {
                 currentCoins.remove(at: index) // removed from coinsOwned
                 print("removed")
                 settings.userData["coinsOwned"] = currentCoins
-//                settings.userData.saveInBackground { (succeeded, error)  in
-//                    if (succeeded) {
-//                        // The object has been saved.
-//                        print("userdata object updated")
-//                    } else {
-//                        // There was a problem, check error.description
-//                    }
-//                }
+                informationLabel.text = "You no longer own this coin!"
+                sellButtonOutlet.isEnabled = false
+                sellButtonOutlet.isHidden = true
             }
         }
         settings.updateUserData(dataKey: (settings.whiteRemover(string: coinNameLabel.text ?? "dyypcoin") ?? "dyypcoin"), dataValue: purchase)

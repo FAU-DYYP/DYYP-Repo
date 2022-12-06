@@ -28,6 +28,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let main = UIStoryboard(name: "Main", bundle: nil)
             let feedView = main.instantiateViewController(withIdentifier: "UITabBarController")
             settings.parseUserData()
+            apiCaller.loadCryptoData()
+            apiCaller.loadCryptoIcons()
             window?.rootViewController = feedView
         } else {
             PFUser.logOut()

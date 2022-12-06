@@ -33,13 +33,11 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         walletRefreshControl.addTarget(self, action: #selector(loadWallet), for: .valueChanged)
         tableView.refreshControl = walletRefreshControl
         
-        // Change Values for Specs
-        //let totalCoins = settings.userData["coinsOwned"]
-        
-        //if totalCoins[0] == "dyyp"
-        
-        totalCoinsLabel.text = "69"
-        totalEarningsLabel.text = "420"
+        // Display
+        //let coinsOwned = (settings.userData["coinsOwned"] as! Array<String>)
+        //totalCoinsLabel.text = String(coinsOwned.count)
+        //let thing = (settings.userData["BTC"] as? Double)
+        //totalEarningsLabel.text = thing.string
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -86,6 +84,18 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let dotIMG = apiCaller.crypto_icons["DOT"]
         let xlmIMG = apiCaller.crypto_icons["XLM"]
         let etcIMG = apiCaller.crypto_icons["ETC"]
+        
+        // Change Values for Specs
+        //let currentCoins = (settings.userData["coinsOwned"] as! Array<String>)
+        
+        //if currentCoins[0] == "dyypcoin" {
+            // user is new
+            //print("just started!")
+        //} else {
+            //if currentCoins.count >= 1 {
+                // LOOP THROUGH ARRAY AND DISPLAY
+            //}
+        //}
         
         
         //tables load before data finishes loading

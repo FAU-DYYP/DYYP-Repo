@@ -32,7 +32,6 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.refreshControl = walletRefreshControl
         
         // Display
-        //let coinsOwned = (settings.userData["coinsOwned"] as! Array<String>)
         //totalCoinsLabel.text = String(coinsOwned.count)
         //let thing = (settings.userData["BTC"] as? Double)
         //totalEarningsLabel.text = thing.string

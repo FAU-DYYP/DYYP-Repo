@@ -94,8 +94,13 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.coinNameLabel?.text = apiCaller.cryptos[currentCoin]!["name"] as! String
             cell.informationLabel?.text = apiCaller.cryptos[currentCoin]!["asset_id"] as! String
             cell.coinLogoImage.af.setImage(withURL: currentImg!)
-            var owned = (settings.userData[cell.coinNameLabel.text ?? "dyypcoin"] as? Double ?? 0.00)
-            cell.ownedLabel.text = String(owned)
+            let coinName = settings.whiteRemover(string: cell.coinNameLabel.text ?? "dyypcoin")
+            var owned = (settings.userData[coinName] as? Double ?? 0.00)
+            if let price = apiCaller.cryptos[currentCoin]!["price_usd"] as? Double {
+                owned = owned / price
+                cell.ownedLabel.text = (String(owned))
+            }
+            
         }
         
         cell.purchaseAmount.isHidden = true

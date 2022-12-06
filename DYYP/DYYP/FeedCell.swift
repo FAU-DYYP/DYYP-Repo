@@ -38,6 +38,9 @@ class FeedCell: UITableViewCell {
         var purchase = (Double(purchaseAmount.text!) ?? 0.00)
         
         purchase = purchase + owned
+        if purchase > 0 {
+            settings.updateCoinsArray(coin: symbolLabel.text!)
+        }
         settings.updateUserData(dataKey: (settings.whiteRemover(string: nameLabel.text ?? "dyypcoin") ?? "dyypcoin"), dataValue: purchase)
         purchaseAmount.text = ""
         purchaseAmount.isEnabled = false

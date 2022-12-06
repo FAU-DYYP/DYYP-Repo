@@ -52,7 +52,7 @@ class CoinCell: UITableViewCell {
         var owned = (settings.userData[settings.whiteRemover(string: coinNameLabel.text ?? "dyypcoin")] as? Double ?? 0.00)
         
         let ownedLabelText = ownedLabel.text ?? "0.00"
-        let price = owned / (Double(ownedLabelText) ?? 0.00)
+        let price = apiCaller.cryptos[informationLabel.text!]!["price_usd"] as! Double
         var purchase = (Double(purchaseAmount.text!) ?? 0.00)
         if buying == false {
             if purchase > owned{
@@ -63,14 +63,13 @@ class CoinCell: UITableViewCell {
         }
         purchase = purchase + owned
         if purchase > 0 {
-            settings.updateCoinsArray(coin: coinNameLabel.text!)
+            settings.updateCoinsArray(coin: informationLabel.text!)
         }
         settings.updateUserData(dataKey: (settings.whiteRemover(string: coinNameLabel.text ?? "dyypcoin") ?? "dyypcoin"), dataValue: purchase)
         purchaseAmount.text = ""
         purchaseAmount.isEnabled = false
         purchaseAmount.isHidden = true
-        print(ownedLabel.text ?? "not found")
-        //ownedLabel.text = String(purchase / price)
+        ownedLabel.text = String(purchase / price)
         self.purchaseStaticButton.backgroundColor = UIColor(named: "Toggle Colors")
         self.sellStaticButton.backgroundColor = UIColor(named: "Toggle Colors")
     }

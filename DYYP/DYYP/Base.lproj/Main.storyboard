@@ -257,7 +257,6 @@
                                                 </button>
                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84l-gX-WII">
                                                     <rect key="frame" x="310" y="61.5" width="11" height="23"/>
-                                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="23" id="ecg-PD-j1k"/>
                                                         <constraint firstAttribute="width" constant="11" id="qTz-MR-Abw"/>
@@ -438,7 +437,7 @@
                                                         <constraint firstAttribute="width" constant="80" id="bYr-E8-pJH"/>
                                                         <constraint firstAttribute="height" constant="43" id="zRz-T1-Ugx"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="26"/>
+                                                    <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="18"/>
                                                     <color key="textColor" name="Toggle Colors"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -448,7 +447,7 @@
                                                         <constraint firstAttribute="height" constant="43" id="LXj-4A-tZA"/>
                                                         <constraint firstAttribute="width" constant="119" id="hz3-kR-wPO"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="24"/>
+                                                    <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="18"/>
                                                     <color key="textColor" name="Toggle Colors"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>

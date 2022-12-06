@@ -15,8 +15,9 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var totalEarningsLabel: UILabel!
     @IBOutlet weak var dyyperTextBubble: UIImageView!
-    
+    @IBOutlet weak var sellButtonOutlet: UIButton!
     let walletRefreshControl = UIRefreshControl()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +32,6 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         walletRefreshControl.addTarget(self, action: #selector(loadWallet), for: .valueChanged)
         tableView.refreshControl = walletRefreshControl
-        
-        // Display
-        //totalCoinsLabel.text = String(coinsOwned.count)
-        //let thing = (settings.userData["BTC"] as? Double)
-        //totalEarningsLabel.text = thing.string
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -73,6 +69,7 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CoinCell") as! CoinCell
+        
 //        var preferredCoin = (settings.userData["preferredCoin"] ?? "BTC") as! String
         
 //        let coinArray = [preferredCoin, "BCH", "ETH", "XRP", "DOGE", "LTC", "XMR", "DOT", "XLM", "ETC"]
@@ -118,18 +115,34 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //                    currentCoin = "BTC"
 //                    currentImg = apiCaller.crypto_icons["BTC"]!
 //                }
+                
+                //total
+                if (indexPath.row == 0) {
+                    total = 0.00
+                    totalCoinsLabel.text = "$" + String(total)
+                }
+                
                 cell.coinNameLabel?.text = apiCaller.cryptos[currentCoin]!["name"] as! String
                 cell.informationLabel?.text = apiCaller.cryptos[currentCoin]!["asset_id"] as! String
                 cell.coinLogoImage.af.setImage(withURL: currentImg!)
                 let coinName = settings.whiteRemover(string: cell.coinNameLabel.text ?? "DYYP")
                 var owned = (settings.userData[coinName] as? Double ?? 0.00)
-                cell.ownedLabel.text = (String(owned))
+                let price = apiCaller.cryptos[currentCoin]!["price_usd"] as! Double
                 
+                total = total + (owned * price)
+                total = Double(round(100 * total) / 100)
+                totalCoinsLabel.text = "$" + String(total)
+                
+                var roundedOwned = Double(round(10000 * owned) / 10000)
+                //cell.ownedLabel.text = (String(roundedOwned) + " " + cell.informationLabel.text!)
+                cell.ownedLabel.text = (String(roundedOwned))
             }
         }
         
+        
         cell.purchaseAmount.isHidden = true
         cell.confirmButtonOutlet.isHidden = true
+        
         return cell
     }
     

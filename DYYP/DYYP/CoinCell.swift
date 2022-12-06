@@ -18,6 +18,8 @@ class CoinCell: UITableViewCell {
     @IBOutlet weak var sellStaticButton: UIButton!
     @IBOutlet weak var sellButtonOutlet: UIButton!
     
+    //sellButtonOutlet.isHidden = false
+    
     @IBAction func purchaseButton(_ sender: Any) {
         buying = true
         dollarsign.isHidden = false
@@ -47,6 +49,7 @@ class CoinCell: UITableViewCell {
     @IBAction func confirmButton(_ sender: Any) {
         confirmButtonOutlet.isHidden = true
         confirmButtonOutlet.isEnabled = false
+        sellButtonOutlet.isHidden = false
         dollarsign.isHidden = true
         
         print((coinNameLabel.text ?? "dyypcoin") + " $" + (purchaseAmount.text ?? "0.00"))
@@ -63,9 +66,11 @@ class CoinCell: UITableViewCell {
             }
             purchase = purchase * -1
         }
-        let newTotal = purchase + owned
+        var newTotal = purchase + owned
         if newTotal > 0 {
-            ownedLabel.text = String(newTotal)
+            var roundedTotal = Double(round(100000 * newTotal) / 100000)
+//            ownedLabel.text = (String(roundedTotal) + " " + informationLabel.text!)
+            ownedLabel.text = (String(roundedTotal))
             sellButtonOutlet.isEnabled = true
             sellButtonOutlet.isHidden = false
             settings.updateCoinsArray(coin: informationLabel.text!)

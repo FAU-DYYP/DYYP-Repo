@@ -55,9 +55,12 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell") as! FeedCell
         
-        let coinArray = [(settings.userData["preferredCoin"] as! String), "BCH", "ETH", "XRP", "DOGE", "LTC", "XMR", "DOT", "XLM", "ETC"]
+        var preferredCoin = (settings.userData["preferredCoin"] ?? "BTC") as! String
+
+        
+        let coinArray = [preferredCoin, "BCH", "ETH", "XRP", "DOGE", "LTC", "XMR", "DOT", "XLM", "ETC"]
         let imageArray = [
-            apiCaller.crypto_icons[settings.userData["preferredCoin"] as! String],
+            apiCaller.crypto_icons[preferredCoin],
             apiCaller.crypto_icons["BCH"],
             apiCaller.crypto_icons["ETH"],
             apiCaller.crypto_icons["XRP"],
@@ -70,7 +73,6 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         ]
         
         
-        var preferredCoin = settings.userData["preferredCoin"] as! String
         if preferredCoin == "None Selected" {
             preferredCoin = "BTC"
         }

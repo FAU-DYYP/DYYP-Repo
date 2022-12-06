@@ -145,8 +145,8 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
                     settings.userData["darkMode"] = true
                     settings.userData["preferredCoin"] = "BTC"
                     settings.userData["profileImage"] = PFFileObject(name: "image.png", data: (UIImage(named: "DYYPERV3")?.pngData())!)
-                    let emptyArray: [String] = []
-                    settings.userData["coinsOwned"] = emptyArray
+                    var defaultArray = ["dyypcoin"]
+                    settings.userData["coinsOwned"] = defaultArray
                     settings.userData.saveInBackground { (succeeded, error)  in
                         if (succeeded) {
                             // The object has been saved.
@@ -200,6 +200,12 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
                 }
             }
             
+    }
+    
+    func updateCoinsArray(coin: String){
+        var currentCoins = (settings.userData["coinsOwned"] as! Array<String>)
+        currentCoins.append(coin)
+        settings.userData["coinsOwned"] = currentCoins
     }
     
     //EXPERIMENT

@@ -268,7 +268,7 @@
                                         <connections>
                                             <outlet property="coinLabel" destination="QeE-N5-5UF" id="4cr-9o-swS"/>
                                             <outlet property="confirmButtonOutlet" destination="Wlc-x6-PK6" id="g2f-H2-P1t"/>
-                                            <outlet property="dollarsign" destination="84l-gX-WII" id="0yU-C9-pTh"/>
+                                            <outlet property="dollarsign" destination="84l-gX-WII" id="EXy-cE-8ad"/>
                                             <outlet property="nameLabel" destination="2SJ-SP-hVI" id="Xgn-eS-lsP"/>
                                             <outlet property="price_usdLabel" destination="MK8-oK-BvC" id="tkd-br-SSf"/>
                                             <outlet property="purchaseAmount" destination="af8-iH-Rhn" id="pA1-K9-04R"/>

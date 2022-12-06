@@ -54,16 +54,34 @@ class CoinCell: UITableViewCell {
         let ownedLabelText = ownedLabel.text ?? "0.00"
         let price = apiCaller.cryptos[informationLabel.text!]!["price_usd"] as! Double
         var purchase = (Double(purchaseAmount.text!) ?? 0.00)
-        if buying == false {
-            if purchase > owned{
+        if buying == false { //selling
+            if purchase >= owned{
                 purchase = owned
                 purchaseAmount.text = String(owned)
             }
             purchase = purchase * -1
         }
         purchase = purchase + owned
+        print("purchase = " + String(purchase))
         if purchase > 0 {
             settings.updateCoinsArray(coin: informationLabel.text!)
+        } else {
+            print("purchase = 0")
+            print("info is " + informationLabel.text!)
+            var currentCoins = (settings.userData["coinsOwned"] as! Array<String>)
+            if let index = currentCoins.firstIndex(of: (informationLabel.text)!) {
+                currentCoins.remove(at: index) // removed from coinsOwned
+                print("removed")
+                settings.userData["coinsOwned"] = currentCoins
+//                settings.userData.saveInBackground { (succeeded, error)  in
+//                    if (succeeded) {
+//                        // The object has been saved.
+//                        print("userdata object updated")
+//                    } else {
+//                        // There was a problem, check error.description
+//                    }
+//                }
+            }
         }
         settings.updateUserData(dataKey: (settings.whiteRemover(string: coinNameLabel.text ?? "dyypcoin") ?? "dyypcoin"), dataValue: purchase)
         purchaseAmount.text = ""

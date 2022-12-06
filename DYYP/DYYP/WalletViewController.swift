@@ -34,7 +34,10 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.refreshControl = walletRefreshControl
         
         // Change Values for Specs
-        let totalCoins = settings.userData["coinsOwned"]
+        //let totalCoins = settings.userData["coinsOwned"]
+        
+        //if totalCoins[0] == "dyyp"
+        
         totalCoinsLabel.text = "69"
         totalEarningsLabel.text = "420"
     }

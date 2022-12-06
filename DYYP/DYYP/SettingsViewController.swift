@@ -302,6 +302,8 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
         preferredCoinSetup()
         if ((settings.userData["preferredCoin"] as! String) ?? "None Selected") == "None Selected" {
             preferredCoinLabel.text = "BTC-Bitcoin"
+        } else {
+            preferredCoinLabel.text = settings.userData["preferredCoin"] as? String
         }
         
         // Profile Image

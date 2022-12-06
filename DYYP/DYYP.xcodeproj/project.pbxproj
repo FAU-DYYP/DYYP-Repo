@@ -25,6 +25,7 @@
 		6B6699F4E992768D354FCE27 /* Pods_DYYP_DYYPUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7728621DB48DF8893D49ED74 /* Pods_DYYP_DYYPUITests.framework */; };
 		6BC5D9115BCD8A54CC8AD477 /* Pods_DYYPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5BBAA18B836D23E92EF1CD1 /* Pods_DYYPTests.framework */; };
 		B2986615291EC99E00C0F64F /* CoinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2986614291EC99E00C0F64F /* CoinCell.swift */; };
+		B2CEA242293FEE6900689C34 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CEA241293FEE6900689C34 /* LoadingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		7E476172AD04CD3DA66CBB71 /* Pods-DYYPTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYYPTests.release.xcconfig"; path = "Target Support Files/Pods-DYYPTests/Pods-DYYPTests.release.xcconfig"; sourceTree = "<group>"; };
 		92B4201ABC01E023CEF27592 /* Pods-DYPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYPP.release.xcconfig"; path = "Target Support Files/Pods-DYPP/Pods-DYPP.release.xcconfig"; sourceTree = "<group>"; };
 		B2986614291EC99E00C0F64F /* CoinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCell.swift; sourceTree = "<group>"; };
+		B2CEA241293FEE6900689C34 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		B2F640E13391991A1F1B367F /* Pods-DYYP-DYYPUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYYP-DYYPUITests.debug.xcconfig"; path = "Target Support Files/Pods-DYYP-DYYPUITests/Pods-DYYP-DYYPUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC115A106C774CBE18EB1BD9 /* Pods-DYPPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYPPTests.debug.xcconfig"; path = "Target Support Files/Pods-DYPPTests/Pods-DYPPTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C0BEF8CA6C95A15762BFB3EA /* Pods-DYPP-DYPPUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYPP-DYPPUITests.release.xcconfig"; path = "Target Support Files/Pods-DYPP-DYPPUITests/Pods-DYPP-DYPPUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				4BCFEDBE291C5D380015507F /* WalletViewController.swift */,
 				B2986614291EC99E00C0F64F /* CoinCell.swift */,
 				4B0EBB852927FA8F00C182DA /* FeedCell.swift */,
+				B2CEA241293FEE6900689C34 /* LoadingViewController.swift */,
 			);
 			path = DYYP;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				4BCFEDB5291C58A40015507F /* FeedViewController.swift in Sources */,
 				4BCFEDC5291C5DE80015507F /* APIData.swift in Sources */,
 				4B02040A28FA1B5A00B4B454 /* SceneDelegate.swift in Sources */,
+				B2CEA242293FEE6900689C34 /* LoadingViewController.swift in Sources */,
 				4B02043B28FA1BE600B4B454 /* APICaller.swift in Sources */,
 				4BCFEDBA291C5B0A0015507F /* SettingsViewController.swift in Sources */,
 			);

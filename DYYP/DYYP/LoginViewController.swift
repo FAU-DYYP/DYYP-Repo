@@ -27,7 +27,7 @@ class LoginViewController: UIViewController {
                 apiCaller.loadCryptoData()
                 apiCaller.loadCryptoIcons()
                 
-                self.performSegue(withIdentifier: "loginViewSegue", sender: nil)
+                self.performSegue(withIdentifier: "LoadingSegue", sender: nil)
             }
             else {
                 print("Error: \(error?.localizedDescription)")
@@ -57,7 +57,7 @@ class LoginViewController: UIViewController {
                     settings.parseUserData()
                     apiCaller.loadCryptoData()
                     apiCaller.loadCryptoIcons()
-                    self.performSegue(withIdentifier: "loginViewSegue", sender: nil)
+                    self.performSegue(withIdentifier: "LoadingSegue", sender: nil)
                 }
                 else {
                     print("Error: \(error?.localizedDescription)")

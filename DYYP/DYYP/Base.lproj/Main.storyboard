@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,6 +12,25 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--LoadingViewController-->
+        <scene sceneID="DfM-bC-swd">
+            <objects>
+                <viewController storyboardIdentifier="LoadingViewController" title="LoadingViewController" modalPresentationStyle="fullScreen" id="Yni-3I-LzW" customClass="LoadingViewController" customModule="DYYP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dLz-C8-b8n">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="0P7-3n-N9d"/>
+                        <color key="backgroundColor" name="Toggle Colors"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DQb-9M-z62"/>
+                    <connections>
+                        <segue destination="K9u-Xv-Gh8" kind="presentation" identifier="navSegue" id="wmx-j3-Jls"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wJ7-oQ-oGs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="82.608695652173921" y="-329.46428571428572"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -133,12 +152,12 @@
                         <outlet property="onSignUpOutlet" destination="JQb-x1-Lfe" id="jRn-aO-qtF"/>
                         <outlet property="passwordField" destination="UyE-OR-IPP" id="ZLn-8r-Ne7"/>
                         <outlet property="usernameField" destination="pyd-ya-Rnu" id="Vpw-oT-R9I"/>
-                        <segue destination="K9u-Xv-Gh8" kind="presentation" identifier="loginViewSegue" id="juz-ke-NsE"/>
+                        <segue destination="Yni-3I-LzW" kind="presentation" identifier="LoadingSegue" id="nx2-SY-6Ky"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-100.00000000000001" y="-329.46428571428572"/>
+            <point key="canvasLocation" x="-683" y="-329"/>
         </scene>
         <!--Feed View Controller-->
         <scene sceneID="uAa-KM-KkF">
@@ -617,6 +636,7 @@
         <scene sceneID="J0j-yD-6nJ">
             <objects>
                 <tabBarController storyboardIdentifier="UITabBarController" modalPresentationStyle="fullScreen" id="K9u-Xv-Gh8" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="K7J-0D-8Py"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9GU-cT-aRc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             print("NOT NIL")
             
             let main = UIStoryboard(name: "Main", bundle: nil)
-            let feedView = main.instantiateViewController(withIdentifier: "UITabBarController")
+            let feedView = main.instantiateViewController(withIdentifier: "LoadingViewController")
             settings.parseUserData()
             apiCaller.loadCryptoData()
             apiCaller.loadCryptoIcons()

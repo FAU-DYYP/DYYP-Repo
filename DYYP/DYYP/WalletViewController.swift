@@ -89,6 +89,7 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //        ]
         
         var currentCoins = [String]()
+        var total = 0.00
         
         if (settings.userData["coinsOwned"]) != nil {
             currentCoins = (settings.userData["coinsOwned"] as! Array<String>)

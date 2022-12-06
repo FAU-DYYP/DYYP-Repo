@@ -28,8 +28,6 @@ class FeedCell: UITableViewCell {
         purchaseAmount.becomeFirstResponder()
     }
     @IBAction func confirmButton(_ sender: Any) {
-        confirmButtonOutlet.isHidden = true
-        confirmButtonOutlet.isEnabled = false
         
 
         print((nameLabel.text ?? "dyypcoin") + " $" + (purchaseAmount.text ?? "0.00"))
@@ -53,6 +51,8 @@ class FeedCell: UITableViewCell {
         purchaseAmount.isHidden = true
         
         dollarsign.isHidden = true
+        confirmButtonOutlet.isHidden = true
+        confirmButtonOutlet.isEnabled = false
     }
     
     @IBOutlet weak var confirmButtonOutlet: UIButton!

@@ -48,42 +48,43 @@ class CoinCell: UITableViewCell {
         confirmButtonOutlet.isHidden = true
         confirmButtonOutlet.isEnabled = false
         dollarsign.isHidden = true
-
+        
         print((coinNameLabel.text ?? "dyypcoin") + " $" + (purchaseAmount.text ?? "0.00"))
         var owned = (settings.userData[settings.whiteRemover(string: coinNameLabel.text ?? "dyypcoin")] as? Double ?? 0.00)
         
-        let ownedLabelText = ownedLabel.text ?? "0.00"
+        //let ownedLabelText = ownedLabel.text ?? "0.00"
         let price = apiCaller.cryptos[informationLabel.text!]!["price_usd"] as! Double
         var purchase = (Double(purchaseAmount.text!) ?? 0.00)
+        purchase = purchase / price
         if buying == false { //selling
             if purchase >= owned{
                 purchase = owned
-                purchaseAmount.text = String(owned)
+                purchaseAmount.text = String(owned * price)
             }
             purchase = purchase * -1
         }
-        purchase = purchase + owned
-        print("purchase = " + String(purchase))
-        if purchase > 0 {
+        let newTotal = purchase + owned
+        print("purchase = " + String(newTotal))
+        if newTotal > 0 {
+            ownedLabel.text = String(newTotal)
             settings.updateCoinsArray(coin: informationLabel.text!)
         } else {
-            print("purchase = 0")
+            print("newTotal = 0")
             print("info is " + informationLabel.text!)
             var currentCoins = (settings.userData["coinsOwned"] as! Array<String>)
             if let index = currentCoins.firstIndex(of: (informationLabel.text)!) {
                 currentCoins.remove(at: index) // removed from coinsOwned
                 print("removed")
                 settings.userData["coinsOwned"] = currentCoins
-                informationLabel.text = "You no longer own this coin!"
+                ownedLabel.text = "You don't own this coin!"
                 sellButtonOutlet.isEnabled = false
                 sellButtonOutlet.isHidden = true
             }
         }
-        settings.updateUserData(dataKey: (settings.whiteRemover(string: coinNameLabel.text ?? "dyypcoin") ?? "dyypcoin"), dataValue: purchase)
+        settings.updateUserData(dataKey: (settings.whiteRemover(string: coinNameLabel.text ?? "dyypcoin") ?? "dyypcoin"), dataValue: newTotal)
         purchaseAmount.text = ""
         purchaseAmount.isEnabled = false
         purchaseAmount.isHidden = true
-        ownedLabel.text = String(purchase / price)
         self.purchaseStaticButton.backgroundColor = UIColor(named: "Toggle Colors")
         self.sellStaticButton.backgroundColor = UIColor(named: "Toggle Colors")
     }

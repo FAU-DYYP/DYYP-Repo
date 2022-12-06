@@ -53,7 +53,9 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell") as! FeedCell
+        cell.dollarsign.isHidden = true
         
         var preferredCoin = (settings.userData["preferredCoin"] ?? "BTC") as! String
 

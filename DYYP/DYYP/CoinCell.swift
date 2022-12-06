@@ -56,15 +56,19 @@ class CoinCell: UITableViewCell {
         let price = apiCaller.cryptos[informationLabel.text!]!["price_usd"] as! Double
         var purchase = (Double(purchaseAmount.text!) ?? 0.00)
         purchase = purchase / price
+        print("purchase1 = " + String(purchase))
         if buying == false { //selling
             if purchase >= owned{
+                print("purchase2 = " + String(purchase))
                 purchase = owned
+                print("purchase3 = " + String(purchase))
                 purchaseAmount.text = String(owned * price)
             }
             purchase = purchase * -1
         }
         let newTotal = purchase + owned
-        print("purchase = " + String(newTotal))
+        print("purchase " + String(purchase) + " + owned " + String(owned))
+        print("newTotal = " + String(newTotal))
         if newTotal > 0 {
             ownedLabel.text = String(newTotal)
             settings.updateCoinsArray(coin: informationLabel.text!)
@@ -76,7 +80,7 @@ class CoinCell: UITableViewCell {
                 currentCoins.remove(at: index) // removed from coinsOwned
                 print("removed")
                 settings.userData["coinsOwned"] = currentCoins
-                ownedLabel.text = "You don't own this coin!"
+                ownedLabel.text = "None!"
                 sellButtonOutlet.isEnabled = false
                 sellButtonOutlet.isHidden = true
             }

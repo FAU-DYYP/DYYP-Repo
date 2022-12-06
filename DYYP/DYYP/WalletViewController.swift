@@ -137,10 +137,11 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 cell.coinLogoImage.af.setImage(withURL: currentImg!)
                 let coinName = settings.whiteRemover(string: cell.coinNameLabel.text ?? "DYYP")
                 var owned = (settings.userData[coinName] as? Double ?? 0.00)
-                if let price = apiCaller.cryptos[currentCoin]!["price_usd"] as? Double {
-                    owned = owned / price
-                    cell.ownedLabel.text = (String(owned))
-                }
+                cell.ownedLabel.text = (String(owned))
+//                if let price = apiCaller.cryptos[currentCoin]!["price_usd"] as? Double {
+//                    owned = owned / price
+//                    
+//                }
                 
             }
         }

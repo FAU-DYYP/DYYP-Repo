@@ -21,8 +21,8 @@ class FeedCell: UITableViewCell {
     
     @IBAction func purchaseButton(_ sender: Any) {
         dollarsign.isHidden = false
-        confirmButtonOutlet.isHidden = false
         confirmButtonOutlet.isEnabled = true
+        confirmButtonOutlet.isHidden = false
         purchaseAmount.isEnabled = true
         purchaseAmount.isHidden = false
         purchaseAmount.becomeFirstResponder()
@@ -30,16 +30,21 @@ class FeedCell: UITableViewCell {
     @IBAction func confirmButton(_ sender: Any) {
         confirmButtonOutlet.isHidden = true
         confirmButtonOutlet.isEnabled = false
-        dollarsign.isHidden = true
+        
 
         print((nameLabel.text ?? "dyypcoin") + " $" + (purchaseAmount.text ?? "0.00"))
         var owned = (settings.userData[nameLabel.text ?? "dyypcoin"] as? Double ?? 0.00)
+        print("feed owned from userdata " + String(owned))
         
         var purchase = (Double(purchaseAmount.text!) ?? 0.00)
-        let price = (Double(price_usdLabel.text!) ?? 1.00)
+        print("feed purchase from field " + String(purchase))
+        let price = apiCaller.cryptos[symbolLabel.text!]!["price_usd"] as! Double
+        print("feed price " + String(price))
         purchase = purchase / price
+        print("feed purchase/price " + String(purchase))
         let newTotal = purchase + owned
-        if newTotal > 0 {
+        print("feed purchase+owned " + String(newTotal))
+        if newTotal > 0 && owned == 0.00 {
             settings.updateCoinsArray(coin: symbolLabel.text!)
         }
         settings.updateUserData(dataKey: (settings.whiteRemover(string: nameLabel.text ?? "dyypcoin") ?? "dyypcoin"), dataValue: newTotal)
@@ -47,6 +52,7 @@ class FeedCell: UITableViewCell {
         purchaseAmount.isEnabled = false
         purchaseAmount.isHidden = true
         
+        dollarsign.isHidden = true
     }
     
     @IBOutlet weak var confirmButtonOutlet: UIButton!

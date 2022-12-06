@@ -11,7 +11,9 @@ import AlamofireImage
 
 class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
+    @IBOutlet weak var totalCoinsLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var totalEarningsLabel: UILabel!
     
     let walletRefreshControl = UIRefreshControl()
     
@@ -31,6 +33,10 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         walletRefreshControl.addTarget(self, action: #selector(loadWallet), for: .valueChanged)
         tableView.refreshControl = walletRefreshControl
         
+        // Change Values for Specs
+        let totalCoins = settings.userData["coinsOwned"]
+        totalCoinsLabel.text = "69"
+        totalEarningsLabel.text = "420"
     }
     
     override func viewDidAppear(_ animated: Bool) {

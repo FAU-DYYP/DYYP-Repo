@@ -55,10 +55,9 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell") as! FeedCell
         
-        let coinArray = ["BTC", "BTC", "BCH", "ETH", "XRP", "DOGE", "LTC", "XMR", "DOT", "XLM", "ETC"]
+        let coinArray = [(settings.userData["preferredCoin"] as! String), "BCH", "ETH", "XRP", "DOGE", "LTC", "XMR", "DOT", "XLM", "ETC"]
         let imageArray = [
-            apiCaller.crypto_icons["BTC"], //dummy
-            apiCaller.crypto_icons["BTC"],
+            apiCaller.crypto_icons[settings.userData["preferredCoin"] as! String],
             apiCaller.crypto_icons["BCH"],
             apiCaller.crypto_icons["ETH"],
             apiCaller.crypto_icons["XRP"],
@@ -75,151 +74,22 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if preferredCoin == "None Selected" {
             preferredCoin = "BTC"
         }
-        let preferredImage = apiCaller.crypto_icons[preferredCoin]
         
         
         if(apiCaller.cryptos.count > 0){
-            if indexPath.row == 0 {
-            cell.nameLabel?.text = apiCaller.cryptos[preferredCoin]!["name"] as! String
-                cell.symbolLabel?.text = apiCaller.cryptos[preferredCoin]!["asset_id"] as! String
-                cell.coinLabel.af.setImage(withURL: preferredImage!)
-            
-            if let showPreferredPrice = apiCaller.cryptos[preferredCoin]!["price_usd"] as? Double {
-                cell.price_usdLabel?.text = "USD $" + String(round(showPreferredPrice * 100) / 100)
+            var currentCoin = coinArray[indexPath.row]
+            var currentImg = imageArray[indexPath.row]
+            if preferredCoin == currentCoin && indexPath.row != 0 {
+                currentCoin = "BTC"
+                currentImg = apiCaller.crypto_icons["BTC"]
             }
-        }
-            if indexPath.row == 1 {
-                if preferredCoin != coinArray[indexPath.row] {
-                    print("hello")
-                    cell.nameLabel?.text = apiCaller.cryptos[coinArray[indexPath.row]]!["name"]
-                        as! String
-                    cell.symbolLabel?.text = apiCaller.cryptos[coinArray[indexPath.row]]!["asset_id"] as! String
-                    cell.coinLabel.af.setImage(withURL: imageArray[indexPath.row]!)
-                    if let price = apiCaller.cryptos[coinArray[indexPath.row]]!["price_usd"] as? Double {
-                        cell.price_usdLabel?.text = "USD $" +
-                            String(round(price * 100) / 100)
-                }
-                }
+            cell.nameLabel?.text = apiCaller.cryptos[currentCoin]!["name"] as! String
+            cell.symbolLabel?.text = apiCaller.cryptos[currentCoin]!["asset_id"] as! String
+            cell.coinLabel.af.setImage(withURL: currentImg!)
+            if let price = apiCaller.cryptos[currentCoin]!["price_usd"] as? Double {
+                cell.price_usdLabel?.text = "USD $" +
+                    String(round(price * 100) / 100)
             }
-            
-            if indexPath.row == 2 {
-                if preferredCoin != coinArray[indexPath.row] {
-                    cell.nameLabel?.text = apiCaller.cryptos[coinArray[indexPath.row]]!["name"]
-                        as! String
-                    cell.symbolLabel?.text = apiCaller.cryptos[coinArray[indexPath.row]]!["asset_id"] as! String
-                    cell.coinLabel.af.setImage(withURL: imageArray[indexPath.row]!)
-                    if let price = apiCaller.cryptos[coinArray[indexPath.row]]!["price_usd"] as? Double {
-                        cell.price_usdLabel?.text = "USD $" +
-                            String(round(price * 100) / 100)
-                }
-                }
-            }
-            
-            if indexPath.row == 3 {
-                if preferredCoin != coinArray[indexPath.row] {
-                    cell.nameLabel?.text = apiCaller.cryptos[coinArray[indexPath.row]]!["name"]
-                        as! String
-                    cell.symbolLabel?.text = apiCaller.cryptos[coinArray[indexPath.row]]!["asset_id"] as! String
-                    cell.coinLabel.af.setImage(withURL: imageArray[indexPath.row]!)
-                    if let price = apiCaller.cryptos[coinArray[indexPath.row]]!["price_usd"] as? Double {
-                        cell.price_usdLabel?.text = "USD $" +
-                            String(round(price * 100) / 100)
-                }
-                }
-            }
-            
-            if indexPath.row == 4 {
-                if preferredCoin != coinArray[indexPath.row] {
-                    cell.nameLabel?.text = apiCaller.cryptos[coinArray[indexPath.row]]!["name"]
-                        as! String
-                    cell.symbolLabel?.text = apiCaller.cryptos[coinArray[indexPath.row]]!["asset_id"] as! String
-                    cell.coinLabel.af.setImage(withURL: imageArray[indexPath.row]!)
-                    if let price = apiCaller.cryptos[coinArray[indexPath.row]]!["price_usd"] as? Double {
-                        cell.price_usdLabel?.text = "USD $" +
-                            String(round(price * 100) / 100)
-                }
-                }
-            }
-            
-            if indexPath.row == 5 {
-                if preferredCoin != coinArray[indexPath.row] {
-                    cell.nameLabel?.text = apiCaller.cryptos[coinArray[indexPath.row]]!["name"]
-                        as! String
-                    cell.symbolLabel?.text = apiCaller.cryptos[coinArray[indexPath.row]]!["asset_id"] as! String
-                    cell.coinLabel.af.setImage(withURL: imageArray[indexPath.row]!)
-                    if let price = apiCaller.cryptos[coinArray[indexPath.row]]!["price_usd"] as? Double {
-                        cell.price_usdLabel?.text = "USD $" +
-                            String(round(price * 100) / 100)
-                }
-                }
-            }
-            
-            if indexPath.row == 6 {
-                if preferredCoin != coinArray[indexPath.row] {
-                    cell.nameLabel?.text = apiCaller.cryptos[coinArray[indexPath.row]]!["name"]
-                        as! String
-                    cell.symbolLabel?.text = apiCaller.cryptos[coinArray[indexPath.row]]!["asset_id"] as! String
-                    cell.coinLabel.af.setImage(withURL: imageArray[indexPath.row]!)
-                    if let price = apiCaller.cryptos[coinArray[indexPath.row]]!["price_usd"] as? Double {
-                        cell.price_usdLabel?.text = "USD $" +
-                            String(round(price * 100) / 100)
-                }
-                }
-            }
-            
-            if indexPath.row == 7 {
-                if preferredCoin != coinArray[indexPath.row] {
-                    cell.nameLabel?.text = apiCaller.cryptos[coinArray[indexPath.row]]!["name"]
-                        as! String
-                    cell.symbolLabel?.text = apiCaller.cryptos[coinArray[indexPath.row]]!["asset_id"] as! String
-                    cell.coinLabel.af.setImage(withURL: imageArray[indexPath.row]!)
-                    if let price = apiCaller.cryptos[coinArray[indexPath.row]]!["price_usd"] as? Double {
-                        cell.price_usdLabel?.text = "USD $" +
-                            String(round(price * 100) / 100)
-                }
-                }
-            }
-            
-            if indexPath.row == 8 {
-                if preferredCoin != coinArray[indexPath.row] {
-                    cell.nameLabel?.text = apiCaller.cryptos[coinArray[indexPath.row]]!["name"]
-                        as! String
-                    cell.symbolLabel?.text = apiCaller.cryptos[coinArray[indexPath.row]]!["asset_id"] as! String
-                    cell.coinLabel.af.setImage(withURL: imageArray[indexPath.row]!)
-                    if let price = apiCaller.cryptos[coinArray[indexPath.row]]!["price_usd"] as? Double {
-                        cell.price_usdLabel?.text = "USD $" +
-                            String(round(price * 100) / 100)
-                }
-                }
-            }
-            
-            if indexPath.row == 9 {
-                if preferredCoin != coinArray[indexPath.row] {
-                    cell.nameLabel?.text = apiCaller.cryptos[coinArray[indexPath.row]]!["name"]
-                        as! String
-                    cell.symbolLabel?.text = apiCaller.cryptos[coinArray[indexPath.row]]!["asset_id"] as! String
-                    cell.coinLabel.af.setImage(withURL: imageArray[indexPath.row]!)
-                    if let price = apiCaller.cryptos[coinArray[indexPath.row]]!["price_usd"] as? Double {
-                        cell.price_usdLabel?.text = "USD $" +
-                            String(round(price * 100) / 100)
-                }
-                }
-            }
-            if indexPath.row == 10 {
-                if preferredCoin != coinArray[indexPath.row] {
-                    print("hello")
-                    cell.nameLabel?.text = apiCaller.cryptos[coinArray[indexPath.row]]!["name"]
-                        as! String
-                    cell.symbolLabel?.text = apiCaller.cryptos[coinArray[indexPath.row]]!["asset_id"] as! String
-                    cell.coinLabel.af.setImage(withURL: imageArray[indexPath.row]!)
-                    if let price = apiCaller.cryptos[coinArray[indexPath.row]]!["price_usd"] as? Double {
-                        cell.price_usdLabel?.text = "USD $" +
-                            String(round(price * 100) / 100)
-                }
-                }
-            }
-            
-            
         }
         
         cell.purchaseAmount.isHidden = true

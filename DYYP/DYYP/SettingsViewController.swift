@@ -202,6 +202,12 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
             
     }
     
+    func updateCoinsArray(coin: String){
+        var currentCoins = (settings.userData["coinsOwned"] as! Array<String>)
+        currentCoins.append(coin)
+        settings.userData["coinsOwned"] = currentCoins
+    }
+    
     //EXPERIMENT
     func updateUserImage(dataKey: String, dataValue: PFFileObject){
             let query = PFQuery(className:"UserData")

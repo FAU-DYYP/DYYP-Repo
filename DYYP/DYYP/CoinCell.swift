@@ -9,6 +9,7 @@ import UIKit
 
 class CoinCell: UITableViewCell {
     var buying = true
+    var reload = false
     
     @IBOutlet weak var coinLogoImage: UIImageView!
     @IBOutlet weak var coinNameLabel: UILabel!
@@ -46,6 +47,8 @@ class CoinCell: UITableViewCell {
         self.purchaseStaticButton.backgroundColor = UIColor(named: "Toggle Colors")
     }
     
+    
+    //I'm sorry to anyone who tries to understand this button
     @IBAction func confirmButton(_ sender: Any) {
         confirmButtonOutlet.isHidden = true
         confirmButtonOutlet.isEnabled = false
@@ -55,9 +58,9 @@ class CoinCell: UITableViewCell {
         print((coinNameLabel.text ?? "dyypcoin") + " $" + (purchaseAmount.text ?? "0.00"))
         var owned = (settings.userData[settings.whiteRemover(string: coinNameLabel.text ?? "dyypcoin")] as? Double ?? 0.00)
         
-        //let ownedLabelText = ownedLabel.text ?? "0.00"
         let price = apiCaller.cryptos[informationLabel.text!]!["price_usd"] as! Double
         var purchase = (Double(purchaseAmount.text!) ?? 0.00)
+        
         purchase = purchase / price
         if buying == false { //selling
             if purchase >= owned{
@@ -66,6 +69,8 @@ class CoinCell: UITableViewCell {
             }
             purchase = purchase * -1
         }
+        var moneyEarned = (-1 * purchase * price) + (settings.userData["moneyEarned"] as! Double)
+        settings.updateUserData(dataKey: "moneyEarned", dataValue: moneyEarned)
         var newTotal = purchase + owned
         if newTotal > 0 {
             var roundedTotal = Double(round(100000 * newTotal) / 100000)
@@ -89,6 +94,8 @@ class CoinCell: UITableViewCell {
         purchaseAmount.text = ""
         purchaseAmount.isEnabled = false
         purchaseAmount.isHidden = true
+        reload = true
+        
         self.purchaseStaticButton.backgroundColor = UIColor(named: "Toggle Colors")
         self.sellStaticButton.backgroundColor = UIColor(named: "Toggle Colors")
     }

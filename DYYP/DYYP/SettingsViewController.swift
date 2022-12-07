@@ -147,6 +147,9 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
                     settings.userData["profileImage"] = PFFileObject(name: "image.png", data: (UIImage(named: "DYYPERV3")?.pngData())!)
                     let defaultArray = ["DYYP"]
                     settings.userData["coinsOwned"] = defaultArray
+                    settings.userData["moneyEarned"] = 0.00
+                    settings.userData["totalValue"] = 0.00
+
                     settings.userData.saveInBackground { (succeeded, error)  in
                         if (succeeded) {
                             // The object has been saved.
@@ -240,6 +243,22 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
                 }
             }
             
+    }
+    
+    func getTotalValue() -> Double {
+        let currentCoins = (settings.userData["coinsOwned"] as! Array<String>)
+        var total = 0.00
+        for coin in currentCoins{
+            if coin != "DYYP"{
+                var coinName = apiCaller.cryptos[coin]!["name"] as! String
+                coinName = whiteRemover(string: coinName)
+                var value = settings.userData[coinName] as! Double
+                value = value * (apiCaller.cryptos[coin]!["price_usd"] as! Double)
+                total = total + value
+            }
+        }
+        let roundedTotal = Double(round(10000 * total) / 10000)
+        return roundedTotal
     }
     
     func whiteRemover(string: String) -> String {

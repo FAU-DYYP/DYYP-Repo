@@ -53,6 +53,9 @@ class FeedCell: UITableViewCell {
         dollarsign.isHidden = true
         confirmButtonOutlet.isHidden = true
         confirmButtonOutlet.isEnabled = false
+        
+        var moneyEarned = (-1 * purchase * price) + (settings.userData["moneyEarned"] as! Double)
+        settings.updateUserData(dataKey: "moneyEarned", dataValue: moneyEarned)
     }
     
     @IBOutlet weak var confirmButtonOutlet: UIButton!

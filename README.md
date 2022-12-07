@@ -91,6 +91,10 @@ Settings view first implementation.
 Coin Icons, Appearance Improvements, Mockup Values, Purchase/Sell Buttons (values recorded but not yet used), Username Changing 
 <img src="https://raw.githubusercontent.com/FAU-DYYP/DYYP-Repo/main/u8BtQLhRji.gif" width=600>
 
+#### Sprint 4 Progress
+Buying and Sellings Coins, user data (preffered display, preferred coin, coins owned, earnings) all saved on parse. Actually track money earned buying and selling (imaginary) crypto!
+<img src="https://raw.githubusercontent.com/FAU-DYYP/DYYP-Repo/main/finalgif.gif" width=600>
+
 ### [BONUS] Interactive Prototype
 
 ## Schema 

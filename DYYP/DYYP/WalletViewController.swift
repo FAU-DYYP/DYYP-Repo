@@ -59,10 +59,13 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if (settings.userData["coinsOwned"]) != nil {
             coins = (settings.userData["coinsOwned"] as! Array<String>)
             print("coinsOwned Length")
+            if coins.count <= 1{
+                dyyperTextBubble.isHidden = false
+            }
             return coins.count - 1
         } else {
             print("10")
-            return 10
+            return 0
         }
     }
     
@@ -91,7 +94,7 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if (settings.userData["coinsOwned"]) != nil {
             currentCoins = (settings.userData["coinsOwned"] as! Array<String>)
-            if (currentCoins.count == 1) && (currentCoins[0] == "DYYP"){
+            if (currentCoins.count <= 1) && (currentCoins[0] == "DYYP"){
                 dyyperTextBubble.isHidden = false
             }
             print("Owned")
@@ -101,7 +104,7 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         
-        if (currentCoins.count == 1){
+        if (currentCoins.count <= 1){
             //dyyper appear
             dyyperTextBubble.isHidden = false
         } else if (currentCoins.count > 1) {
@@ -118,8 +121,8 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 
                 //total
                 if (indexPath.row == 0) {
-                    total = 0.00
-                    totalCoinsLabel.text = "$" + String(total)
+                    //total = 0.00
+                    //totalCoinsLabel.text = "$" + String(total)
                 }
                 
                 cell.coinNameLabel?.text = apiCaller.cryptos[currentCoin]!["name"] as! String
@@ -129,8 +132,8 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 var owned = (settings.userData[coinName] as? Double ?? 0.00)
                 let price = apiCaller.cryptos[currentCoin]!["price_usd"] as! Double
                 
-                total = total + (owned * price)
-                total = Double(round(100 * total) / 100)
+                //total = total + (owned * price)
+                //total = Double(round(100 * total) / 100)
                 totalCoinsLabel.text = "$" + String(total)
                 
                 var roundedOwned = Double(round(10000 * owned) / 10000)

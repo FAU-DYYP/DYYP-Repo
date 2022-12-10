@@ -83,7 +83,6 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if(apiCaller.cryptos.count > 0){
             var currentCoin = coinArray[indexPath.row]
             var currentImg = imageArray[indexPath.row]
-            cell.purchaseAmount.tag = indexPath.row
             if preferredCoin == currentCoin && indexPath.row != 0 {
                 currentCoin = "BTC"
                 currentImg = apiCaller.crypto_icons["BTC"]

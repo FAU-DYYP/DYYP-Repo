@@ -86,7 +86,7 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 dyyperTextBubble.isHidden = false
             }
         } else {
-            currentCoins = ["DYYP", "BCH", "ETH", "XRP", "DOGE", "LTC", "XMR", "DOT", "XLM", "ETC", "DASH", "MAID", "VTC", "TOR", "MANA", "XCP"]
+            currentCoins = ["DYYP", "BCH", "ETH", "XRP", "DOGE", "LTC", "XMR", "DOT", "XLM", "ETC", "DASH", "MAID", "VTC", "MANA", "XCP"]
             print("Default")
         }
         

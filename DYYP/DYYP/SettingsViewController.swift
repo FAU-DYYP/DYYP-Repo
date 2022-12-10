@@ -298,7 +298,6 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
                 UIAction(title: "DASH-Dash", handler: action),
                 UIAction(title: "MAID-MaidSafeCoin", handler: action),
                 UIAction(title: "VTC-Vertcoin", handler: action),
-                UIAction(title: "TOR-Torcoin", handler: action),
                 UIAction(title: "MANA-Decentraland", handler: action),
                 UIAction(title: "XCP-Counterparty", handler: action),
                 ])

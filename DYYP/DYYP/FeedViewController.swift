@@ -49,7 +49,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 16
+        return 15
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -60,7 +60,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         var preferredCoin = (settings.userData["preferredCoin"] ?? "BTC") as! String
 
         
-        let coinArray = [preferredCoin, "BCH", "ETH", "XRP", "DOGE", "LTC", "XMR", "DOT", "XLM", "ETC", "DASH", "MAID", "VTC", "TOR", "MANA", "XCP"]
+        let coinArray = [preferredCoin, "BCH", "ETH", "XRP", "DOGE", "LTC", "XMR", "DOT", "XLM", "ETC", "DASH", "MAID", "VTC", "MANA", "XCP"]
         
         let imageArray = [
                     apiCaller.crypto_icons[preferredCoin],
@@ -76,7 +76,6 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     apiCaller.crypto_icons["DASH"],
                     apiCaller.crypto_icons["MAID"],
                     apiCaller.crypto_icons["VTC"],
-                    apiCaller.crypto_icons["TOR"],
                     apiCaller.crypto_icons["MANA"],
                     apiCaller.crypto_icons["XCP"],
                 ]

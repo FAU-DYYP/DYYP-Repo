@@ -285,17 +285,23 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
         
         // UPDATE LATER - All Coins to List
         let menu = UIMenu(children : [
-        UIAction(title: "BTC-Bitcoin", state: .on, handler: action),
-        UIAction(title: "BCH-Bitcoin Cash", handler: action),
-        UIAction(title: "ETH-Etherium", handler: action),
-        UIAction(title: "XRP-Ripple", handler: action),
-        UIAction(title: "DOGE-DogeCoin", handler: action),
-        UIAction(title: "LTC-Litecoin", handler: action),
-        UIAction(title: "XMR-Monero", handler: action),
-        UIAction(title: "DOT-Polkadot", handler: action),
-        UIAction(title: "XLM-Stellar Lumens", handler: action),
-        UIAction(title: "ETC-Ethereum Classic", handler: action)
-        ])
+                UIAction(title: "BTC-Bitcoin", state: .on, handler: action),
+                UIAction(title: "BCH-Bitcoin Cash", handler: action),
+                UIAction(title: "ETH-Etherium", handler: action),
+                UIAction(title: "XRP-Ripple", handler: action),
+                UIAction(title: "DOGE-DogeCoin", handler: action),
+                UIAction(title: "LTC-Litecoin", handler: action),
+                UIAction(title: "XMR-Monero", handler: action),
+                UIAction(title: "DOT-Polkadot", handler: action),
+                UIAction(title: "XLM-Stellar Lumens", handler: action),
+                UIAction(title: "ETC-Ethereum Classic", handler: action),
+                UIAction(title: "DASH-Dash", handler: action),
+                UIAction(title: "MAID-MaidSafeCoin", handler: action),
+                UIAction(title: "VTC-Vertcoin", handler: action),
+                UIAction(title: "TOR-Torcoin", handler: action),
+                UIAction(title: "MANA-Decentraland", handler: action),
+                UIAction(title: "XCP-Counterparty", handler: action),
+                ])
         
         preferredCoinSelect.menu = menu
     }

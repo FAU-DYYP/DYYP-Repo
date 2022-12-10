@@ -49,7 +49,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 16
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -60,19 +60,26 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         var preferredCoin = (settings.userData["preferredCoin"] ?? "BTC") as! String
 
         
-        let coinArray = [preferredCoin, "BCH", "ETH", "XRP", "DOGE", "LTC", "XMR", "DOT", "XLM", "ETC"]
+        let coinArray = [preferredCoin, "BCH", "ETH", "XRP", "DOGE", "LTC", "XMR", "DOT", "XLM", "ETC", "DASH", "MAID", "VTC", "TOR", "MANA", "XCP"]
+        
         let imageArray = [
-            apiCaller.crypto_icons[preferredCoin],
-            apiCaller.crypto_icons["BCH"],
-            apiCaller.crypto_icons["ETH"],
-            apiCaller.crypto_icons["XRP"],
-            apiCaller.crypto_icons["DOGE"],
-            apiCaller.crypto_icons["LTC"],
-            apiCaller.crypto_icons["XMR"],
-            apiCaller.crypto_icons["DOT"],
-            apiCaller.crypto_icons["XLM"],
-            apiCaller.crypto_icons["ETC"]
-        ]
+                    apiCaller.crypto_icons[preferredCoin],
+                    apiCaller.crypto_icons["BCH"],
+                    apiCaller.crypto_icons["ETH"],
+                    apiCaller.crypto_icons["XRP"],
+                    apiCaller.crypto_icons["DOGE"],
+                    apiCaller.crypto_icons["LTC"],
+                    apiCaller.crypto_icons["XMR"],
+                    apiCaller.crypto_icons["DOT"],
+                    apiCaller.crypto_icons["XLM"],
+                    apiCaller.crypto_icons["ETC"],
+                    apiCaller.crypto_icons["DASH"],
+                    apiCaller.crypto_icons["MAID"],
+                    apiCaller.crypto_icons["VTC"],
+                    apiCaller.crypto_icons["TOR"],
+                    apiCaller.crypto_icons["MANA"],
+                    apiCaller.crypto_icons["XCP"],
+                ]
         
         
         if preferredCoin == "None Selected" {

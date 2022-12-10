@@ -87,7 +87,7 @@ class CoinCell: UITableViewCell {
                 settings.userData["coinsOwned"] = currentCoins
                 ownedLabel.text = "None!"
                 sellButtonOutlet.isEnabled = false
-                sellButtonOutlet.isHidden = true
+                sellButtonOutlet.isHidden = false
             }
         }
         settings.updateUserData(dataKey: (settings.whiteRemover(string: coinNameLabel.text ?? "dyypcoin") ?? "dyypcoin"), dataValue: newTotal)

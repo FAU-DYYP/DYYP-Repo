@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -40,7 +38,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USERNAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Om0-kd-cae">
-                                <rect key="frame" x="47" y="393" width="104" height="21"/>
+                                <rect key="frame" x="47" y="389" width="104" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Lgf-hi-062"/>
                                 </constraints>
@@ -49,12 +47,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pyd-ya-Rnu">
-                                <rect key="frame" x="41" y="421" width="333" height="34"/>
+                                <rect key="frame" x="41" y="417" width="333" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kin-hh-bXc">
-                                <rect key="frame" x="47" y="478" width="104" height="21"/>
+                                <rect key="frame" x="47" y="474" width="104" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="dkZ-vn-gPv"/>
                                 </constraints>
@@ -63,12 +61,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UyE-OR-IPP">
-                                <rect key="frame" x="41" y="507" width="333" height="34"/>
+                                <rect key="frame" x="41" y="503" width="333" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdQ-JA-15C">
-                                <rect key="frame" x="67" y="569" width="71" height="32"/>
+                                <rect key="frame" x="67" y="565" width="71" height="32"/>
                                 <color key="backgroundColor" name="Toggle Colors"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="4va-xE-cJM"/>
@@ -83,7 +81,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQb-x1-Lfe">
-                                <rect key="frame" x="285" y="568" width="71" height="32"/>
+                                <rect key="frame" x="285" y="564" width="71" height="32"/>
                                 <color key="backgroundColor" name="Toggle Colors"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="71" id="0S7-PN-ian"/>
@@ -98,7 +96,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DYYPLogoV2" translatesAutoresizingMaskIntoConstraints="NO" id="tBR-Xc-Uhc">
-                                <rect key="frame" x="41" y="161" width="333" height="177"/>
+                                <rect key="frame" x="41" y="157" width="333" height="177"/>
                                 <color key="backgroundColor" name="Toggle Colors"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="333" id="bPV-cx-c9V"/>
@@ -173,7 +171,7 @@
                                 <color key="sectionIndexBackgroundColor" systemColor="systemGray6Color"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedCell" rowHeight="136" id="gsU-V8-fE2" customClass="FeedCell" customModule="DYYP" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="414" height="136"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="136"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gsU-V8-fE2" id="qwx-dg-alv">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="136"/>
@@ -328,12 +326,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Tg2-8C-ynH">
-                                <rect key="frame" x="0.0" y="352" width="414" height="461"/>
+                                <rect key="frame" x="0.0" y="348" width="414" height="465"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="systemGray6Color"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CoinCell" rowHeight="200" id="tUz-u1-jea" customClass="CoinCell" customModule="DYYP" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="414" height="200"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tUz-u1-jea" id="ywA-89-trN">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
@@ -498,7 +496,7 @@
                                 </prototypes>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V83-K5-bvr" userLabel="Backdrop">
-                                <rect key="frame" x="20" y="48" width="374" height="245"/>
+                                <rect key="frame" x="20" y="44" width="374" height="245"/>
                                 <color key="backgroundColor" name="Toggle Colors"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="245" id="HqP-7p-tme"/>
@@ -506,7 +504,7 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S3f-nV-bsd" userLabel="DailyDrop">
-                                <rect key="frame" x="43" y="132" width="329" height="129"/>
+                                <rect key="frame" x="43" y="128" width="329" height="129"/>
                                 <color key="backgroundColor" systemColor="secondaryLabelColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="329" id="HPK-Bf-lRM"/>
@@ -514,7 +512,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZWJ-tD-EPc">
-                                <rect key="frame" x="224" y="199" width="139" height="30"/>
+                                <rect key="frame" x="224" y="195" width="139" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="139" id="FFK-Qm-x0M"/>
                                     <constraint firstAttribute="height" constant="30" id="ah7-3r-N0v"/>
@@ -524,7 +522,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY WALLET" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgB-Tw-eVN">
-                                <rect key="frame" x="88" y="69" width="233" height="55"/>
+                                <rect key="frame" x="88" y="65" width="233" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="233" id="O4v-Vr-ZWc"/>
                                     <constraint firstAttribute="height" constant="55" id="iHp-9k-ZbT"/>
@@ -534,7 +532,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOTAL VALUE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Da-Dt-KOg">
-                                <rect key="frame" x="71" y="160" width="129" height="21"/>
+                                <rect key="frame" x="71" y="156" width="129" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="U41-3E-TFI"/>
                                     <constraint firstAttribute="width" constant="129" id="rMj-ES-3n6"/>
@@ -544,7 +542,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F02-5X-CRI">
-                                <rect key="frame" x="55" y="199" width="145" height="30"/>
+                                <rect key="frame" x="55" y="195" width="145" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="145" id="YOS-pm-0in"/>
                                     <constraint firstAttribute="height" constant="30" id="iQM-xJ-Fpq"/>
@@ -554,7 +552,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OWNED COINS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YsJ-nj-Dcs">
-                                <rect key="frame" x="23" y="310" width="200" height="34"/>
+                                <rect key="frame" x="23" y="306" width="200" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="LON-Ky-mwm"/>
                                     <constraint firstAttribute="height" constant="34" id="PDe-iP-c11"/>
@@ -564,7 +562,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DYYPERV1" translatesAutoresizingMaskIntoConstraints="NO" id="lFV-W7-pDQ">
-                                <rect key="frame" x="224" y="269" width="90" height="75"/>
+                                <rect key="frame" x="224" y="265" width="90" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="lMy-cl-di3"/>
                                     <constraint firstAttribute="height" constant="75" id="pNN-OG-cZK"/>
@@ -574,7 +572,7 @@
                                 <rect key="frame" x="55" y="310" width="298" height="311"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOTAL EARNINGS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mml-24-EkH">
-                                <rect key="frame" x="224" y="160" width="139" height="21"/>
+                                <rect key="frame" x="224" y="156" width="139" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="ftS-da-H2Y"/>
                                     <constraint firstAttribute="width" constant="139" id="o4j-AE-iFT"/>
@@ -662,7 +660,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DYYPERV3" translatesAutoresizingMaskIntoConstraints="NO" id="C6J-Oj-lEv">
-                                <rect key="frame" x="67" y="164" width="280" height="280"/>
+                                <rect key="frame" x="67" y="160" width="280" height="280"/>
                                 <color key="backgroundColor" name="Toggle Colors"/>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
@@ -687,12 +685,12 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ONb-A3-IHS">
-                                <rect key="frame" x="67" y="479" width="185" height="36"/>
+                                <rect key="frame" x="67" y="475" width="185" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pad-7E-wa2">
-                                <rect key="frame" x="260" y="479" width="87" height="36"/>
+                                <rect key="frame" x="260" y="475" width="87" height="36"/>
                                 <color key="backgroundColor" name="Toggle Colors"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="6yX-t8-ucf"/>
@@ -707,19 +705,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DISPLAY NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvL-0X-civ">
-                                <rect key="frame" x="67" y="452" width="103" height="19"/>
+                                <rect key="frame" x="67" y="448" width="103" height="19"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PREFERRED COIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5R-fF-Cig">
-                                <rect key="frame" x="67" y="523" width="117" height="19"/>
+                                <rect key="frame" x="67" y="519" width="117" height="19"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC-Bitcoin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TS6-tT-qA8">
-                                <rect key="frame" x="67" y="550" width="185" height="34"/>
+                                <rect key="frame" x="67" y="546" width="185" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="185" id="6fZ-xE-B4I"/>
                                     <constraint firstAttribute="height" constant="34" id="xLV-4I-uO6"/>
@@ -728,20 +726,14 @@
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zFw-Nc-Oom">
-                                <rect key="frame" x="260" y="550" width="87" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zFw-Nc-Oom">
+                                <rect key="frame" x="260" y="546" width="87" height="34"/>
                                 <color key="backgroundColor" name="Toggle Colors"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="Fua-Tc-n5f"/>
                                     <constraint firstAttribute="width" constant="87" id="JQo-i7-fef"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
-                                <menu key="menu" id="Fnb-aR-4hP">
-                                    <children>
-                                        <command title="Item 1" id="TwF-oa-u7x"/>
-                                        <command title="Item 2" id="nJ7-2z-vyd"/>
-                                    </children>
-                                </menu>
                                 <state key="normal" title="SELECT...">
                                     <color key="titleColor" systemColor="tertiarySystemBackgroundColor"/>
                                 </state>
@@ -770,7 +762,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zRe-PG-lEf">
-                                <rect key="frame" x="316" y="420" width="31" height="24"/>
+                                <rect key="frame" x="316" y="416" width="31" height="24"/>
                                 <color key="backgroundColor" systemColor="secondaryLabelColor"/>
                                 <color key="tintColor" systemColor="systemGray6Color"/>
                                 <constraints>
@@ -843,15 +835,15 @@
         <image name="DYYPLogoV2" width="1790" height="1086"/>
         <image name="DYYPText1" width="512" height="260"/>
         <image name="DYYPText2" width="512" height="512"/>
-        <image name="camera" catalog="system" width="128" height="93"/>
+        <image name="camera" catalog="system" width="128" height="94"/>
         <image name="creditcard" catalog="system" width="128" height="88"/>
-        <image name="list.bullet" catalog="system" width="128" height="87"/>
-        <image name="person.crop.circle" catalog="system" width="128" height="123"/>
+        <image name="list.bullet" catalog="system" width="128" height="88"/>
+        <image name="person.crop.circle" catalog="system" width="128" height="121"/>
         <namedColor name="Toggle Colors">
             <color red="0.95399999618530273" green="0.75" blue="0.15800000727176666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>

@@ -252,14 +252,17 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
             if coin != "DYYP"{
                 var coinName = apiCaller.cryptos[coin]!["name"] as! String
                 coinName = whiteRemover(string: coinName)
-                var value = settings.userData[coinName] as! Double
-                value = value * (apiCaller.cryptos[coin]!["price_usd"] as! Double)
-                total = total + value
+                if settings.userData[coinName] != nil {
+                    var value = (settings.userData[coinName] as! Double)
+                    value = value * (apiCaller.cryptos[coin]!["price_usd"] as! Double)
+                    total = total + value
+                }
             }
         }
         let roundedTotal = Double(round(10000 * total) / 10000)
         return roundedTotal
     }
+    
     
     func whiteRemover(string: String) -> String {
         return string.replacingOccurrences(of: " ", with: "_")

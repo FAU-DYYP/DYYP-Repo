@@ -46,6 +46,9 @@ class FeedCell: UITableViewCell {
             settings.updateCoinsArray(coin: symbolLabel.text!)
         }
         settings.updateUserData(dataKey: (settings.whiteRemover(string: nameLabel.text ?? "dyypcoin") ?? "dyypcoin"), dataValue: newTotal)
+        
+        settings.updateUserData(dataKey: "totalValue", dataValue: settings.getTotalValue())
+
         purchaseAmount.text = ""
         purchaseAmount.isEnabled = false
         purchaseAmount.isHidden = true

@@ -37,9 +37,17 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        settings.getUserData()
         //dyyper
         dyyperTextBubble.isHidden = false
         
+        if (settings.userData["totalValue"]) != nil {
+            let total = settings.getTotalValue()
+            let strTotal = String(total)
+            totalCoinsLabel.text = "$" + strTotal
+        }
+            
+
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 115
         self.tableView.reloadData()
@@ -47,7 +55,11 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     @objc func loadWallet() {
-        print("ran loadWaller")
+        if (settings.userData["totalValue"]) != nil {
+            let total = settings.getTotalValue()
+            let strTotal = String(total)
+            totalCoinsLabel.text = "$" + strTotal
+        }
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.tableView.reloadData()
             self.walletRefreshControl.endRefreshing()

@@ -48,7 +48,7 @@ class CoinCell: UITableViewCell {
     }
     
     
-    //I'm sorry to anyone who tries to understand this button
+    //I'm sorry to anyone who tries to understand this button, its terribly organized
     @IBAction func confirmButton(_ sender: Any) {
         confirmButtonOutlet.isHidden = true
         confirmButtonOutlet.isEnabled = false
@@ -56,7 +56,7 @@ class CoinCell: UITableViewCell {
         dollarsign.isHidden = true
         
         print((coinNameLabel.text ?? "dyypcoin") + " $" + (purchaseAmount.text ?? "0.00"))
-        var owned = (settings.userData[settings.whiteRemover(string: coinNameLabel.text ?? "dyypcoin")] as? Double ?? 0.00)
+        let owned = (settings.userData[settings.whiteRemover(string: coinNameLabel.text ?? "dyypcoin")] as? Double ?? 0.00)
         
         let price = apiCaller.cryptos[informationLabel.text!]!["price_usd"] as! Double
         var purchase = (Double(purchaseAmount.text!) ?? 0.00)
@@ -69,12 +69,11 @@ class CoinCell: UITableViewCell {
             }
             purchase = purchase * -1
         }
-        var moneyEarned = (-1 * purchase * price) + (settings.userData["moneyEarned"] as! Double)
+        let moneyEarned = (-1 * purchase * price) + (settings.userData["moneyEarned"] as! Double)
         settings.updateUserData(dataKey: "moneyEarned", dataValue: moneyEarned)
-        var newTotal = purchase + owned
+        let newTotal = purchase + owned
         if newTotal > 0 {
-            var roundedTotal = Double(round(100000 * newTotal) / 100000)
-//            ownedLabel.text = (String(roundedTotal) + " " + informationLabel.text!)
+            let roundedTotal = Double(round(100000 * newTotal) / 100000)
             ownedLabel.text = (String(roundedTotal))
             sellButtonOutlet.isEnabled = true
             sellButtonOutlet.isHidden = false
@@ -89,8 +88,11 @@ class CoinCell: UITableViewCell {
                 sellButtonOutlet.isEnabled = true
                 sellButtonOutlet.isHidden = false
             }
+            settings.updateUserData(dataKey: "coinsOwned", dataValue: currentCoins)
         }
         settings.updateUserData(dataKey: (settings.whiteRemover(string: coinNameLabel.text ?? "dyypcoin") ?? "dyypcoin"), dataValue: newTotal)
+        
+        settings.updateUserData(dataKey: "totalValue", dataValue: settings.getTotalValue())
         purchaseAmount.text = ""
         purchaseAmount.isEnabled = false
         purchaseAmount.isHidden = true

@@ -12,7 +12,7 @@ Original App Design Project
 
 ## Overview
 ### Description
-DYYP is a cryptocurrency focused app: it monitors the crpyto market for prices. Users can personalize their feed, a profile, and a simulated crypto wallet. The user can also seen in-depth information about a specific coin in a seperate view.
+DYYP is a cryptocurrency focused app: it monitors the crypto market for prices. Users can personalize their feed, a profile, and a simulated crypto wallet. The user can also seen in-depth information about a specific coin in a seperate view.
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
